@@ -3,7 +3,10 @@
 ##-- Executes all the functions 
 
 import numpy as np
-
+from scipy.integrate import odeint
+from y_ODE import *
+from utilities import *
+import pylab
 
 def model(parameters,delta_t = 1,):
 
@@ -34,10 +37,9 @@ def model(parameters,delta_t = 1,):
 
 	num_iter = 1
 
-	time_length = len(range(t0,tf,delta_t))
+	time_length = len(range(t0,tf+delta_t,delta_t))
 	T_vec = np.ones(time_length)*323
 	DH_vec = np.zeros((num_iter,time_length))
-	C_vec = np.zeros((num_iter,time_length))
 
 
 
@@ -51,30 +53,55 @@ def model(parameters,delta_t = 1,):
 
 		y_mat = np.zeros((time_length,9))
 		z_mat = np.zeros((time_length,9))
-		theta_mat = np.zeros((time_length,9))
-		fi_mat = np.zeros((time_length,9))
+		#theta_mat = np.zeros((time_length,9))
+		#fi_mat = np.zeros((time_length,9))
 
 		DelH_dy_mat = np.zeros((time_length,9))
 		DelH_dz_mat = np.zeros((time_length,9))
 
 		y_mat[0,:] = y0
+		#print y_mat[0,0]
 		z_mat[-1,:] = zf
-		theta_mat[0,:] = theta0
-		fi_mat[-1,:] = fi_f
-
-
-		t = np.arange(t0,tf,delta_t)
-
-		print t
+		#theta_mat[0,:] = theta0
+		#fi_mat[-1,:] = fi_f
 		
+		for t in range(t0,tf,delta_t) :
+			#print t 
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			#print t_horizon
+			T = T_vec[t]
+			C = y_mat[t,0]
+			G = calG(T,C,parameters)
+			B = calB(y_mat[t,:],T,parameters)
+
+			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
+			
+			y_mat[t+delta_t,:] = y[-1,:]
+
+
+		for t in range(tf,t0,-delta_t):
+
+			t_horizon = np.linspace(t,t-delta_t,num =10)
+			T = T_vec[t]
+			C = y_mat[t,0]
+			G = calG(T,C,parameters)
+			B = calB(y_mat[t,:],T,parameters)
+			
+						
+			
+		for t in range
+		#print y 
+		iteration+=1
 
 
 
+	plt_y =  y_mat[:,0]
 
+	## Plotting function 
 
-
-
-
+	t = np.linspace(t0,tf,num = 1801)
+	pylab.plot(t,plt_y)
+	plot.show()	
 
 if __name__ == "__main__" :
 
