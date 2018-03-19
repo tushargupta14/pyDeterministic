@@ -6,6 +6,8 @@ import numpy as np
 from scipy.integrate import odeint
 from y_ODE import *
 from z_ODE import *
+from DH_dy import * 
+from DH_dz import * 
 from utilities import *
 import matplotlib.pyplot as plt 
 
@@ -86,15 +88,30 @@ def model(parameters,delta_t = 1,):
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
-			#B = calB(y_mat[t,:],T,parameters)
-
 			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
-			print z[-1,0]			
+			#print z[-1,0]			
 			z_mat[t-delta_t,:] = z[-1,:]
+		
+
+		for t in range(t0,tf+delta_t,delta_t):
+
+			##t_horizon = np.linspace(t,t+delta_t,num = 10)
+			T = T_vec[t]
+			G = calG(T,C,parameters)
+
+			DelH_dy_mat[t,:] = DH_dy(y_mat[t,:],z_mat[t,:],G,T,parameters)
+			DelH_dz_mat[t,:] = DH_dz(T,y_mat[t,:],parameters)
+		
+		## Theta forward integration
+		#for t in range(t0,tf,delta_t) :
+
 		iteration+=1
 
-	print z_mat.shape
-	plt_z =  z_mat[:,0]
+
+	
+
+
+	plt_z =  DelH_dz_mat[:,5]
 
 	## Plotting function 
 
