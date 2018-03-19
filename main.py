@@ -5,8 +5,9 @@
 import numpy as np
 from scipy.integrate import odeint
 from y_ODE import *
+from z_ODE import *
 from utilities import *
-import pylab
+import matplotlib.pyplot as plt 
 
 def model(parameters,delta_t = 1,):
 
@@ -64,7 +65,7 @@ def model(parameters,delta_t = 1,):
 		z_mat[-1,:] = zf
 		#theta_mat[0,:] = theta0
 		#fi_mat[-1,:] = fi_f
-		
+	
 		for t in range(t0,tf,delta_t) :
 			#print t 
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
@@ -78,30 +79,28 @@ def model(parameters,delta_t = 1,):
 			
 			y_mat[t+delta_t,:] = y[-1,:]
 
-
 		for t in range(tf,t0,-delta_t):
-
+			#print t 
 			t_horizon = np.linspace(t,t-delta_t,num =10)
+			#print t_horizon
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
-			B = calB(y_mat[t,:],T,parameters)
-			
-						
-			
-		for t in range
-		#print y 
+			#B = calB(y_mat[t,:],T,parameters)
+
+			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
+			print z[-1,0]			
+			z_mat[t-delta_t,:] = z[-1,:]
 		iteration+=1
 
-
-
-	plt_y =  y_mat[:,0]
+	print z_mat.shape
+	plt_z =  z_mat[:,0]
 
 	## Plotting function 
 
 	t = np.linspace(t0,tf,num = 1801)
-	pylab.plot(t,plt_y)
-	plot.show()	
+	plt.plot(t,plt_z)
+	plt.show()	
 
 if __name__ == "__main__" :
 
