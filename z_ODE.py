@@ -16,7 +16,7 @@ def z_ODE(z,t,G,params,T,y):
    	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 	S  = (C- Cs)/Cs
    	DelG = DG_dy(T,C,params)
-   	DelB = DB_dy(T,C,y[3],y[7],params)
+   	DelB = DB_dy(T,C,y,params)
 
 
    	dz1 = z[0]*(3*rho*kv*(y[3]+y[7])*DelG)

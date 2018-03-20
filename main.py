@@ -8,6 +8,7 @@ from y_ODE import *
 from z_ODE import *
 from DH_dy import * 
 from DH_dz import * 
+from theta_ODE import *
 from utilities import *
 import matplotlib.pyplot as plt 
 
@@ -56,7 +57,7 @@ def model(parameters,delta_t = 1,):
 
 		y_mat = np.zeros((time_length,9))
 		z_mat = np.zeros((time_length,9))
-		#theta_mat = np.zeros((time_length,9))
+		theta_mat = np.zeros((time_length,9))
 		#fi_mat = np.zeros((time_length,9))
 
 		DelH_dy_mat = np.zeros((time_length,9))
@@ -65,7 +66,7 @@ def model(parameters,delta_t = 1,):
 		y_mat[0,:] = y0
 		#print y_mat[0,0]
 		z_mat[-1,:] = zf
-		#theta_mat[0,:] = theta0
+		theta_mat[0,:] = theta0
 		#fi_mat[-1,:] = fi_f
 	
 		for t in range(t0,tf,delta_t) :
@@ -103,15 +104,30 @@ def model(parameters,delta_t = 1,):
 			DelH_dz_mat[t,:] = DH_dz(T,y_mat[t,:],parameters)
 		
 		## Theta forward integration
-		#for t in range(t0,tf,delta_t) :
+		for t in range(t0,tf,delta_t) :
 
+			T = T_vec[t]
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			theta = odeint(theta_ODE,theta_mat[t,:],t_horizon,args = (y_mat[t,:],T,parameters))
+
+			theta_mat[t+delta_t,:] = theta[-1,:]
+
+
+
+		print theta_mat
 		iteration+=1
 
+
+		## Fi backward Integration
+
+
+
+		for t in
 
 	
 
 
-	plt_z =  DelH_dz_mat[:,5]
+	plt_z =  theta_mat[:,0]
 
 	## Plotting function 
 
