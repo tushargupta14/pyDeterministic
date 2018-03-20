@@ -5,7 +5,7 @@ def DH_dy(y,z,G,T,params) :
 	C = y[0]
 	B = calB(y,T,params)
 	DelG = DG_dy(T,C,params)
-   	DelB = DB_dy(T,C,y[3],y[7],params)
+   	DelB = DB_dy(T,C,y,params)
 
    	kv = params["kv"]
    	rho = params["rho"]

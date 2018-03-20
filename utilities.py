@@ -104,7 +104,7 @@ def DG_dT(theta,T,C,params):
 	DCs_dT = 2.46*10**-3 -14.28*10**-6*(T-273)	
 
 	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (C - Cs))/Cs**2
-
+	S  = (C- Cs)/Cs
 	A = kg*S**g*np.exp(-Eg/T)*Eg/T**2
 
 	DelG_dT = A + kg*np.exp(-Eg/T)*g*(S**(g-1))*exper
@@ -123,10 +123,10 @@ def DG_dydT(theta,T,C,params):
 
 	DCs_dT = 2.46*10**-3 -14.28*10**-6*(T-273)
 	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (C - Cs))/Cs**2
-
+	S  = (C- Cs)/Cs
 	A = kg*g*np.exp(-Eg/T)*S**(g-1)*(Eg/T**2)/Cs
 	B = kg*g*np.exp(-Eg/T)*(g-1)*S**(g-2)*exper/Cs
-	C = -1*kg*g*np.exp(-Eg/T)*S**(g-1)*DCs_dT/Cs^2
+	C = -1*kg*g*np.exp(-Eg/T)*S**(g-1)*DCs_dT/Cs**2
 
 	return  A+B+C
 
@@ -142,7 +142,7 @@ def DB_dydT(theta,y,T,params):
 
 	DCs_dT = 2.46*10**-3 -14.28*10**-6*(T-273)
 
-
+	S  = (y[0]	- Cs)/Cs
 	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (y[0] - Cs))/Cs**2
 
 	A = kb*b*np.exp(-Eb/T)*(Eb/T**2)*S**(b-1)*(y[3]+y[7])/Cs
@@ -150,4 +150,4 @@ def DB_dydT(theta,y,T,params):
 	C = -kb*b*np.exp(-Eb/T)*S**(b-1)*DCs_dT*(y[3]+y[7])/Cs**2            
 	D = kb*b*np.exp(-Eb/T)*S**(b-1)*(theta[3]+theta[7])               
 
-	return A+B+C+D;
+	return A+B+C+D
