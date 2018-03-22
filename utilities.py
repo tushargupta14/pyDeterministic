@@ -151,3 +151,19 @@ def DB_dydT(theta,y,T,params):
 	D = kb*b*np.exp(-Eb/T)*S**(b-1)*(theta[3]+theta[7])               
 
 	return A+B+C+D
+
+
+def solve_quadratic(a,b,c):
+
+
+	d = math.sqrt(b**2 - 4*a*c)
+
+	
+	r1 = (-b + d)/(2*a)
+
+	r2= (-b -d )/(2*a) 
+
+
+	return r1,r2
+
+

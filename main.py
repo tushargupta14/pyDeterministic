@@ -14,79 +14,77 @@ from utilities import *
 import matplotlib.pyplot as plt 
 
 
-def check_constraint(C,):
+
+def check_constraint(T,C,DH_dt,M):
 
 
+
+
+	T_new = T + M*DH_dt
 
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
+	Cm =  7.76 * 10**-2 + 2.46*10**-3 * (T_new-273) - 8.1*10**-6 * (T_new-273)**2 ;
+    
 
-
-	if C <  Cs 
+	if C <  Cs :
     ## Evaluat0e T from Cs expression
-    p = [7.14*10^-6 -2.46*10^-3 (-6.29*10^-2+C)];
-    disp('inside the Cs constraint');
-    r = roots(p)
-    if isreal(r(1)) ==0 
-       C = Cs ;
-       p = [7.14*10^-6 -2.46*10^-3 (-6.29*10^-2+C)];
-       r = roots(p)
-    end
+
+	    a = 7.14*10**-6
+	    b = -2.46*10**-3
+	    c = (-6.29*10**-2+C)
+
+	    r1,r2 = solve_quadratic(a,b,c)
+
+	    if isinstance(r1,complex):
+
+	    	print "Fuck you 1"
+	    	C = Cs
+	    	c = (-6.29*10**-2+C)
+
+	    	r1,r2 = solve_quadratic(a,b,c)
+	 	
+
+	    if r2 > 0 :
+
+	    	T_new = r2 + 273 
+	    else :
+	    	T_new = r1+273
+
+
+
     
-    if min(r) > 0 
-        
-        T_new = min(r)+273
-    else 
-        T_new = max(r)+273
-    end
+	if (C > Cm) :
+
+		a = 8.1*10**-6
+		b = -2.46*10**-3
+		c = (-7.76*10**-2+C)
+
+		r1,r2 = solve_quadratic(r1,r2)
+		if isinstance(r1,complex):
+
+			print "Fuck you 2"
+			C = Cm
+			c = (-7.76*10**-2+C)
+
+			r1,r2 = solve_quadratic(a,b,c)
+			
+
+		if r2 > 0 :
+
+			T_new = r2 + 273 
+		else :
+			T_new = r1+273	
+
+
+	if T_new < 303:
+
+		T_new = 303
+
+
+
+	return T_new
+ 
     
-    %Cm =  7.76 * 10^-2 + 2.46*10^-3 * (T_new-273) - 8.1*10^-6 * (T_new-273)^2 ;
-    
-    
-    if C > Cm 
-        
-        p = [8.1*10^-6  -2.46*10^-3  (-7.76*10^-2+C)];
-        disp('Inside the Cs Cm constraint');
-        r = roots(p)
-        
-        t_min = min(r);
-        if t_min > 0 
-            T_new = t_min+273 
-        else
-            T_new = max(r) + 273
-        end   
-        %if 27 <= r(1) <= 52
-            %T_new = r(1)+273
-            
-        %end
-        %if  27<=r(2)<=52
-            %T_new = r(2)+273
-        %end
-        %if 27<=r(1)<=52 && 27<=r(2)<=52 
-            %T_new = min(r) +273
-        
-        %end
-        
-        if T_new == 0
-            display('Error');
-        end
-    end
-end
-if T_new < 300 
-    T_new = 300
-end
-
-if T_new > 325 
- T_new = 325
-
-end
-
-if T_new ==0 
- display('Here')
- T_new = T_computed;
-end
-
-
-
 def model(parameters,delta_t = 1,):
 
 
@@ -111,7 +109,7 @@ def model(parameters,delta_t = 1,):
 	fi_f = np.array([0,0,0,0,0,0,0,0,0])
 	fi_f = fi_f.reshape(1,-1)
 
-	M = -10**-7
+	M = -10**-3
 	tolerance = 10**-2
 
 	num_iter = 2
@@ -214,9 +212,10 @@ def model(parameters,delta_t = 1,):
 
 		for t in range(t0,tf+delta_t,delta_t) :
 
-			if DH_vec[iteration,t] < tolerance :
+			if abs(DH_vec[iteration,t]) > tolerance :
 
-				T_vec[t] = check_constraint()
+				print "Here"
+				T_vec[t] = check_constraint(T_vec[t],y_mat[t,0],DH_vec[iteration,t],M)
 
 
 
@@ -227,9 +226,9 @@ def model(parameters,delta_t = 1,):
 		## Fi backward Integration
 
 	
+	print T_vec
 
-
-	plt_z =  DH_vec[0,:]
+	plt_z =  T_vec	
 
 	## Plotting function 
 
