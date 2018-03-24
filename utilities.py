@@ -23,7 +23,7 @@ def calB(y,T,params) :
 	b = params["b"]
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 	S  = (y[0]- Cs)/Cs
-	B = (kb*np.exp(-Eb/T))*(S**b)*(y[3]+y[7])    ######
+	B = (kb*np.exp(-Eb/T))*(S**b)*(y[4]+y[8])    ######
 	
 	return B
 
@@ -50,7 +50,7 @@ def DB_dy(T,C,y,params):
 
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 	S  = (C- Cs)/Cs
-	return kb*b*np.exp(-Eb/T)*(S**(b-1))*(y[3]+y[7])/Cs
+	return kb*b*np.exp(-Eb/T)*(S**(b-1))*(y[4]+y[8])/Cs    ###
 
 def DG_dt(theta,T,C,params):
 
@@ -84,9 +84,9 @@ def DB_dt(theta,y,T,params):
 
 
 	b = params["b"]
-	A = kb*np.exp(-Eb/T)*Eb*S**b*(y[3]+y[7])/T**2
-	B = A + kb*np.exp(-Eb/T)*b*S**(b-1)*exper*(y[3]+y[7])
-	DelB_dT = kb*np.exp(-Eb/T)*S**b*(theta[3]+theta[7])+B
+	A = kb*np.exp(-Eb/T)*Eb*S**b*(y[4]+y[8])/T**2
+	B = A + kb*np.exp(-Eb/T)*b*S**(b-1)*exper*(y[4]+y[8])
+	DelB_dT = kb*np.exp(-Eb/T)*S**b*(theta[4]+theta[8])+B
 
 	return DelB_dT
 
@@ -145,10 +145,10 @@ def DB_dydT(theta,y,T,params):
 	S  = (y[0]	- Cs)/Cs
 	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (y[0] - Cs))/Cs**2
 
-	A = kb*b*np.exp(-Eb/T)*(Eb/T**2)*S**(b-1)*(y[3]+y[7])/Cs
-	B = kb*b*np.exp(-Eb/T)*(b-1)*S**(b-2)*(y[3]+y[7])*exper
-	C = -kb*b*np.exp(-Eb/T)*S**(b-1)*DCs_dT*(y[3]+y[7])/Cs**2            
-	D = kb*b*np.exp(-Eb/T)*S**(b-1)*(theta[3]+theta[7])               
+	A = kb*b*np.exp(-Eb/T)*(Eb/T**2)*S**(b-1)*(y[4]+y[8])/Cs
+	B = kb*b*np.exp(-Eb/T)*(b-1)*S**(b-2)*(y[4]+y[8])*exper
+	C = -kb*b*np.exp(-Eb/T)*S**(b-1)*DCs_dT*(y[4]+y[8])/Cs**2            
+	D = kb*b*np.exp(-Eb/T)*S**(b-1)*(theta[8]+theta[8])               
 
 	return A+B+C+D
 

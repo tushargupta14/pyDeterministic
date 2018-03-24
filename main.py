@@ -109,7 +109,7 @@ def model(parameters,delta_t = 1,):
 	fi_f = np.array([0,0,0,0,0,0,0,0,0])
 	fi_f = fi_f.reshape(1,-1)
 
-	M = -10**-3
+	M = 10**-3
 	tolerance = 10**-2
 
 	num_iter = 2
@@ -126,7 +126,7 @@ def model(parameters,delta_t = 1,):
 	print y0.shape
 
 
-	while(iteration <= num_iter) :
+	while(iteration < num_iter) :
 
 		y_mat = np.zeros((time_length,9))
 		z_mat = np.zeros((time_length,9))
@@ -138,7 +138,7 @@ def model(parameters,delta_t = 1,):
 
 		y_mat[0,:] = y0
 		#print y_mat[0,0]
-		z_mat[-1,:] = zf
+		z_mat[0,:] = zf
 		theta_mat[0,:] = theta0
 		fi_mat[-1,:] = fi_f
 	
@@ -155,7 +155,7 @@ def model(parameters,delta_t = 1,):
 			
 			y_mat[t+delta_t,:] = y[-1,:]
 
-		for t in range(tf,t0,-delta_t):
+		"""for t in range(tf,t0,-delta_t):
 			#print t 
 			t_horizon = np.linspace(t,t-delta_t,num =10)
 			#print t_horizon
@@ -166,6 +166,20 @@ def model(parameters,delta_t = 1,):
 			#print z[-1,0]			
 			z_mat[t-delta_t,:] = z[-1,:]
 		
+		#print z_mat
+		"""
+
+		for t in range(t0,tf,delta_t):
+
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			##print t_horizon
+			T = T_vec[t]
+			C = y_mat[t,0]
+			G = calG(T,C,parameters)
+			z = odeint(z_ODE,z_mat[t,:],-t_horizon,args = (G,parameters,T,y_mat[t,:]))
+			z_mat[t+delta_t,:] = z[-1,:]
+		
+		#print z_mat		
 
 		for t in range(t0,tf+delta_t,delta_t):
 
@@ -186,29 +200,32 @@ def model(parameters,delta_t = 1,):
 			theta_mat[t+delta_t,:] = theta[-1,:]
 
 
-		for t in range(tf,t0,-delta_t):
+		#print theta_mat
+
+		for t in range(t0,tf,delta_t):
 			#print t 
-			t_horizon = np.linspace(t,t-delta_t,num =10)
+			t_horizon = np.linspace(t,t+delta_t,num =10)
 			#print t_horizon
 			T = T_vec[t]
 	
 			fi = odeint(fi_ODE,fi_mat[t,:],-t_horizon,args = (y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters))
 			#print z[-1,0]			
-			fi_mat[t-delta_t,:] = fi[-1,:]
+			fi_mat[t+delta_t,:] = fi[-1,:]
 		
 
 		#print fi_mat
 
-
+		
 		for t in range(t0,tf+delta_t,delta_t) :
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum = DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i]
-
+				var_sum +=    DelH_dz_mat[t,i]*fi_mat[t,i] +  DelH_dy_mat[t,i]*theta_mat[t,i]
+				## +
 			DH_vec[iteration,t] = var_sum
 
 
+		
 
 		for t in range(t0,tf+delta_t,delta_t) :
 
@@ -219,21 +236,20 @@ def model(parameters,delta_t = 1,):
 
 
 
-
+		break
 		iteration+=1
-		break 
+		 
 
-		## Fi backward Integration
+	#print T_vec
 
-	
-	print T_vec
-
-	plt_z =  T_vec	
-
+	#plt_1 =  DH_vec[0,:]
+	plt_2 = DH_vec[0,:]
 	## Plotting function 
 
 	t = np.linspace(t0,tf,num = 1801)
-	plt.plot(t,plt_z)
+	#plt.plot(t,plt_1,'r')
+
+	plt.plot(t,plt_2,'b')
 	plt.show()	
 
 if __name__ == "__main__" :
