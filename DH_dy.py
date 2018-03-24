@@ -20,4 +20,6 @@ def DH_dy(y,z,G,T,params) :
 	dh_dy8 = z[8]*3*G - 3*rho*kv*G*z[0]
 	dh_dy9 = 0
 
-	return [dh_dy1,dh_dy2,dh_dy3,dh_dy4,dh_dy5,dh_dy6,dh_dy7,dh_dy8,dh_dy9];
+	DH_dy =  [dh_dy1,dh_dy2,dh_dy3,dh_dy4,dh_dy5,dh_dy6,dh_dy7,dh_dy8,dh_dy9]
+
+	return [i*10**-1 for i in DH_dy]
