@@ -22,4 +22,4 @@ def DH_dy(y,z,G,T,params) :
 
 	DH_dy =  [dh_dy1,dh_dy2,dh_dy3,dh_dy4,dh_dy5,dh_dy6,dh_dy7,dh_dy8,dh_dy9]
 
-	return [i*10**-1 for i in DH_dy]
+	return [i*10**	-2 for i in DH_dy]

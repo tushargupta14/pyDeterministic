@@ -1,6 +1,6 @@
 ## Utility Functions
 import numpy as np 
-
+import math
 def calG(T,C,params):
 
 	kg = params["kg"]
@@ -105,7 +105,7 @@ def DG_dT(theta,T,C,params):
 
 	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (C - Cs))/Cs**2
 	S  = (C- Cs)/Cs
-	A = kg*S**g*np.exp(-Eg/T)*Eg/T**2
+	A = kg*S**g*np.exp(-Eg/T)*Eg/(T**2)
 
 	DelG_dT = A + kg*np.exp(-Eg/T)*g*(S**(g-1))*exper
 

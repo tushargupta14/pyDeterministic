@@ -1,6 +1,4 @@
-### Main File 
-##--Input : Parameters 
-##-- Executes all the functions 
+### Consists of Explicit Euler Scchemes for forward and backward integeration
 
 import numpy as np
 from scipy.integrate import odeint
@@ -16,78 +14,9 @@ import matplotlib.pyplot as plt
 import math
 
 
-def check_constraint(T,C,DH_dt,M):
 
 
-
-
-	T_new = T + M*DH_dt
-
-	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T_new-273) - 7.14 * (10**-6) * (T_new-273)**2 
-	Cm =  7.76 * 10**-2 + 2.46*10**-3 * (T_new-273) - 8.1*10**-6 * (T_new-273)**2 
-    
-
-	if C <  Cs :
-    ## Evaluat0e T from Cs expression
-
-	    a = 7.14*10**-6
-	    b = -2.46*10**-3
-	    c = (-6.29*10**-2+C)
-
-	    r1,r2 = solve_quadratic(a,b,c)
-
-	    if isinstance(r1,complex):
-
-	    	print "Fuck you 1"
-	    	C = Cs
-	    	c = (-6.29*10**-2+C)
-
-	    	r1,r2 = solve_quadratic(a,b,c)
-	 	
-
-	    if r2 > 0 :
-
-	    	T_new = r2 + 273 
-	    else :
-	    	T_new = r1+273
-
-
-
-    
-	if (C > Cm) :
-
-		a = 8.1*10**-6
-		b = -2.46*10**-3
-		c = (-7.76*10**-2+C)
-
-		r1,r2 = solve_quadratic(a,b,c)
-		if isinstance(r1,complex):
-
-			print "Fuck you 2"
-			C = Cm
-			c = (-7.76*10**-2+C)
-
-			r1,r2 = solve_quadratic(a,b,c)
-			
-
-		if r2 > 0 :
-
-			T_new = r2 + 273 
-		else :
-			T_new = r1+273	
-
-
-	if T_new < 303:
-
-		T_new = 303
-
-	if T_new < 0 :
-
-		print "egfefefefe"
-
-	return T_new
- 
-    
+   
 def model(parameters,delta_t = 1,):
 
 
@@ -143,53 +72,42 @@ def model(parameters,delta_t = 1,):
 
 		y_mat[0,:] = y0
 		#print y_mat[0,0]
-		z_mat[0,:] = zf
+		z_mat[tf,:] = zf
 		theta_mat[0,:] = theta0
-		fi_mat[0,:] = fi_f
+		fi_mat[tf,:] = fi_f
 	
 		for t in range(t0,tf,delta_t) :
-			#print t 
-			t_horizon = np.linspace(t,t+delta_t,num = 10)
-			#print t_horizon
+		
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
 			B = calB(y_mat[t,:],T,parameters)
 
-			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
-			
-			y_mat[t+delta_t,:] = y[-1,:]
 
-		"""for t in range(tf,t0,-delta_t):
-			#print t 
-			t_horizon = np.linspace(t,t-delta_t,num =10)
-			#print t_horizon
+			dy_vec = y_ODE(y_mat[t,:],t,T,C,G,B,parameters)
+
+			dy_vec = np.array([i*delta_t for i in dy_vec])
+			#y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
+						
+			y_mat[t+delta_t,:] = y_mat[t,:] + dy_vec
+
+		#print y_mat
+		for t in range(tf,t0,-delta_t):
+
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
-			z = odeint(z_ODE,z_mat[t,:],-t_horizon,args = (G,parameters,T,y_mat[t,:]))
-			#print z[-1,0]			
-			z_mat[t-delta_t,:] = z[-1,:]
-		
-		#print z_mat
-		"""
-		"""
-		for t in range(t0,tf,delta_t):
 
-			t_horizon = np.linspace(t,t+delta_t,num = 10)
-			##print t_horizon
-			T = T_vec[t]
-			C = y_mat[t,0]
-			G = calG(T,C,parameters)
-			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
-			z_mat[t+delta_t,:] = z[-1,:]
-		"""
-
-		for t in range()
+			dz_vec = z_ODE(z_mat[t,:],t,G,parameters,T,y_mat[t,:])
+			#print dz_vec
+			dz_vec = np.array([i*delta_t for i in dz_vec])
 
 
-		#print z_mat		
 
+			z_mat[t-delta_t,:] = z_mat[t,:]  - dz_vec 
+	
+
+		#print z_mat	
 		for t in range(t0,tf+delta_t,delta_t):
 
 			##t_horizon = np.linspace(t,t+delta_t,num = 10)
@@ -203,38 +121,40 @@ def model(parameters,delta_t = 1,):
 		for t in range(t0,tf,delta_t) :
 
 			T = T_vec[t]
-			t_horizon = np.linspace(t,t+delta_t,num = 10)
-			theta = odeint(theta_ODE,theta_mat[t,:],t_horizon,args = (y_mat[t,:],T,parameters))
+	
+			dtheta = theta_ODE(theta_mat[t,:],t,y_mat[t,:],T,parameters)
 
-			theta_mat[t+delta_t,:] = theta[-1,:]
+			dtheta = np.array([i*delta_t for i in dtheta])
+
+			theta_mat[t+delta_t,:] = theta_mat[t,:] + dtheta
 
 
 		#print theta_mat
 
-		for t in range(t0,tf,delta_t):
-			#print t 
-			t_horizon = np.linspace(t,t+delta_t,num =10)
-			#print t_horizon
+		for t in range(tf,t0,-delta_t):
+			
 			T = T_vec[t]
 	
-			fi = odeint(fi_ODE,fi_mat[t,:],t_horizon,args = (y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters))
+			dfi = fi_ODE(fi_mat[t,:],t,y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters)
 			#print z[-1,0]			
-			fi_mat[t+delta_t,:] = fi[-1,:]
+
+			dfi = np.array([i*delta_t for i in dfi])
+
+
+			fi_mat[t-delta_t,:] = fi_mat[t,:] - dfi
 		
 
 		#print fi_mat
-
-		
 		for t in range(t0,tf+delta_t,delta_t) :
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum += DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i]
-				## + DelH_dz_mat[t,i]*fi_mat[t,i]		
+				var_sum +=  DelH_dz_mat[tf-t,i]*fi_mat[tf-t,i] + + DelH_dy_mat[t,i]*theta_mat[t,i]
+				## + DelH_dy_mat[t,i]*theta_mat[t,i] +
 			DH_vec[iteration,t] = var_sum
 
 
-		
+		break
 		
 		for t in range(t0,tf+delta_t,delta_t) :
 
@@ -262,7 +182,7 @@ def model(parameters,delta_t = 1,):
 
 	#print T_vec
 
-	"""plt_1 =  DH_vec[iteration-1,:]
+	plt_1 =  DH_vec[0,:]
 
 	## Plotting function 
 
@@ -271,9 +191,9 @@ def model(parameters,delta_t = 1,):
 	plt.figure(0)
 	plt.plot(t,plt_1,'b')
 	#plt.show()
-	plt.figure(1)
-	plt.plot(t,T_vec)
-	plt.show()"""
+	#plt.figure(1)
+	#plt.plot(t,T_vec)
+	plt.show()
 if __name__ == "__main__" :
 
 	parameters = {}

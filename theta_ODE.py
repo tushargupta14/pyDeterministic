@@ -25,4 +25,5 @@ def theta_ODE(theta,t,y,T,params):
 
    dtheta =  [dthe1,dthe2,dthe3,dthe4,dthe5,dthe6,dthe7,dthe8,dthe9]
 
-   return [-1*i for i in dtheta]
+   return [i for i in dtheta]
+   #return dtheta
