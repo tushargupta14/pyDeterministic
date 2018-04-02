@@ -36,20 +36,20 @@ def fi_ODE(fi,t,y,z,theta,T,params):
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 
 	DCs_dT = 2.46*10**-3 -14.28*10**-6*(T-273)
-	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (y[0] - Cs))/Cs**2
+	exper = (Cs*(theta[0] - DCs_dT) - DCs_dT * (y[0] - Cs))/(Cs**2)
 
 
     
 		   
 	dtfi1 = A+B1+C+D+E+F+G1
 	dtfi2  = -(z[2]*DelG_dT+fi[2]*G)
-	dtfi3 = -2*(fi[3]*G + z[3]*DelG_dT);
-	dtfi4 = 3*rho*kv*DelG_dT - 3*z[4]*DelG_dT - 3*fi[4]*G;
-	dtfi5 = -kb*(fi[5]*np.exp(-Eb/T)*S**b + z[5]*np.exp(-Eb/T)*S**b*Eb/T**2 + z[5]*np.exp(-Eb/T)*b*S**(b-1)*exper)
+	dtfi3 = -2*(fi[3]*G + z[3]*DelG_dT)
+	dtfi4 = 3*rho*kv*DelG_dT - 3*z[4]*DelG_dT - 3*fi[4]*G
+	dtfi5 = -kb*(fi[5]*np.exp(-Eb/T)*S**b + z[5]*np.exp(-Eb/T)*(S**b)*Eb/(T**2) + z[5]*np.exp(-Eb/T)*b*S**(b-1)*exper)
 	dtfi6 = -(z[6]*DelG_dT+fi[6]*G)
 	dtfi7 = -2*(fi[7]*G+z[7]*DelG_dT)
 	dtfi8 = 3*rho*kv*z[0]*DelG_dT + 3*rho*kv*fi[0]*G -3*z[8]*DelG_dT-3*fi[8]*G
-	dtfi9 = -kb*(fi[5]*np.exp(-Eb/T)*S**b+z[5]*np.exp(-Eb/T)*S**b*Eb/T**2 + z[5]*np.exp(-Eb/T)*b*S**(b-1)*exper)
+	dtfi9 = -kb*(fi[5]*np.exp(-Eb/T)*(S**b)+z[5]*np.exp(-Eb/T)*S**b*Eb/(T**2) + z[5]*np.exp(-Eb/T)*b*S**(b-1)*exper)
 
 
 

@@ -75,9 +75,9 @@ def model(parameters,delta_t = 1,):
 
 		y_mat[0,:] = y0
 		#print y_mat[0,0]
-		z_mat[tf,:] = zf
+		z_mat[0,:] = zf
 		theta_mat[0,:] = theta0
-		fi_mat[tf,:] = fi_f
+		fi_mat[0,:] = fi_f
 	
 		for t in range(t0,tf,delta_t) :
 		
@@ -95,7 +95,7 @@ def model(parameters,delta_t = 1,):
 			y_mat[t+delta_t,:] = y_mat[t,:] + dy_vec
 
 		#print y_mat
-		for t in range(tf,t0,-delta_t):
+		for t in range(t0,tf,delta_t):
 
 			T = T_vec[t]
 			C = y_mat[t,0]
@@ -107,7 +107,7 @@ def model(parameters,delta_t = 1,):
 
 
 
-			z_mat[t-delta_t,:] = z_mat[t,:]  - dz_vec 
+			z_mat[t+delta_t,:] = z_mat[t,:]  + dz_vec 
 	
 
 		#print z_mat	
@@ -134,7 +134,7 @@ def model(parameters,delta_t = 1,):
 
 		#print theta_mat
 
-		for t in range(tf,t0,-delta_t):
+		for t in range(t0,tf,delta_t):
 			
 			T = T_vec[t]
 	
@@ -144,7 +144,7 @@ def model(parameters,delta_t = 1,):
 			dfi = np.array([i*delta_t for i in dfi])
 
 
-			fi_mat[t-delta_t,:] = fi_mat[t,:] - dfi
+			fi_mat[t+delta_t,:] = fi_mat[t,:] + dfi
 		
 
 		#print fi_mat
@@ -152,12 +152,10 @@ def model(parameters,delta_t = 1,):
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum +=  DelH_dz_mat[tf-t,i]*fi_mat[tf-t,i] + + DelH_dy_mat[t,i]*theta_mat[t,i]
-				## + DelH_dy_mat[t,i]*theta_mat[t,i] +
+				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i] 
+				## + +  
 			DH_vec[iteration,t] = var_sum
 
-
-		break
 		
 		for t in range(t0,tf+delta_t,delta_t) :
 
@@ -169,6 +167,7 @@ def model(parameters,delta_t = 1,):
 
 		plt_1 =  DH_vec[iteration,:]
 
+		break
 		## Plotting function 
 
 		t = np.linspace(t0,tf,num = 1801)
@@ -185,7 +184,7 @@ def model(parameters,delta_t = 1,):
 
 	#print T_vec
 
-	plt_1 =  DH_vec[0,:]
+	plt_1 =  T_vec
 
 	## Plotting function 
 

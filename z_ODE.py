@@ -21,7 +21,7 @@ def z_ODE(z,t,G,params,T,y):
 
    	dz1 = z[0]*(3*rho*kv*(y[3]+y[7])*DelG)
 
-   	dz1 -= (z[2]*y[1]+2*z[3]*y[2]+3*z[4]*y[3]+z[6]*y[5]+2*z[7]*y[6]+3*z[8]*y[7])*DelG-DelB*z[5]  
+   	dz1 = dz1 - (z[2]*y[1]+2*z[3]*y[2]+3*z[4]*y[3]+z[6]*y[5]+2*z[7]*y[6]+3*z[8]*y[7])*DelG-DelB*z[5]  
    	dz2 = -z[2]*G
    	dz3 = -2*z[3]*G
 	dz4 =  3*z[0]*rho*kv*G -3*z[4]*G

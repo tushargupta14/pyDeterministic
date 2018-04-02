@@ -229,8 +229,8 @@ def model(parameters,delta_t = 1,):
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum += DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i]
-				## + DelH_dz_mat[t,i]*fi_mat[t,i]		
+				var_sum += DelH_dz_mat[t,i]*fi_mat[t,i]
+				## + DelH_dy_mat[t,i]*theta_mat[t,i]		
 			DH_vec[iteration,t] = var_sum
 
 
