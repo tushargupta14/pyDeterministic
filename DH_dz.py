@@ -21,7 +21,8 @@ def DH_dz(T,y,params) :
 	dh_dz8 = 2*G*y[6]
 	dh_dz9 = 3*G*y[7]
 
-	return [dh_dz1,dh_dz2,dh_dz3,dh_dz4,dh_dz5,dh_dz6,dh_dz7,dh_dz8,dh_dz9]
+	dh_dz =  [dh_dz1,dh_dz2,dh_dz3,dh_dz4,dh_dz5,dh_dz6,dh_dz7,dh_dz8,dh_dz9]
 
+	return [i*10**-6 for i in dh_dz]
 
 

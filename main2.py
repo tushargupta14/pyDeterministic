@@ -13,10 +13,8 @@ from theta_ODE import *
 from fi_ODE import *
 from utilities import *
 import matplotlib.pyplot as plt 
-
+from check_constraint import *
 import math
-
-
 
 
    
@@ -44,10 +42,10 @@ def model(parameters,delta_t = 1,):
 	fi_f = np.array([0,0,0,0,0,0,0,0,0])
 	fi_f = fi_f.reshape(1,-1)
 
-	M = 10**-7
+	M = -10**-6
 	tolerance = 10**-2
 
-	num_iter = 4
+	num_iter = 2
 
 	time_length = len(range(t0,tf+delta_t,delta_t))
 	T_vec = np.ones(time_length)*323
@@ -152,7 +150,7 @@ def model(parameters,delta_t = 1,):
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i] 
+				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[0,i]*fi_mat[t,i] 
 				## + +  
 			DH_vec[iteration,t] = var_sum
 
@@ -167,7 +165,7 @@ def model(parameters,delta_t = 1,):
 
 		plt_1 =  DH_vec[iteration,:]
 
-		break
+	
 		## Plotting function 
 
 		t = np.linspace(t0,tf,num = 1801)
@@ -183,7 +181,7 @@ def model(parameters,delta_t = 1,):
 				 
 
 	#print T_vec
-
+	"""
 	plt_1 =  T_vec
 
 	## Plotting function 
@@ -196,6 +194,7 @@ def model(parameters,delta_t = 1,):
 	#plt.figure(1)
 	#plt.plot(t,T_vec)
 	plt.show()
+	"""
 if __name__ == "__main__" :
 
 	parameters = {}

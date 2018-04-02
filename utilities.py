@@ -10,8 +10,9 @@ def calG(T,C,params):
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 	S  = (C- Cs)/Cs
 	
-	#print S**g, S, g 
+	#print S**g, S,
 	growth_rate = kg*np.exp(-Eg/T)*S**g
+
 	#print growth_rate
 	return growth_rate
 
