@@ -185,7 +185,6 @@ def model(parameters,delta_t = 1,):
 			z_mat[t+delta_t,:] = z[-1,:]
 		"""
 
-		for t in range()
 
 
 		#print z_mat		

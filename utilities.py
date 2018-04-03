@@ -9,9 +9,13 @@ def calG(T,C,params):
 	g = params["g"]
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T-273) - 7.14 * (10**-6) * (T-273)**2 
 	S  = (C- Cs)/Cs
-	
+	##f =  open("error_log.txt","a") 
 	#print S**g, S,
 	growth_rate = kg*np.exp(-Eg/T)*S**g
+	##np.exp(-Eg/T)
+	##f.write(str(np.exp(-Eg/T))+"\t"+str(T)+"\n")
+
+
 
 	#print growth_rate
 	return growth_rate

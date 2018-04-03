@@ -6,9 +6,6 @@ def check_constraint(T,C,DH_dt,M):
 
 
 
-
-
-
 	T_computed = T + M*DH_dt
 
 	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T_computed-273) - 7.14 * (10**-6) * (T_computed-273)**2 
@@ -24,7 +21,7 @@ def check_constraint(T,C,DH_dt,M):
 
 			T_new = T_computed
 
-		
+
 
 		else :
 

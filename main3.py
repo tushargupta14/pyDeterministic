@@ -1,5 +1,5 @@
-### Consists of Explicit Euler Scchemes for forward and backward integeration
-## This is the second testing script
+### Consists of odeint for all forward integeration
+## This is the third testing script
 
 
 
@@ -78,86 +78,71 @@ def model(parameters,delta_t = 1,):
 		fi_mat[0,:] = fi_f
 		
 
-		
+		print "y forward integration"
 		for t in range(t0,tf,delta_t) :
-		
+			
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
 			B = calB(y_mat[t,:],T,parameters)
 
 
-			dy_vec = y_ODE(y_mat[t,:],t,T,C,G,B,parameters)
+			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
+			
+			y_mat[t+delta_t,:] = y[-1,:]
 
-			dy_vec = np.array([i*delta_t for i in dy_vec])
-			#y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
-						
-			y_mat[t+delta_t,:] = y_mat[t,:] + dy_vec
-
-		#print y_mat
-
+		print "Z backward ..."
 		for t in range(t0,tf,delta_t):
 
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
 
-			dz_vec = z_ODE(z_mat[t,:],t,G,parameters,T,y_mat[t,:])
-			#print dz_vec
-			dz_vec = np.array([i*delta_t for i in dz_vec])
-
-
-
-			z_mat[t+delta_t,:] = z_mat[t,:]  + dz_vec 
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
+			z_mat[t+delta_t,:] = z[-1,:]
 	
-
-		#print z_mat	
+		print "DH .."
 		for t in range(t0,tf+delta_t,delta_t):
 
-			##t_horizon = np.linspace(t,t+delta_t,num = 10)
+		
 			T = T_vec[t]
 			G = calG(T,C,parameters)
 
 			DelH_dy_mat[t,:] = DH_dy(y_mat[t,:],z_mat[t,:],G,T,parameters)
 			DelH_dz_mat[t,:] = DH_dz(T,y_mat[t,:],parameters)
 		
-		## Theta forward integration
+		print " Theta forward integration.."
 		for t in range(t0,tf,delta_t) :
 
 			T = T_vec[t]
-	
-			dtheta = theta_ODE(theta_mat[t,:],t,y_mat[t,:],T,parameters)
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			theta = odeint(theta_ODE,theta_mat[t,:],t_horizon,args = (y_mat[t,:],T,parameters))
 
-			dtheta = np.array([i*delta_t for i in dtheta])
+			theta_mat[t+delta_t,:] = theta[-1,:]
 
-			theta_mat[t+delta_t,:] = theta_mat[t,:] + dtheta
-
-
-		#print theta_mat
-
+		print "Fi backward .."
 		for t in range(t0,tf,delta_t):
 			
 			T = T_vec[t]
-	
-			dfi = fi_ODE(fi_mat[t,:],t,y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters)
+			t_horizon = np.linspace(t,t+delta_t,num = 10)
+
+
+			fi = odeint(fi_ODE,fi_mat[t,:],t_horizon,args = (y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters))
 			#print z[-1,0]			
-
-			dfi = np.array([i*delta_t for i in dfi])
-
-
-			fi_mat[t+delta_t,:] = fi_mat[t,:] + dfi
+			fi_mat[t+delta_t,:] = fi[-1,:]
 		
-
-		#print fi_mat
+		print "Derivative sums...."
 		for t in range(t0,tf+delta_t,delta_t) :
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[0,i]*fi_mat[t,i] 
+				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i] 
 				## + +  
 			DH_vec[iteration,t] = var_sum
 
-		
+		print "check constraints...."
 		for t in range(t0,tf+delta_t,delta_t) :
 
 			if abs(DH_vec[iteration,t]) > tolerance :
@@ -183,7 +168,7 @@ def model(parameters,delta_t = 1,):
 		plt.cla()
 
 
-		break 
+
 		iteration+=1
 				 
 
