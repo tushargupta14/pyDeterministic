@@ -1,13 +1,6 @@
-## The script contains the deterministic model 
-
-## --  Takes input the delta_t , model parameters
-
-## --  Output T_vec and y_mat
-
-### Consists of odeint for all forward integeration
-## This is the third testing script
-
-
+### Main File 
+##--Input : Parameters 
+##-- Executes all the functions 
 
 import numpy as np
 from scipy.integrate import odeint
@@ -19,26 +12,94 @@ from theta_ODE import *
 from fi_ODE import *
 from utilities import *
 import matplotlib.pyplot as plt 
-from check_constraint import *
+
 import math
 
 
-   
-def model(kg,Eg,g,kb,Eb,b):
+def check_constraint(T,C,DH_dt,M):
 
-	delta_t = 1
+
+
+
+	T_new = T + M*DH_dt
+
+	Cs = 6.29 * (10**-2) + 2.46*(10**-3) * (T_new-273) - 7.14 * (10**-6) * (T_new-273)**2 
+	Cm =  7.76 * 10**-2 + 2.46*10**-3 * (T_new-273) - 8.1*10**-6 * (T_new-273)**2 
+    
+
+	if C <  Cs :
+    ## Evaluat0e T from Cs expression
+
+	    a = 7.14*10**-6
+	    b = -2.46*10**-3
+	    c = (-6.29*10**-2+C)
+
+	    r1,r2 = solve_quadratic(a,b,c)
+
+	    if isinstance(r1,complex):
+
+	    	print "Fuck you 1"
+	    	C = Cs
+	    	c = (-6.29*10**-2+C)
+
+	    	r1,r2 = solve_quadratic(a,b,c)
+	 	
+
+	    if r2 > 0 :
+
+	    	T_new = r2 + 273 
+	    else :
+	    	T_new = r1+273
+
+
+
+    
+	if (C > Cm) :
+
+		a = 8.1*10**-6
+		b = -2.46*10**-3
+		c = (-7.76*10**-2+C)
+
+		r1,r2 = solve_quadratic(a,b,c)
+		if isinstance(r1,complex):
+
+			print "Fuck you 2"
+			C = Cm
+			c = (-7.76*10**-2+C)
+
+			r1,r2 = solve_quadratic(a,b,c)
+			
+
+		if r2 > 0 :
+
+			T_new = r2 + 273 
+		else :
+			T_new = r1+273	
+
+
+	if T_new < 303:
+
+		T_new = 303
+
+	if T_new < 0 :
+
+		print "egfefefefe"
+
+	return T_new
+ 
+    
+def model(parameters,delta_t = 1,):
+
+
 	t0 = 0
 	tf = 1800  ## batch_time
 
-	parameters = {}
-	parameters["kg"] = kg
-	parameters["Eg"] = Eg 
-	parameters["g"] = g
-	parameters["kb"] = kb
-	parameters["Eb"] = Eb
-	parameters["b"] = b
-	parameters["rho"] = 2.66*10**-12;
-	parameters["kv"] = 0.54
+	kg = parameters["kg"]
+	Eg = parameters["Eg"]
+	g = parameters["g"]
+	kb = parameters["kb"]
+	Eb = parameters["Eb"]
+	b = parameters["b"]
 	#rho = parameters["rho"]
 
 
@@ -51,10 +112,10 @@ def model(kg,Eg,g,kb,Eb,b):
 	fi_f = np.array([0,0,0,0,0,0,0,0,0])
 	fi_f = fi_f.reshape(1,-1)
 
-	M = -10**-6
+	M = 10**-7
 	tolerance = 10**-2
 
-	num_iter = 2
+	num_iter = 4
 
 	time_length = len(range(t0,tf+delta_t,delta_t))
 	T_vec = np.ones(time_length)*323
@@ -71,6 +132,7 @@ def model(kg,Eg,g,kb,Eb,b):
 	while(iteration < num_iter) :
 
 
+		print iteration
 		y_mat = np.zeros((time_length,9))
 		z_mat = np.zeros((time_length,9))
 		theta_mat = np.zeros((time_length,9))
@@ -84,44 +146,59 @@ def model(kg,Eg,g,kb,Eb,b):
 		z_mat[0,:] = zf
 		theta_mat[0,:] = theta0
 		fi_mat[0,:] = fi_f
-		
-
-		print "y forward integration"
+	
 		for t in range(t0,tf,delta_t) :
-			
+			#print t 
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			#print t_horizon
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
 			B = calB(y_mat[t,:],T,parameters)
 
-
 			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
 			
 			y_mat[t+delta_t,:] = y[-1,:]
 
-		print "Z backward ..."
-		for t in range(t0,tf,delta_t):
-
+		"""for t in range(tf,t0,-delta_t):
+			#print t 
+			t_horizon = np.linspace(t,t-delta_t,num =10)
+			#print t_horizon
 			T = T_vec[t]
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
+			z = odeint(z_ODE,z_mat[t,:],-t_horizon,args = (G,parameters,T,y_mat[t,:]))
+			#print z[-1,0]			
+			z_mat[t-delta_t,:] = z[-1,:]
+		
+		#print z_mat
+		"""
+		"""
+		for t in range(t0,tf,delta_t):
 
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
+			##print t_horizon
+			T = T_vec[t]
+			C = y_mat[t,0]
+			G = calG(T,C,parameters)
 			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
 			z_mat[t+delta_t,:] = z[-1,:]
-	
-		print "DH .."
+		"""
+
+
+
+		#print z_mat		
+
 		for t in range(t0,tf+delta_t,delta_t):
 
-		
+			##t_horizon = np.linspace(t,t+delta_t,num = 10)
 			T = T_vec[t]
 			G = calG(T,C,parameters)
 
 			DelH_dy_mat[t,:] = DH_dy(y_mat[t,:],z_mat[t,:],G,T,parameters)
 			DelH_dz_mat[t,:] = DH_dz(T,y_mat[t,:],parameters)
 		
-		print " Theta forward integration.."
+		## Theta forward integration
 		for t in range(t0,tf,delta_t) :
 
 			T = T_vec[t]
@@ -130,27 +207,34 @@ def model(kg,Eg,g,kb,Eb,b):
 
 			theta_mat[t+delta_t,:] = theta[-1,:]
 
-		print "Fi backward .."
+
+		#print theta_mat
+
 		for t in range(t0,tf,delta_t):
-			
+			#print t 
+			t_horizon = np.linspace(t,t+delta_t,num =10)
+			#print t_horizon
 			T = T_vec[t]
-			t_horizon = np.linspace(t,t+delta_t,num = 10)
-
-
+	
 			fi = odeint(fi_ODE,fi_mat[t,:],t_horizon,args = (y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters))
 			#print z[-1,0]			
 			fi_mat[t+delta_t,:] = fi[-1,:]
 		
-		print "Derivative sums...."
+
+		#print fi_mat
+
+		
 		for t in range(t0,tf+delta_t,delta_t) :
 			var_sum = 0 
 
 			for i in range(9):
-				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i] 
-				## + +  
+				var_sum += DelH_dz_mat[t,i]*fi_mat[t,i]
+				## + DelH_dy_mat[t,i]*theta_mat[t,i]		
 			DH_vec[iteration,t] = var_sum
 
-		print "check constraints...."
+
+		
+		
 		for t in range(t0,tf+delta_t,delta_t) :
 
 			if abs(DH_vec[iteration,t]) > tolerance :
@@ -161,30 +245,23 @@ def model(kg,Eg,g,kb,Eb,b):
 
 		plt_1 =  DH_vec[iteration,:]
 
-	
 		## Plotting function 
-		"""
+
 		t = np.linspace(t0,tf,num = 1801)
 		plt.figure(0)
 		plt.plot(t,plt_1,'b')
 		#plt.show()
 		plt.figure(1)
 		plt.plot(t,T_vec)
-		plt.figure(2)
-		plt.plot(t,y_mat[:,4]-y_mat[:,8])
 		plt.show()
 		plt.cla()
-
-		"""
 
 		iteration+=1
 				 
 
-
-	return y_mat
 	#print T_vec
-	"""
-	plt_1 =  T_vec
+
+	"""plt_1 =  DH_vec[iteration-1,:]
 
 	## Plotting function 
 
@@ -193,11 +270,18 @@ def model(kg,Eg,g,kb,Eb,b):
 	plt.figure(0)
 	plt.plot(t,plt_1,'b')
 	#plt.show()
-	#plt.figure(1)
-	#plt.plot(t,T_vec)
-	plt.show()
-	"""
+	plt.figure(1)
+	plt.plot(t,T_vec)
+	plt.show()"""
 if __name__ == "__main__" :
 
-	
-	y_mat = model(kg,Eg,g,kb,Eb,b)
+	parameters = {}
+	parameters["kg"] = 1.44*10**8
+	parameters["Eg"] = 4859 
+	parameters["g"] = 1.5
+	parameters["kb"] = 285
+	parameters["Eb"] = 7517
+	parameters["b"] = 1.45
+	parameters["rho"] = 2.66*10**-12;
+	parameters["kv"] = 0.54
+	model(parameters)
