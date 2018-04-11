@@ -152,11 +152,10 @@
 \university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
                 {University Name}}
                 {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {Department or School Name}}
+\UNIVERSITY  {\texorpdfstring{
+                {Indian Institute of Technology,Kharagpur}} }
+\department  {\texorpdfstring{
+                {Department of Chemical Engineering}}
                 {Department or School Name}}
 \DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
                 {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
