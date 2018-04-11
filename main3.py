@@ -1,23 +1,23 @@
 ### Consists of odeint for all forward integeration
 ## This is the third testing script
-
+## This is the final implementation of Deterministic model
 
 
 import numpy as np
 from scipy.integrate import odeint
 from y_ODE import *
 from z_ODE import *
-from DH_dy import * 
-from DH_dz import * 
+from DH_dy import *
+from DH_dz import *
 from theta_ODE import *
 from fi_ODE import *
 from utilities import *
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 from check_constraint import *
 import math
 
 
-   
+
 def model(parameters,delta_t = 1,):
 
 
@@ -76,11 +76,11 @@ def model(parameters,delta_t = 1,):
 		z_mat[0,:] = zf
 		theta_mat[0,:] = theta0
 		fi_mat[0,:] = fi_f
-		
+
 
 		print "y forward integration"
 		for t in range(t0,tf,delta_t) :
-			
+
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
 			T = T_vec[t]
 			C = y_mat[t,0]
@@ -89,7 +89,7 @@ def model(parameters,delta_t = 1,):
 
 
 			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
-			
+
 			y_mat[t+delta_t,:] = y[-1,:]
 
 		print "Z backward ..."
@@ -102,17 +102,17 @@ def model(parameters,delta_t = 1,):
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
 			z = odeint(z_ODE,z_mat[t,:],t_horizon,args = (G,parameters,T,y_mat[t,:]))
 			z_mat[t+delta_t,:] = z[-1,:]
-	
+
 		print "DH .."
 		for t in range(t0,tf+delta_t,delta_t):
 
-		
+
 			T = T_vec[t]
 			G = calG(T,C,parameters)
 
 			DelH_dy_mat[t,:] = DH_dy(y_mat[t,:],z_mat[t,:],G,T,parameters)
 			DelH_dz_mat[t,:] = DH_dz(T,y_mat[t,:],parameters)
-		
+
 		print " Theta forward integration.."
 		for t in range(t0,tf,delta_t) :
 
@@ -124,22 +124,22 @@ def model(parameters,delta_t = 1,):
 
 		print "Fi backward .."
 		for t in range(t0,tf,delta_t):
-			
+
 			T = T_vec[t]
 			t_horizon = np.linspace(t,t+delta_t,num = 10)
 
 
 			fi = odeint(fi_ODE,fi_mat[t,:],t_horizon,args = (y_mat[t,:],z_mat[t,:],theta_mat[t,:],T,parameters))
-			#print z[-1,0]			
+			#print z[-1,0]
 			fi_mat[t+delta_t,:] = fi[-1,:]
-		
+
 		print "Derivative sums...."
 		for t in range(t0,tf+delta_t,delta_t) :
-			var_sum = 0 
+			var_sum = 0
 
 			for i in range(9):
-				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i] 
-				## + +  
+				var_sum +=  DelH_dy_mat[t,i]*theta_mat[t,i] + DelH_dz_mat[t,i]*fi_mat[t,i]
+				## + +
 			DH_vec[iteration,t] = var_sum
 
 		print "check constraints...."
@@ -153,8 +153,8 @@ def model(parameters,delta_t = 1,):
 
 		plt_1 =  DH_vec[iteration,:]
 
-	
-		## Plotting function 
+
+		## Plotting function
 
 		t = np.linspace(t0,tf,num = 1801)
 		plt.figure(0)
@@ -170,13 +170,13 @@ def model(parameters,delta_t = 1,):
 
 
 		iteration+=1
-				 
+
 
 	#print T_vec
 	"""
 	plt_1 =  T_vec
 
-	## Plotting function 
+	## Plotting function
 
 	t = np.linspace(t0,tf,num = 1801)
 	#plt.plot(t,plt_1,'r')
@@ -191,7 +191,7 @@ if __name__ == "__main__" :
 
 	parameters = {}
 	parameters["kg"] = 1.44*10**8
-	parameters["Eg"] = 4859 
+	parameters["Eg"] = 4859
 	parameters["g"] = 1.5
 	parameters["kb"] = 285
 	parameters["Eb"] = 7517
