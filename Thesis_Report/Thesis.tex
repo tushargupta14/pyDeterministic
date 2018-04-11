@@ -5,9 +5,12 @@
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
+\usepackage{graphicx}
+\graphicspath{images/}
+%\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
+
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
@@ -140,7 +143,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 %% ----------------------------------------------------------------
 \clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
+%\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
 \listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
 {
 % Constant Name & Symbol & = & Constant Value (with units) \\
@@ -150,7 +153,7 @@ Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$
 
 %% ----------------------------------------------------------------
 \clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
+%\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
 \listofnomenclature{lll}  % Include a list of Symbols (a three column table)
 {
 % symbol & name & unit \\
@@ -181,9 +184,9 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{Chapters/Introduction} % Introduction
 
-\input{Chapters/Chapter2} % Background Theory 
+\input{Chapters/Theory} % Theory
 
-%\input{Chapters/Chapter3} % Experimental Setup
+\input{Chapters/Modeling} % Model for the problem
 
 %\input{Chapters/Chapter4} % Experiment 1
 
@@ -209,7 +212,21 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter
 
-%% ----------------------------------------------------------------
+%%
+
+\begin{thebibliography}{9}
+\bibitem{mullin}
+Mulin, J. W.; Nyvlt, J. Programmed cooling of batch crystallizers.
+\textit{Chem. Eng. Sci.} \textbf{1971}, \textit{26}, 369−377.
+
+\bibitem{agjones}
+Jones, A. G. Optimal operation of a batch cooling crystallizer.
+\textit{Chem. Eng. Sci.} \textbf{1974}, \textit{29}, 1075−1087.
+\bibitem{rawlings}
+ Rawlings, J. B.; Witkowski, W. R.; Eaton, J. W. Modeling and
+control of crystallizers.\textit{ Powder Technol.} \textbf{1992}, \textit{69}, 3−9.
+\end{thebibliography}
+ ----------------------------------------------------------------
 \label{Bibliography}
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
 \bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
