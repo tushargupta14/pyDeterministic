@@ -15,10 +15,14 @@ The population balance can be expressed as eq :
 \end{equation}
 where \textbf{n} is the number density distribution, \textbf{t} is the time, \textbf{r} represents the characteristic dimension for size measurements, \textbf{G} is the crystal growth rate, and \textbf{B} is the nucleation rate. Both growth and nucleation processes describe crystallization kinetics, and their expression may vary, depending on the system under consideration.
 
-\subsection{The One-Dimensional Case}
+\section{Model Equations}
 
+In this work, the system under consideration is potassium sulfate, which has been studied earlier by Hu et al. \cite{hu}, Shi et al. \cite{shi}, and Paengjuntuek et al.\cite{paeng}. \\
 
-Consider a population of particles distributed according to their size x which we shall take to be the mass of the particle and allow it to vary between 0 and infinity.Such a situation can be approximated, for example, in a crystallizer containing a highly supersaturated solution of the crystallizing solute. The process involves nucleation resulting in the formation of a rudimentary particle and its subsequent growth by transferring solute from the solution phase to the particle surface.\\
-If the supersaturation is sufficiently high, the nucleation and growth rates may remain relatively unaffected as crystallization progresses. This unnecessarily restrictive assumption is made only for simplifying the preliminary derivation of the population balance equation.\\
-We let X(x,t) be the growth rate of the particle of size x. The particles may then be viewed as distributed along the size coordinate and embedded on a string deforming with velocity X(x,t). Choose an arbitrary region [a, b] on the stationary size coordinate with respect to which the string with the embedded particles is deforming. 
-As the string deforms, particles commute through the interval [a, b] across the endpoints a and b, changing the number of particles in the interval.If we denote the number density by f1(x,t), the rate of change in the number of particles in [a, b] caused by this traffic at a and b is given by
+Nucleation kinetics$^{(5-7)}$ are defined by :
+
+\begin{equation*}
+
+B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}
+
+\end{equation*}    
