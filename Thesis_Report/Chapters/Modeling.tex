@@ -20,9 +20,61 @@ where \textbf{n} is the number density distribution, \textbf{t} is the time, \te
 In this work, the system under consideration is potassium sulfate, which has been studied earlier by Hu et al. \cite{hu}, Shi et al. \cite{shi}, and Paengjuntuek et al.\cite{paeng}. \\
 
 Nucleation kinetics$^{(5-7)}$ are defined by :
-
-\begin{equation*}
-
+\begin{equation}
 B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}
+\end{equation}  
 
-\end{equation*}    
+
+Growth Kinetics$^{(5-7)}$ are given by:
+\begin{equation}
+G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}
+\end{equation}
+where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. $C_{s}(T)$ is the saturation concentration at a given temperature. The following equations are used to evaluate the saturation and metastable concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}.
+\begin{align}
+C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \\
+C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2}
+\end{align} 
+The mass balance, in terms of concentration of the solute in the solution, is expressed as :
+\begin{equation}
+\frac{dC}{dt} = -3\rho{}k_{v}G(t)\mu_{2}(t)
+\end{equation}
+where $\rho{}$ is the density of the crystals, $k_{v}$ the volumetric shape factor, and $\mu_{2}$ is the second moment of particle size distribution (PSD).\\
+
+Since $n(r,t)$ represents the population density of the crystals\cite{randolph}, the ith moment of the particle size distribution(PSD) is given by :
+\begin{equation}
+\mu_{i} = \int_{0}^{\infty} r^{i}n(r,t) dr
+\end{equation}
+
+The above equations along with the Population Balance Equation represent a complete model of a seeded batch crystallizer . 
+Since population balance equations are multidimensional, their implementation in control functions is tedious; hence, much research has been focused on the model order reduction methods.\\
+For simplifying the solution method, we reduce the population balance equations into moment balance equations. It is also advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment model leads to a reduced-order model involving the process dynamics in batch crystallization.
+
+%%%% Insert table of parameters
+
+\section{Solution Methodology}
+
+Separate moment equations are used for the seed and nuclei classes of crystals, and they are defined as : 
+\begin{align}
+\mu^{n}_{i} = \int_{0}^{r_{g}} r^{i}n(r,t) dr \\
+\mu^{s}_{i} = \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
+\end{align}
+n : nucleation , s: seed , $r_{g}$  : critical radius separating the two \\  
+Since, we ignore the agglomeration and breakage phenomena, the number of seeds added to the process ($\mu_{0}^{s}$) remain constant.
+
+The differential equations for nucleated and seeded crystals are as follows :
+
+\begin{enumerate}
+
+\item Nucleated crystals$^{5,7}$ 
+\begin{align}
+\frac{du_{0}^{n}}{dt} &= B(t) \\
+\frac{du_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
+\end{align}
+
+\item Seeded crystals$^{5,7}$
+\begin{equation}
+\frac{du_{i}^{s}}{dt} = iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \\
+\end{equation}
+
+\end{enumerate}
+The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  12 APR 2018 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  14 APR 2018 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -578,14 +578,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(./Thesis.toc)
+(./Thesis.toc [5
+
+
+])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [5
-
-
-]
+ [6]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
@@ -593,7 +593,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 \tf@lof=\write5
 \openout5 = `Thesis.lof'.
 
- [6
+ [7
 
 
 ]
@@ -604,20 +604,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 \tf@lot=\write6
 \openout6 = `Thesis.lot'.
 
- [7
+ [8
 
 
 ]
 ------------------------------------------------------------------------------
  Abbreviations
-------------------------------------------------------------------------------
-[8
-
-
-
-]
-------------------------------------------------------------------------------
- Physical Constants
 ------------------------------------------------------------------------------
 [9
 
@@ -625,7 +617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
 ]
 ------------------------------------------------------------------------------
- Symbols
+ Physical Constants
 ------------------------------------------------------------------------------
 [10
 
@@ -633,9 +625,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
 ]
 ------------------------------------------------------------------------------
- Dedicatory
+ Symbols
 ------------------------------------------------------------------------------
 [11
+
+
+
+]
+------------------------------------------------------------------------------
+ Dedicatory
+------------------------------------------------------------------------------
+[12
 
 ] (./Chapters/Introduction.tex
 Chapter 1.
@@ -832,78 +832,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.25 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.25 
-     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.26 B(t) = k_
-              {b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.27 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+ []
 
 
-! LaTeX Error: Bad math environment delimiter.
+Package natbib Warning: Citation `randolph' on page 7 undefined on input line 4
+3.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \end{equation*}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[7]) (./Chapters/Control_Problems.tex [8]
+Chapter 4.
+------------------------------------------------------------------------------
+ 4 Optimal Control Problems
+------------------------------------------------------------------------------
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.28 \end{equation*}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+Package hyperref Warning: Difference (3) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 9.
 
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.28 \end{equation*}
-                    
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+Missing character: There is no Î in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+Missing character: There is no Î in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+) (./Appendices/AppendixA.tex [9
 
-) (./Appendices/AppendixA.tex [7]
+]
 Appendix A.
 ------------------------------------------------------------------------------
  A An Appendix
 ------------------------------------------------------------------------------
-[8
+[10
 
-]) [9]
+]) [11]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
@@ -933,7 +893,7 @@ No file Thesis.bbl.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
-[10
+[12
 
 
 ]
@@ -948,25 +908,25 @@ Package rerunfilecheck Warning: File `Thesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: F786992D02012434BA34937B9956D035;2859
-(rerunfilecheck)             After:  274F854B37F19302F3A3D78D117400C1;2859.
+(rerunfilecheck)             Before: 97721BF5FB90A2EE26456E15B92E219A;3224
+(rerunfilecheck)             After:  CDADBEF05F454D91C96A14221A697FE1;3524.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 12909 strings out of 493029
- 182101 string characters out of 6136235
- 253406 words of memory out of 5000000
- 16195 multiletter control sequences out of 15000+600000
+ 12935 strings out of 493029
+ 182408 string characters out of 6136235
+ 255406 words of memory out of 5000000
+ 16198 multiletter control sequences out of 15000+600000
  13628 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,11n,45p,13132b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{dummy.33} has been referenced but does not exist,
+ 49i,12n,45p,13132b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{dummy.47} has been referenced but does not exist,
  replaced by a fixed one
 
-pdfTeX warning (dest): name{appendix.32} has been referenced but does not exist
+pdfTeX warning (dest): name{appendix.46} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
@@ -984,10 +944,10 @@ cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl1
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (22 pages, 210837 bytes).
+Output written on Thesis.pdf (25 pages, 220248 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 65 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 319 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
