@@ -1,0 +1,23 @@
+%%% Uncertainity Quantification
+
+\chapter{Optimal Control using Uncertainity Quantification}
+
+\paragraph{Kinetic parameters} are generally empirical constants determined by fitting experimental data to the model, and, hence, are a source of uncertainty within the system. I discuss two methods here to quantify these uncertainities and as a result build a more robust process dunamics model.
+
+\section{Stochastic Optimal Control using Ito Processes}
+
+From several previous works it has been shown that the dynamic uncertainties
+such as the batch reactors\cite{benavides2} and batch distillation,\cite{diwekar}, can be represented using stochastic processes called as the Ito processes.\\
+The advantage lies in the ability to integrate the equations using the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. \\
+In batch crystallization kinetics, the growth and nucleation expressions have empirical constants shown in Table \ref{Table1}, they can be assumed to follow a Gaussian distribution\cite{yenkie}. By studying the nature of the dynamic uncertainty plots of the process variables and their correlation to Ito processes, it has been observed that the uncertainties can be best modeled with a simple Ito process known as \textbf{Brownian motion} with drift\cite{diwekar}\cite{wong}. It can be defined as:
+\begin{equation}
+dy = a(y,t)dt + b(y,t)dz
+\end{equation}
+where $dz$ is the increment of the Wiener process equal to $\varepsilon_{t}(\Delta t)^{1/2}$, and a(y,t) and b(y,t) are known functions. The random value $\varepsilon_{t}$  has a unit normal distribution with zero mean
+and a standard deviation of 1. To estimate the values of the functions a and b, a generalized method presented by Diwekar\cite{diwekar} has been used.\\
+In this work a simplification of the above equations has been done to incorporate the uncertainties into the moment equations which are\cite{yenkie} :
+\begin{align*}
+
+
+
+\end{align*} 

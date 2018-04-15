@@ -9,7 +9,7 @@ Analysis of a particulate system seeks to synthesize the behavior of the populat
 A population balance formulation describes the process of crystal size distribution with time most effectively. Thus, modeling of a batch crystallizer involves the use of population balances to model the crystal size prediction and the mass balance on the system can be modeled as a simple differential equation having concentration as the state variable.
 The population balance can be expressed as eq :
 
-\begin{equation}
+\begin{equation} \label{populationbalance}
 	\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B
 
 \end{equation}
@@ -41,13 +41,13 @@ The mass balance, in terms of concentration of the solute in the solution, is ex
 where $\rho{}$ is the density of the crystals, $k_{v}$ the volumetric shape factor, and $\mu_{2}$ is the second moment of particle size distribution (PSD).\\
 
 Since $n(r,t)$ represents the population density of the crystals\cite{randolph}, the ith moment of the particle size distribution(PSD) is given by :
-\begin{equation}
+\begin{equation} \label{moments}
 \mu_{i} = \int_{0}^{\infty} r^{i}n(r,t) dr
 \end{equation}
 
 The above equations along with the Population Balance Equation represent a complete model of a seeded batch crystallizer . 
 Since population balance equations are multidimensional, their implementation in control functions is tedious; hence, much research has been focused on the model order reduction methods.\\
-For simplifying the solution method, we reduce the population balance equations into moment balance equations. It is also advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment model leads to a reduced-order model involving the process dynamics in batch crystallization.
+For simplifying the solution method, we reduce the population balance equations into \textbf{Moment balance equations}(ODE). This is done by multiplying the equation (\ref{populationbalance})  with $r^{i}$ on both sides to generate the expression given by equation (\ref{moments}). It is also advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment method leads to a reduced-order model involving the process dynamics in batch crystallization.
 
 %%%% Insert table of parameters
 
@@ -59,9 +59,9 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 \mu^{s}_{i} = \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
 \end{align}
 n : nucleation , s: seed , $r_{g}$  : critical radius separating the two \\  
-Since, we ignore the agglomeration and breakage phenomena, the number of seeds added to the process ($\mu_{0}^{s}$) remain constant.
-
-The differential equations for nucleated and seeded crystals are as follows :
+Since, we ignore the agglomeration and breakage phenomena, the number of seeds added to the process ($\mu_{0}^{s}$) remain constant.\\
+Fourth and higher order moments are not affected by the lower, which makes it possible for the complete process dynamics to be expressed by the first 4 moments for each of the respective crystals growth patterns.\\
+The moment equations for nucleated and seeded crystals become as follows\cite{yenkie} :
 
 \begin{enumerate}
 
@@ -72,9 +72,13 @@ The differential equations for nucleated and seeded crystals are as follows :
 \end{align}
 
 \item Seeded crystals$^{5,7}$
-\begin{equation}
+\begin{align}
 \frac{du_{i}^{s}}{dt} = iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \\
-\end{equation}
+\mu_{0}^{s} = constant
+\end{align}
 
 \end{enumerate}
-The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$
+The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. 
+The complete set of differential equations are as follows :
+
+%% Insert all differential equations here

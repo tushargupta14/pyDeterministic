@@ -5,6 +5,7 @@
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\setcounter{tocdepth}{3}
 \usepackage{graphicx}
 \graphicspath{images/}
 %\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
@@ -77,18 +78,18 @@ Date:\\
 
 %% ----------------------------------------------------------------
 % The "Funny Quote Page"
-\pagestyle{empty}  % No headers or footers for the following pages
+%\pagestyle{empty}  % No headers or footers for the following pages
 
-\null\vfill
+%\null\vfill
 % Now comes the "Funny Quote", written in italics
-\textit{``Write a funny quote here.''}
+%\textit{``Write a funny quote here.''}
 
-\begin{flushright}
-If the quote is taken from someone, their name goes here
-\end{flushright}
+%\begin{flushright}
+%If the quote is taken from someone, their name goes here
+%\end{flushright}
 
-\vfill\vfill\vfill\vfill\vfill\vfill\null
-\clearpage  % Funny Quote page ended, start a new page
+%\vfill\vfill\vfill\vfill\vfill\vfill\null
+%\clearpage  % Funny Quote page ended, start a new page
 %% ----------------------------------------------------------------
 
 % The Abstract Page
@@ -127,51 +128,51 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \listoffigures  % Write out the List of Figures
 
 %% ----------------------------------------------------------------
-\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+%\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
 \listoftables  % Write out the List of Tables
 
 %% ----------------------------------------------------------------
-\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
-\clearpage  % Start a new page
-\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
-\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
-{
+%\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+%\clearpage  % Start a new page
+%\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+%\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+%{
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 
-}
+%}
 
 %% ----------------------------------------------------------------
-\clearpage  % Start a new page
-%\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
+%\clearpage  % Start a new page
+%\lhead{}  % Set the left side page header to "Physical Constants"
+%\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
+%{
 % Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
 
-}
+%}
 
 %% ----------------------------------------------------------------
-\clearpage  %Start a new page
+%\clearpage  %Start a new page
 %\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
+%\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
+%{
 % symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
-}
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+%& & \\ % Gap to separate the Roman symbols from the Greek
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+%}
 %% ----------------------------------------------------------------
 % End of the pre-able, contents and lists of things
 % Begin the Dedication page
 
-\setstretch{1.3}  % Return the line spacing back to 1.3
+%\setstretch{1.3}  % Return the line spacing back to 1.3
 
-\pagestyle{empty}  % Page style needs to be empty for this page
-\dedicatory{For/Dedicated to/To my\ldots}
+%\pagestyle{empty}  % Page style needs to be empty for this page
+%\dedicatory{For/Dedicated to/To my\ldots}
 
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+%\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 
 
 %% ----------------------------------------------------------------
@@ -190,7 +191,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{Chapters/Control_Problems} % Optimal Control Problems
 
-%\input{Chapters/Chapter5} % Experiment 2
+\input{Chapters/UncertainityQ} % Stochastic and PCE 
 
 %\input{Chapters/Chapter6} % Results and Discussion
 
@@ -243,6 +244,23 @@ Paengjuntuek, W.; Arpornwichanop, A.; Kittisupakorn, P.
 Product quality improvement of batch crystallizers by a batch to
 batch optimization and non-linear control approach. \textit{Chem. Eng. J.}
 \textbf{2008}, \textit{139}, 344−350.
+
+\bibitem{diwekar}
+Diwekar, U. \textit{Introduction to Applied Optimization}, 2nd ed.;
+Springer: New York, 2008
+\bibitem{benavides}
+Benavides, P. T.; Diwekar, U. Optimal control of biodiesel
+production in a batch reactor. Part I: Deterministic control. Fuel \textbf{2011}, DOI: 10.1016/j.fuel.2011.08.035.
+\bibitem{yenkie}
+Yenkie, K. M., & Diwekar, U. Stochastic optimal control of seeded batch crystallizer applying the ito process. \textit{Industrial & Engineering Chemistry Research}, \textbf{2012}, \textit{52(1)}, 108-122.
+\bibitem{wong}
+Wong, E.; Zakai, M. On the relation between ordinary and
+stochastic differential equations. \textit{Int. J. Eng. Sci.} \textbf{1965}, \textit{3}, 213−229.
+\bibitem{benavides2}
+Benavides, P. T.; Diwekar, U. Optimal control of biodiesel
+production in a batch reactor. Part II: Stochastic control. \textit{Fuel} \textbf{2012}, \textit{94}, 218−226.
+
+
 \end{thebibliography}
  ----------------------------------------------------------------
 \label{Bibliography}

@@ -1,31 +1,35 @@
 \contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
 \vspace {1em}
-\contentsline {chapter}{Abstract}{iii}{dummy.2}
+\contentsline {chapter}{Abstract}{ii}{dummy.2}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{iv}{dummy.3}
+\contentsline {chapter}{Acknowledgements}{iii}{dummy.3}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{vii}{dummy.5}
-\contentsline {chapter}{List of Tables}{viii}{dummy.7}
-\contentsline {chapter}{Abbreviations}{ix}{dummy.9}
-\contentsline {chapter}{Physical Constants}{x}{dummy.12}
-\contentsline {chapter}{Symbols}{xi}{dummy.15}
+\contentsline {chapter}{List of Figures}{v}{dummy.5}
+\contentsline {chapter}{List of Tables}{vi}{dummy.7}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
+\contentsline {paragraph}{Deterministic Optimal Control}{1}{section*.10}
+\contentsline {paragraph}{Stochastic Optimal Control}{2}{section*.11}
+\contentsline {section}{\numberline {1.1}Previous Work}{2}{section.12}
+\contentsline {chapter}{\numberline {2}Theory}{3}{chapter.13}
+\contentsline {paragraph}{}{3}{section*.14}
+\contentsline {section}{\numberline {2.1}Nucleation}{4}{section.15}
+\contentsline {section}{\numberline {2.2}Crystal Growth}{4}{section.17}
+\contentsline {chapter}{\numberline {3}Modelling a Seeded Batch Crystallizer}{6}{chapter.18}
+\contentsline {section}{\numberline {3.1}Population Balance Equation}{6}{section.19}
+\contentsline {section}{\numberline {3.2}Model Equations}{7}{section.21}
+\contentsline {section}{\numberline {3.3}Solution Methodology}{8}{section.28}
+\contentsline {chapter}{\numberline {4}Optimal Control Problems}{10}{chapter.37}
+\contentsline {section}{\numberline {4.1}Deterministic Optimal Control}{10}{section.38}
+\contentsline {paragraph}{Aim}{10}{section*.39}
+\contentsline {paragraph}{Objective Function}{10}{section*.40}
+\contentsline {paragraph}{Active Constraints}{10}{section*.41}
+\contentsline {subsection}{\numberline {4.1.1}Solution Technique : Steepest Ascent Hamiltonian}{11}{subsection.42}
+\contentsline {paragraph}{Algorithm}{11}{section*.44}
+\contentsline {subsection}{\numberline {4.1.2}Results}{12}{subsection.57}
+\contentsline {chapter}{\numberline {5}Optimal Control using Uncertainity Quantification}{14}{chapter.59}
+\contentsline {paragraph}{Kinetic parameters}{14}{section*.60}
+\contentsline {section}{\numberline {5.1}Stochastic Optimal Control using Ito Processes}{14}{section.61}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.18}
-\contentsline {paragraph}{Deterministic Optimal Control}{1}{section*.19}
-\contentsline {paragraph}{Stochastic Optimal Control}{2}{section*.20}
-\contentsline {section}{\numberline {1.1}Previous Work}{2}{section.21}
-\contentsline {chapter}{\numberline {2}Theory}{3}{chapter.22}
-\contentsline {paragraph}{}{3}{section*.23}
-\contentsline {section}{\numberline {2.1}Nucleation}{4}{section.24}
-\contentsline {section}{\numberline {2.2}Crystal Growth}{4}{section.26}
-\contentsline {chapter}{\numberline {3}Modelling a Seeded Batch Crystallizer}{6}{chapter.27}
-\contentsline {section}{\numberline {3.1}Population Balance Equation}{6}{section.28}
-\contentsline {section}{\numberline {3.2}Model Equations}{7}{section.30}
-\contentsline {section}{\numberline {3.3}Solution Methodology}{8}{section.37}
-\contentsline {chapter}{\numberline {4}Optimal Control Problems}{9}{chapter.45}
-\contentsline {section}{\numberline {4.1}Deterministic Optimal Control}{9}{section.46}
-\contentsline {paragraph}{Aim}{9}{section*.47}
+\contentsline {chapter}{\numberline {A}An Appendix}{16}{appendix.63}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{10}{appendix.48}
-\vspace {2em}
-\contentsline {chapter}{Bibliography}{12}{dummy.49}
+\contentsline {chapter}{Bibliography}{18}{dummy.64}
