@@ -1,35 +1,43 @@
-\contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
+\contentsline {chapter}{Certificate}{i}{dummy.2}
 \vspace {1em}
-\contentsline {chapter}{Abstract}{ii}{dummy.2}
+\contentsline {chapter}{Abstract}{ii}{dummy.3}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{iii}{dummy.3}
+\contentsline {chapter}{Acknowledgements}{iii}{dummy.4}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{v}{dummy.5}
-\contentsline {chapter}{List of Tables}{vi}{dummy.7}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
-\contentsline {paragraph}{Deterministic Optimal Control}{1}{section*.10}
-\contentsline {paragraph}{Stochastic Optimal Control}{2}{section*.11}
-\contentsline {section}{\numberline {1.1}Previous Work}{2}{section.12}
-\contentsline {chapter}{\numberline {2}Theory}{3}{chapter.13}
-\contentsline {paragraph}{}{3}{section*.14}
-\contentsline {section}{\numberline {2.1}Nucleation}{4}{section.15}
-\contentsline {section}{\numberline {2.2}Crystal Growth}{4}{section.17}
-\contentsline {chapter}{\numberline {3}Modelling a Seeded Batch Crystallizer}{6}{chapter.18}
-\contentsline {section}{\numberline {3.1}Population Balance Equation}{6}{section.19}
-\contentsline {section}{\numberline {3.2}Model Equations}{7}{section.21}
-\contentsline {section}{\numberline {3.3}Solution Methodology}{8}{section.28}
-\contentsline {chapter}{\numberline {4}Optimal Control Problems}{10}{chapter.37}
-\contentsline {section}{\numberline {4.1}Deterministic Optimal Control}{10}{section.38}
-\contentsline {paragraph}{Aim}{10}{section*.39}
-\contentsline {paragraph}{Objective Function}{10}{section*.40}
-\contentsline {paragraph}{Active Constraints}{10}{section*.41}
-\contentsline {subsection}{\numberline {4.1.1}Solution Technique : Steepest Ascent Hamiltonian}{11}{subsection.42}
-\contentsline {paragraph}{Algorithm}{11}{section*.44}
-\contentsline {subsection}{\numberline {4.1.2}Results}{12}{subsection.57}
-\contentsline {chapter}{\numberline {5}Optimal Control using Uncertainity Quantification}{14}{chapter.59}
-\contentsline {paragraph}{Kinetic parameters}{14}{section*.60}
-\contentsline {section}{\numberline {5.1}Stochastic Optimal Control using Ito Processes}{14}{section.61}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}
+\contentsline {paragraph}{Deterministic Optimal Control}{1}{section*.7}
+\contentsline {paragraph}{Stochastic Optimal Control}{1}{section*.8}
+\contentsline {section}{\numberline {1.1}Previous Work}{2}{section.9}
+\contentsline {chapter}{\numberline {2}Theory}{3}{chapter.10}
+\contentsline {paragraph}{}{3}{section*.11}
+\contentsline {section}{\numberline {2.1}Nucleation}{4}{section.12}
+\contentsline {section}{\numberline {2.2}Crystal Growth}{4}{section.13}
+\contentsline {chapter}{\numberline {3}Modelling a Seeded Batch Crystallizer}{6}{chapter.14}
+\contentsline {section}{\numberline {3.1}Population Balance Equation}{6}{section.15}
+\contentsline {section}{\numberline {3.2}Model Equations}{7}{section.17}
+\contentsline {section}{\numberline {3.3}Solution Methodology}{8}{section.24}
+\contentsline {chapter}{\numberline {4}Optimal Control Problems}{10}{chapter.43}
+\contentsline {section}{\numberline {4.1}Deterministic Optimal Control}{10}{section.44}
+\contentsline {paragraph}{Aim}{10}{section*.45}
+\contentsline {paragraph}{Objective Function}{10}{section*.46}
+\contentsline {paragraph}{Active Constraints}{10}{section*.47}
+\contentsline {subsection}{\numberline {4.1.1}Solution Technique : Steepest Ascent Hamiltonian}{11}{subsection.48}
+\contentsline {paragraph}{Algorithm}{11}{section*.50}
+\contentsline {subsection}{\numberline {4.1.2}Results}{12}{subsection.63}
+\contentsline {chapter}{\numberline {5}Optimal Control using Uncertainity Quantification}{15}{chapter.70}
+\contentsline {paragraph}{Kinetic parameters}{15}{section*.71}
+\contentsline {section}{\numberline {5.1}Stochastic Optimal Control using Ito Processes}{15}{section.72}
+\contentsline {paragraph}{Objective Function}{16}{section*.84}
+\contentsline {subsection}{\numberline {5.1.1}Solution Technique : Stochastic Steepest Ascent Hamiltonian}{16}{subsection.86}
+\contentsline {subsection}{\numberline {5.1.2}Results}{17}{subsection.95}
+\contentsline {section}{\numberline {5.2}Stochastic Optimal Control using Polynomial Chaos Expansions}{19}{section.99}
+\contentsline {subsection}{\numberline {5.2.1}Introduction}{19}{subsection.100}
+\contentsline {subsection}{\numberline {5.2.2}Solving a system of O.D.E using P.C.E approach}{20}{subsection.106}
+\contentsline {paragraph}{Non-Intrusive Approach}{20}{section*.108}
+\contentsline {paragraph}{Algorithm}{21}{section*.109}
+\contentsline {paragraph}{Objective Function}{21}{section*.115}
+\contentsline {subsection}{\numberline {5.2.3}Results}{21}{subsection.116}
+\contentsline {section}{\numberline {5.3}Conclusions}{23}{section.119}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}An Appendix}{16}{appendix.63}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{18}{dummy.64}
+\contentsline {chapter}{Bibliography}{24}{dummy.120}

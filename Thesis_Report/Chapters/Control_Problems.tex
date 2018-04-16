@@ -1,7 +1,7 @@
 % Optimal Control Problems 
 \chapter{Optimal Control Problems}
 
-\section{Deterministic Optimal Control}
+\section{Deterministic Optimal Control} \label{deterministic}
 
 
 \paragraph{Aim}
@@ -81,7 +81,7 @@ $k_{g}$ & $1.44\times10^{8} \mu m s^{-1}$ \\
 $E_{g}/R$ & $4859K$ \\
 $g$ & $1.5$ \\
 \hline
-\multicolumn{2}{|c|}{Growth Kinetics} \\
+\multicolumn{2}{|c|}{Nucleation Kinetics} \\
 \hline
 $k_{b}$ & $285 (s \mu m^{3})^{-1}$ \\ 
 $E_{b}/R$ & $7517K$ \\
@@ -95,10 +95,58 @@ $b$ & $1.45$ \\
 
 \begin{itemize}
 \item The model was implemented both using \textbf{Python} and \textbf{Matlab} producing similar results. 
-\item Matlab employed use of \textbf{ode15s} for performing the forward and backward integrations which is used to solve stiff-differential equation. In Python it was performed through \textbf{Explicit Euler} method.
+\item Matlab employed use of \textbf{ode15s} for performing the forward and backward integrations which is used to solve stiff-differential equation. 
+%In Python it was performed through \textbf{Explicit Euler} method.
 \item A tolerance value of $10^{-2}$ is used for computation of the Hamiltonian Derivative profile. The value of M was selected suitably after experimentation. 
-
 \end{itemize}
-
-
-
+The following results were obtained: \\
+\begin{figure}[h!] 
+\caption{Objective Function ($\mu_{3}^{s}(t) - \mu_{3}^{n}(t)$)}
+\begin{center}
+\includegraphics[width=4in]{objective.jpg}
+\end{center}
+\end{figure}
+\begin{figure}[h!] 
+\caption{Depicts the cooling profile for the controlled variable T(t) obtained at the final iteration}
+\begin{center}
+\includegraphics[width=4in]{temp.jpg}
+\end{center}
+\end{figure}
+\clearpage
+The change of the Hamiltonian Derivative($\frac{dH}{dT}$) after each iteration is shown below : 
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h1.jpg}
+    \caption{Iteration 1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h2.jpg}
+    \caption{Iteration 2}
+  \end{minipage}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h3.jpg}
+    \caption{Iteration 3}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h4.jpg}
+    \caption{Iteration 4}
+  \end{minipage}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h5.jpg}
+    \caption{Iteration 5}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{h6.jpg}
+    \caption{Iteration 6}
+  \end{minipage}
+\end{figure}

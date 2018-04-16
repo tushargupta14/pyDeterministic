@@ -7,7 +7,7 @@
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
-\graphicspath{images/}
+\usepackage{subcaption}
 %\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
@@ -19,20 +19,45 @@
 
 %% ----------------------------------------------------------------
 \begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+\vspace{2 cm}
+\Large{\textbf{\huge Optimal Control of Seeded Batch Crystallizer}\\
+
+\normalsize
+\begin{figure}
+\begin{center}
+\vspace{3 cm}
+\includegraphics[width=2in]{logo.png}
+\vspace{2 cm}
+\end{center}
+\end{figure}
+\vspace{3 cm}
+Submitted by
+\\\textbf{{\Large Tushar Gupta (13CH30023)}}\\
+\vspace{3cm}
+Under the guidance of\\
+{\Large \textbf{Prof. Debasis Sarkar}}\\
+Department of Chemical Engineering,\\
+Indian Institute of Technology Kharagpur,\\
+Kharagpur 721302, India
+\end{center}
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Optimal Control of Seeded Batch Crystallizer}
-\authors  {\texorpdfstring
-            {\href{your web site or email address}{Author Name}}
-            {Tushar Gupta}
-            }
-\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
-\date       {\today}
-\subject    {}
-\keywords   {}
+%\title  {Optimal Control of Seeded Batch Crystallizer}
+%\authors  {\texorpdfstring
+            %{{\textbf{Tushar Gupta(13CH30023)}}}
+            %{}
+            %}
 
-\maketitle
+%\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+%\date       {\today}
+%\subject    {}
+%\keywords   {}
+
+\clearpage
 %% ----------------------------------------------------------------
 
 \setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
@@ -50,34 +75,22 @@
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
-
-\begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
+This is to certify that the project report entitled “Optimal Control of Seeded Batch Crystallizer” submitted by Tushar Gupta  (13CH30023) towards partial fulfilment for the award of the degree of Master of Technology in Chemical Engineering to the Department of Chemical Engineering of the Indian Institute of Technology Kharagpur is an original bona fide research work carried out by him under my guidance and supervision and that the results contained in it have not been submitted in partial or full to any other university for the award of any degree.\\
  
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
  
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
- 
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
- 
-\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
- 
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
 \\
-\end{itemize}
- 
- 
-Signed:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
-Date:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+\\
+\textbf{Date:} 16 April 2018
+\begin{flushleft}
+\textbf{Prof. Debasis Sarkar}\\
+Department of Chemical Engineering,\\
+Indian Institute of Technology, Kharagpur\\
+\end{flushleft}
 }
 \clearpage  % Declaration ended, now start a new page
 
 %% ----------------------------------------------------------------
-% The "Funny Quote Page"
+% Certificte
 %\pagestyle{empty}  % No headers or footers for the following pages
 
 %\null\vfill
@@ -96,9 +109,8 @@ Date:\\
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-
+Minimization of operation costs and the enhancement in product quality have been major concerns for all industrial processes. The field under study here is batch crystalllization which relies on determination of optimum process parameters such as Temperature and Concentration and is affected heavily by the uncertainities in measurements and other errors. \\
+The current work aims to study the performance of a variety of Optimum Control Methods both from a Deterministic and a Stochastic paradigm to construct a robust model. Lastly, a novel approach named “Polynomial Chaos Expansions” is used to incorporate parameter uncertainties which has been applied successfully to other domains for Nonlinear Model Predictive Control but was not explored in the field of crystallization.
 }
 
 \clearpage  % Abstract ended, start a new page
@@ -109,8 +121,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % The Acknowledgements page, for thanking everyone
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+With  great  pleasure  and  a  deep  sense  of  gratitude,  I  express  my indebtedness  to  \textbf{Prof. Debasis Sarkar}  for  his  invaluable  guidance  at  each  and  every  step  of  my  project  work.  His  constant flow  of ideas and inexhaustible enthusiasm has helped me overcome many hurdles that I faced in my work.\\
+I  am  also  deeply  grateful  to  my  classmates,  who  exposed  me  to  the  intricacies of  relevant  topics through  proper  counseling  and  discussions  and  always  showed  great  interest  in  providing  timely support, suitable suggestions and constant encouragement.
 
 }
 \clearpage  % End of the Acknowledgements
@@ -124,12 +136,12 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \tableofcontents  % Write out the Table of Contents
 
 %% ----------------------------------------------------------------
-\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
-\listoffigures  % Write out the List of Figures
+%\lhead{}  % Set the left side page header to "List if Figures"
+%\listoffigures  % Write out the List of Figures
 
 %% ----------------------------------------------------------------
 %\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
-\listoftables  % Write out the List of Tables
+%\listoftables  % Write out the List of Tables
 
 %% ----------------------------------------------------------------
 %\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
@@ -202,9 +214,9 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
-\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+%\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-\input{Appendices/AppendixA}	% Appendix Title
+%\input{Appendices/AppendixA}	% Appendix Title
 
 %\input{Appendices/AppendixB} % Appendix Title
 
@@ -256,11 +268,25 @@ Yenkie, K. M., & Diwekar, U. Stochastic optimal control of seeded batch crystall
 \bibitem{wong}
 Wong, E.; Zakai, M. On the relation between ordinary and
 stochastic differential equations. \textit{Int. J. Eng. Sci.} \textbf{1965}, \textit{3}, 213−229.
+\bibitem{corriou}
+Corriou, J. P.; Rohani, S. A new look at optimal control of a
+batch crystallizer. \textit{AIChE J.},\textbf{2008}, \textit{54}, 3188−3206.
+\bibitem{grosso}
+Grosso, M.; Cogoni, G.; Baratti, R.; Romagnoli, J. A. Stochastic
+Approach for the prediction of PSD in crystallization processes:
+Formulation and comparative assessment of different stochastic
+models. \textit{Ind. Eng. Chem. Res.}, \textbf{2011}, \textit{50}, 2133−2143.
+\bibitem{ma}
+Ma, D. L.; Chung, S. H.; Braatz, R. D. Worst-case performance
+analysis of optimal batch control trajectories. \textit{AIChE J.} \textbf{1999}, \textit{45}, 1469−1476.
 \bibitem{benavides2}
 Benavides, P. T.; Diwekar, U. Optimal control of biodiesel
 production in a batch reactor. Part II: Stochastic control. \textit{Fuel} \textbf{2012}, \textit{94}, 218−226.
-
-
+\bibitem{ramirez}
+Rico-Ramirez, V.; Diwekar, U. M. Stochastic maximum principle
+for optimal control under uncertainty. \textit{Comput. Chem. Eng.} \textbf{2004}, \textit{28}, 2845−2849
+\bibitem{chaospy}
+Feinberg, J., & Langtangen, H. P. Chaospy: An open source tool for designing methods of uncertainty quantification. \textit{Journal of Computational Science},\textbf{2015}, \textit{11}, 46-57.
 \end{thebibliography}
  ----------------------------------------------------------------
 \label{Bibliography}
