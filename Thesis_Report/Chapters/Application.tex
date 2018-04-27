@@ -1,0 +1,38 @@
+\chapter{Application}
+
+\paragraph{Aim} To build a predictive model for unseeded batch crystallization of L-Asparagine Monohyrdate(LAM). The problem here follows only Nucleation kinectics unlike the previous versions and thus proves an ideal opportunity to diversify in application.
+
+
+\section{Optimal Control Problem}
+
+The population balance equations(PBE) given by \ref{populationbalance} are used here to model the kinetics of crystal formation. The Nucleation rate expression for LAM crystals is given by\cite{lindenberg} :
+\begin{equation}
+B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) 
+\end{equation}
+$C_{c}$ representys the  molar density of LAM. kJ1 and kJ2 are
+empirical parameters. The following power-law expression is used to describe the growth rate\cite{nagy}\cite{nagy2}:
+\begin{equation}
+G = k_{g}(S-1)^{g}
+\end{equation}
+The supersaturation ratio, S, is defined as :
+\begin{equation}
+S = C/C^{*}
+\end{equation}
+C* represents the saturation concentration of LAM. The solubility of LAM in 
+can be expressed as \cite{}:
+\begin{equation}
+C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
+\end{equation}
+Method of Meoments has been used to reduce the PBE to ODE's as stated in Section \ref{modeleq}. The mass balance for LAM crystals also remains the same from there, with the difference being the absence of seeded crystals.\\
+
+\section{Solution Technique}
+The ODEs for the model are given by :
+
+\begin{align}
+\frac{du_{0}}{dt} = B
+\frac{du_{j}}{dt} = jG\mu_{j-1}
+\end{align}
+for  $j = 1,2,3,4 $
+\\
+The determination of the optimal temperature or supersaturation profile for maximizing the weight mean size is a highly studied objective for a crystallization process.
+\paragraph{Objective Function} becomes :

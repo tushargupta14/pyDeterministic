@@ -38,6 +38,9 @@
 \contentsline {paragraph}{Objective Function}{21}{section*.115}
 \contentsline {subsection}{\numberline {5.2.3}Results}{21}{subsection.116}
 \contentsline {section}{\numberline {5.3}Conclusions}{23}{section.119}
+\contentsline {chapter}{\numberline {6}Application}{24}{chapter.120}
+\contentsline {paragraph}{Aim}{24}{section*.121}
+\contentsline {section}{\numberline {6.1}Optimal Control Problem}{24}{section.122}
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{24}{dummy.120}
+\contentsline {chapter}{Bibliography}{25}{dummy.127}

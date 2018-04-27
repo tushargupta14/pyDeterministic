@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  16 APR 2018 07:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  27 APR 2018 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,7 +548,7 @@ LaTeX Info: Redefining \nameref on input line 21.
 \@outlinefile=\write3
 \openout3 = `Thesis.out'.
 
- <logo.png, id=104, 326.21875pt x 346.29375pt>
+ <logo.png, id=116, 326.21875pt x 346.29375pt>
 File: logo.png Graphic file (type png)
 
 <use logo.png>
@@ -643,14 +643,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [4
+
+
+])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [4
-
-
-]
+ [5]
 (./Chapters/Introduction.tex
 Chapter 1.
 ------------------------------------------------------------------------------
@@ -838,49 +838,49 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[11] [12] <objective.jpg, id=301, 725.71124pt x 539.01375pt>
+[11] [12] <objective.jpg, id=320, 725.71124pt x 539.01375pt>
 File: objective.jpg Graphic file (type jpg)
 
 <use objective.jpg>
 Package pdftex.def Info: objective.jpg used on input line 106.
 (pdftex.def)             Requested size: 289.07999pt x 214.71341pt.
- <temp.jpg, id=302, 562.1pt x 421.575pt>
+ <temp.jpg, id=321, 562.1pt x 421.575pt>
 File: temp.jpg Graphic file (type jpg)
  <use temp.jpg>
 Package pdftex.def Info: temp.jpg used on input line 112.
 (pdftex.def)             Requested size: 289.07999pt x 216.80798pt.
 
-[13 <./objective.jpg> <./temp.jpg>] <h1.jpg, id=310, 562.1pt x 421.575pt>
+[13 <./objective.jpg> <./temp.jpg>] <h1.jpg, id=330, 562.1pt x 421.575pt>
 File: h1.jpg Graphic file (type jpg)
 
 <use h1.jpg>
 Package pdftex.def Info: h1.jpg used on input line 120.
 (pdftex.def)             Requested size: 166.98668pt x 125.23839pt.
- <h2.jpg, id=311, 562.1pt x 421.575pt>
+ <h2.jpg, id=331, 562.1pt x 421.575pt>
 File: h2.jpg Graphic file (type jpg)
  <use h2.jpg>
 Package pdftex.def Info: h2.jpg used on input line 125.
 (pdftex.def)             Requested size: 166.98668pt x 125.23839pt.
 
-<h3.jpg, id=312, 562.1pt x 421.575pt>
+<h3.jpg, id=332, 562.1pt x 421.575pt>
 File: h3.jpg Graphic file (type jpg)
  <use h3.jpg>
 Package pdftex.def Info: h3.jpg used on input line 132.
 (pdftex.def)             Requested size: 166.98668pt x 125.23839pt.
 
-<h4.jpg, id=313, 562.1pt x 421.575pt>
+<h4.jpg, id=333, 562.1pt x 421.575pt>
 File: h4.jpg Graphic file (type jpg)
  <use h4.jpg>
 Package pdftex.def Info: h4.jpg used on input line 137.
 (pdftex.def)             Requested size: 166.98668pt x 125.23839pt.
 
-<h5.jpg, id=314, 562.1pt x 421.575pt>
+<h5.jpg, id=334, 562.1pt x 421.575pt>
 File: h5.jpg Graphic file (type jpg)
  <use h5.jpg>
 Package pdftex.def Info: h5.jpg used on input line 144.
 (pdftex.def)             Requested size: 166.98668pt x 125.23839pt.
 
-<h6.jpg, id=315, 562.1pt x 421.575pt>
+<h6.jpg, id=335, 562.1pt x 421.575pt>
 File: h6.jpg Graphic file (type jpg)
  <use h6.jpg>
 Package pdftex.def Info: h6.jpg used on input line 149.
@@ -911,13 +911,13 @@ Overfull \hbox (4.64993pt too wide) in paragraph at lines 90--91
 d us-ing stochas-tic cal-cu-lus through
  []
 
-[17] <Obj_Stochastic.jpg, id=375, 562.1pt x 421.575pt>
+[17] <Obj_Stochastic.jpg, id=394, 562.1pt x 421.575pt>
 File: Obj_Stochastic.jpg Graphic file (type jpg)
 
 <use Obj_Stochastic.jpg>
 Package pdftex.def Info: Obj_Stochastic.jpg used on input line 96.
 (pdftex.def)             Requested size: 289.07999pt x 216.80798pt.
- <Temp_Stochastic.jpg, id=376, 562.1pt x 421.575pt>
+ <Temp_Stochastic.jpg, id=395, 562.1pt x 421.575pt>
 File: Temp_Stochastic.jpg Graphic file (type jpg)
 
 <use Temp_Stochastic.jpg>
@@ -983,7 +983,7 @@ So I shall assume that you typed `$$' both times.
 
 [19
 
-] [20] <iter_obj.png, id=404, 578.16pt x 433.62pt>
+] [20] <iter_obj.png, id=424, 578.16pt x 433.62pt>
 File: iter_obj.png Graphic file (type png)
  <use iter_obj.png>
 Package pdftex.def Info: iter_obj.png used on input line 197.
@@ -992,7 +992,7 @@ Package pdftex.def Info: iter_obj.png used on input line 197.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<iter2_temp.png, id=406, 578.16pt x 433.62pt>
+<iter2_temp.png, id=426, 578.16pt x 433.62pt>
 File: iter2_temp.png Graphic file (type png)
  <use iter2_temp.png>
 Package pdftex.def Info: iter2_temp.png used on input line 203.
@@ -1003,7 +1003,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [21
 
-] [22 <./iter_obj.png> <./iter2_temp.png>]) [23
+] [22 <./iter_obj.png> <./iter2_temp.png>]) (./Chapters/Application.tex
+[23
+
+]
+Chapter 6.
+------------------------------------------------------------------------------
+ 6 Application
+------------------------------------------------------------------------------
+
+Package natbib Warning: Citation `nagy' on page 24 undefined on input line 13.
+
+
+Package natbib Warning: Citation `nagy2' on page 24 undefined on input line 13.
+
+
+) [24
 
 ]
 ------------------------------------------------------------------------------
@@ -1058,7 +1073,7 @@ Missing character: There is no ’ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ’ in font cmr10!
-[24
+[25
 
 
 ]
@@ -1085,16 +1100,30 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
 No file Thesis.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 297.
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 297.
- (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 297.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 297.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 304.
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 304.
+ (./Thesis.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 304.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 304.
 
 
 Package rerunfilecheck Warning: File `Thesis.out' has changed.
@@ -1102,22 +1131,22 @@ Package rerunfilecheck Warning: File `Thesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 1D58ED54A49AAA152784E3D92592183B;4906
-(rerunfilecheck)             After:  1EB1F4E0C478257048188BAD1525C81B;5040.
+(rerunfilecheck)             Before: ADA41D6CE5178B3F3F977F092A4714DB;5355
+(rerunfilecheck)             After:  DC5D02D9832E0A2941ADFFE95EFBE699;5355.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 297.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 304.
  ) 
 Here is how much of TeX's memory you used:
- 13128 strings out of 493029
- 185052 string characters out of 6136235
- 257475 words of memory out of 5000000
- 16295 multiletter control sequences out of 15000+600000
+ 13155 strings out of 493029
+ 185411 string characters out of 6136235
+ 258507 words of memory out of 5000000
+ 16307 multiletter control sequences out of 15000+600000
  15259 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,12n,45p,13135b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{dummy.119} has been referenced but does not exist
+pdfTeX warning (dest): name{dummy.124} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
@@ -1137,10 +1166,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Thesis.pdf (30 pages, 694351 bytes).
+Output written on Thesis.pdf (32 pages, 699474 bytes).
 PDF statistics:
- 538 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 170 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 501 compressed objects within 6 object streams
+ 182 named destinations out of 1000 (max. 500000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
 
