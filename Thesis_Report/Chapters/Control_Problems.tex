@@ -17,6 +17,7 @@ For uniformity of shape and size in the crystals in a seeded batch crystallizati
 \begin{equation*}
 C_{s}\leqslant C \leqslant C_{m}
 \end{equation*}
+$C_{m}$ is the metastable concentration described by Equation(\ref{meta})
 The state variables can be represented as :
 \begin{equation*}
 y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
@@ -26,12 +27,12 @@ Thus, the complete model involving the moment equations consists of nine state e
 
 \subsection{Solution Technique : Steepest Ascent Hamiltonian}
 
-The method involves use of the \textbf{Maximum Principle} discussed by Diwekar et al.\cite{diwekar} in detail. The algorithm of Steepest Ascent utilizes this principle using the Hamiltonian Derivative to move towards the optimum value of Temperature and maximise the objective function. \\
+The method involves use of the \textbf{Maximum Principle} discussed by Diwekar et al.\cite{diwekar} in detail. The algorithm of Steepest Ascent utilizes this principle using the Hamiltonian Derivative to move towards the optimum value of temperature and maximise the objective function. A two-point boundary-value-problem is constructed using state equations and additionally defined adjoint equations which has been explained in detail futher.\\
 The formulation results in two point boundary value problem, since initial conditions for the state variables and final conditions for the adjoint variables are available. The method also involves introduction of nine additional variables, known as adjoints ($z_{i}$), corresponding to each of the state variable ($y_{i}$), which must satisfy the \textbf{Hamiltonian equation} represented by :
 \begin{equation}
 H &= \sum_{i = 1}^{9} z_{i}f(y_{i},t,T) 
 \end{equation}
-The complete problem can be described as :
+The state variables and objective function can be described as :
 \begin{align*}
 &\max_{T(t)} \lbrace{ y_{5}(t_{f}) - y_{9}(t_{f})}\rbrace \\
 &\frac{dy_{i}}{dt} = f(y_{i},t,T) \\
@@ -48,7 +49,7 @@ $t_{0} = 0$ and $t_{f} = 1800s$ (batch time)
 \item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon.
 \item The differential equations for state variables are integrated using the initial conditions for a time step of 1s .
 \item The value of the adjoint variables are computed by backward integration for the same time step used in the previous.
-\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides},  is used in which we an additional variable corresponding to each of the state and adjoint variable is introduced.
+\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides},  is used in an additional variable corresponding to each of the state and adjoint variable is introduced.
 \item The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, respectively.
 \item The Hamiltonian derivative is now calculated at each time step  as :
 \begin{align}
@@ -66,11 +67,12 @@ T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right)
 
 \subsection{Results}
 
-The following fixed kinetic parameters were used in the deterministic modelling. 
+The following kinetic parameters were used in the deterministic optimization. 
 
 \begin{center}
 \begin{table}[!h]
 \centering
+\caption{Parameter Values for Batch Crystallizer\cite{hu,paeng}}
 \begin{tabular}{|c|c|}
 \hline
 Parameters & Experimental Values \\
@@ -88,7 +90,6 @@ $E_{b}/R$ & $7517K$ \\
 $b$ & $1.45$ \\
 \hline
 \end{tabular}
-\caption{Parameter Values for Batch Crystallizer$^{5-7}$}
 \label{Table1}
 \end{table}
 \end{center}
@@ -101,52 +102,61 @@ $b$ & $1.45$ \\
 \end{itemize}
 The following results were obtained: \\
 \begin{figure}[h!] 
-\caption{Objective Function ($\mu_{3}^{s}(t) - \mu_{3}^{n}(t)$)}
 \begin{center}
-\includegraphics[width=4in]{objective.jpg}
+\includegraphics[width=4in]{Dobj.png}
 \end{center}
+\caption{Objective Function ($\mu_{3}^{s}(t) - \mu_{3}^{n}(t)$)}
 \end{figure}
 \begin{figure}[h!] 
-\caption{Depicts the cooling profile for the controlled variable T(t) obtained at the final iteration}
+
 \begin{center}
-\includegraphics[width=4in]{temp.jpg}
+\includegraphics[width=4in]{Dtemp.png}
 \end{center}
+\caption{The cooling profile for the controlled variable T(t) obtained at the final iteration}
+\end{figure}
+
+\begin{figure}[h!] 
+
+\begin{center}
+\includegraphics[width=4in]{Dconc.png}
+\end{center}
+\caption{The Concentration profile as obtained.}
 \end{figure}
 \clearpage
 The change of the Hamiltonian Derivative($\frac{dH}{dT}$) after each iteration is shown below : 
 \begin{figure}[h!]
   \centering
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h1.jpg}
+    \includegraphics[width=\textwidth]{h1.png}
     \caption{Iteration 1}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h2.jpg}
+    \includegraphics[width=\textwidth]{h2.png}
     \caption{Iteration 2}
   \end{minipage}
 \end{figure}
 \begin{figure}[h!]
   \centering
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h3.jpg}
+    \includegraphics[width=\textwidth]{h3.png}
     \caption{Iteration 3}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h4.jpg}
+    \includegraphics[width=\textwidth]{h4.png}
     \caption{Iteration 4}
   \end{minipage}
 \end{figure}
 \begin{figure}[h!]
   \centering
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h5.jpg}
+    \includegraphics[width=\textwidth]{h5.png}
     \caption{Iteration 5}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{h6.jpg}
+    \includegraphics[width=\textwidth]{h6.png}
     \caption{Iteration 6}
   \end{minipage}
 \end{figure}

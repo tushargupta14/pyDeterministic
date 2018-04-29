@@ -1,6 +1,6 @@
 % Modeling a batch crystallizer
 
-\chapter{Modelling a Seeded Batch Crystallizer}
+\chapter{Modelling of a Seeded Batch Crystallizer}
 
 
 \section{Population Balance Equation}
@@ -10,8 +10,7 @@ A population balance formulation describes the process of crystal size distribut
 The population balance can be expressed as eq :
 
 \begin{equation} \label{populationbalance}
-	\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B
-
+	\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B  \nolinebreak
 \end{equation}
 where \textbf{n} is the number density distribution, \textbf{t} is the time, \textbf{r} represents the characteristic dimension for size measurements, \textbf{G} is the crystal growth rate, and \textbf{B} is the nucleation rate. Both growth and nucleation processes describe crystallization kinetics, and their expression may vary, depending on the system under consideration.
 
@@ -32,7 +31,7 @@ G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\rig
 where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. $C_{s}(T)$ is the saturation concentration at a given temperature. The following equations are used to evaluate the saturation and metastable concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}.
 \begin{align}
 C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \\
-C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2}
+C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2} \label{meta}
 \end{align} 
 The mass balance, in terms of concentration of the solute in the solution, is expressed as :
 \begin{equation}
@@ -40,7 +39,7 @@ The mass balance, in terms of concentration of the solute in the solution, is ex
 \end{equation}
 where $\rho{}$ is the density of the crystals, $k_{v}$ the volumetric shape factor, and $\mu_{2}$ is the second moment of particle size distribution (PSD).\\
 
-Since $n(r,t)$ represents the population density of the crystals\cite{randolph}, the ith moment of the particle size distribution(PSD) is given by :
+Since $n(r,t)$ represents the population density of the crystals, the i-th moment of the particle size distribution(PSD) is given by :
 \begin{equation} \label{moments}
 \mu_{i} = \int_{0}^{\infty} r^{i}n(r,t) dr
 \end{equation}
@@ -58,36 +57,40 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 \mu^{n}_{i} = \int_{0}^{r_{g}} r^{i}n(r,t) dr \\
 \mu^{s}_{i} = \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
 \end{align}
-n : nucleation , s: seed , $r_{g}$  : critical radius separating the two \\  
+n : nucleated crystal , s: seeded crystal , $r_{g}$  : critical radius separating the two \\  
 Since, we ignore the agglomeration and breakage phenomena, the number of seeds added to the process ($\mu_{0}^{s}$) remain constant.\\
 Fourth and higher order moments are not affected by the lower, which makes it possible for the complete process dynamics to be expressed by the first 4 moments for each of the respective crystals growth patterns.\\
 The moment equations for nucleated and seeded crystals become as follows\cite{yenkie} :
 
 \begin{enumerate}
 
-\item Nucleated crystals$^{5,7}$ 
+\item Nucleated crystals\cite{hu}\cite{paeng} 
 \begin{align}
-\frac{du_{0}^{n}}{dt} &= B(t) \\
-\frac{du_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
+\frac{d\mu_{0}^{n}}{dt} &= B(t) \\
+\frac{d\mu_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
 \end{align}
 
-\item Seeded crystals$^{5,7}$
+\item Seeded crystals\cite{hu}\cite{paeng}
 \begin{align}
-\frac{du_{i}^{s}}{dt} = iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \\
-\mu_{0}^{s} = constant
+\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \\
+\mu_{0}^{s} &= constant
 \end{align}
 
 \end{enumerate}
 The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. 
 The complete set of differential equations are as follows\cite{yenkie} :
-\begin{align} \label{modeleq}
+\begin{align} 
 \frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y{8}) \\
 \frac{dy_{2}}{dt} &= 0 \\
-\frac{dy_{3}}{dt} &= (G(t)y_{2})  \\
-\frac{dy_{4}}{dt} &= (2G(t)y_{3}) \\
-\frac{dy_{5}}{dt} &= (3G(t)y_{4}) \\
-\frac{dy_{6}}{dt} &= (B(t))  \\
-\frac{dy_{7}}{dt} &= (G(t)y_{6})  \\
-\frac{dy_{8}}{dt} &= (2G(t)y_{7})  \\
-\frac{dy_{9}}{dt} &= (3G(t)y_{8})  \\
+\frac{dy_{3}}{dt} &= G(t)y_{2}  \\
+\frac{dy_{4}}{dt} &= 2G(t)y_{3} \\
+\frac{dy_{5}}{dt} &= 3G(t)y_{4} \\
+\frac{dy_{6}}{dt} &= B(t)  \\
+\frac{dy_{7}}{dt} &= G(t)y_{6}  \\
+\frac{dy_{8}}{dt} &= 2G(t)y_{7}  \\
+\frac{dy_{9}}{dt} &= 3G(t)y_{8}  \\
 \end{align} 
+Here the state variables $y_{i}$ are given by : 
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
+\end{equation*}

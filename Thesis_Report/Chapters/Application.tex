@@ -1,6 +1,6 @@
-\chapter{Application}
+\chapter{Stochastic Optimization using Polynomial Chaos Expansions : Unseeded Crystallization}
 
-\paragraph{Aim} To build a predictive model for unseeded batch crystallization of L-Asparagine Monohyrdate(LAM). The problem here follows only Nucleation kinectics unlike the previous versions and thus proves an ideal opportunity to diversify in application.
+\paragraph{Aim} To build a predictive model for unseeded batch crystallization of L-Asparagine Monohyrdate(LAM). 
 
 
 \section{Optimal Control Problem}
@@ -19,20 +19,79 @@ The supersaturation ratio, S, is defined as :
 S = C/C^{*}
 \end{equation}
 C* represents the saturation concentration of LAM. The solubility of LAM in 
-can be expressed as \cite{}:
+can be expressed as:
 \begin{equation}
 C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
 \end{equation}
-Method of Meoments has been used to reduce the PBE to ODE's as stated in Section \ref{modeleq}. The mass balance for LAM crystals also remains the same from there, with the difference being the absence of seeded crystals.\\
-
-\section{Solution Technique}
+Method of Moments has been used to reduce the PBE to ODE's as stated in Section \ref{modeleq}. The mass balance for LAM crystals also remains the same from there, with the difference being the absence of seeded crystals.\\
 The ODEs for the model are given by :
-
 \begin{align}
-\frac{du_{0}}{dt} = B
-\frac{du_{j}}{dt} = jG\mu_{j-1}
+\frac{du_{0}}{dt} &= B \\
+\frac{du_{j}}{dt} &= jG\mu_{j-1}
 \end{align}
 for  $j = 1,2,3,4 $
 \\
-The determination of the optimal temperature or supersaturation profile for maximizing the weight mean size is a highly studied objective for a crystallization process.
+The determination of the optimal temperature profile for maximizing the weight mean size is a highly studied objective for a crystallization process.Thus, 
 \paragraph{Objective Function} becomes :
+\begin{align}
+\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t_{f} 
+\end{align}
+\paragraph{Constraints}
+\begin{align}
+T_{min} &\leqslant T(t) \leqslant T_{max} \\
+\frac{dT}{dt} &\leqslant 0
+\end{align}
+The state variables can be represented as :
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
+\end{equation*}
+Here we do not divide the moments in seeded and nucleated ones. 
+
+\section{Solution Technique : Hamiltonian Steepest Ascent with PCE}
+
+The Hamiltonian method described in the previous sections was employed to solve the optimaization problem along with the uncertainity quantification being done using Polynomial Chaos Expansions. The new state equations, inputs and parameters are plugged into the model developed in previous sections.\\
+
+\begin{itemize}
+\item The batch time for the model was taken to be 240 min($t_{f}$).
+\item An initial concentration value of 0.073 $g/L$ was taken to obtain the cooling profile. All the moments were intialised to 0.
+\item The ODEs were integrated using Python \textbf{scipy's} \textbf{odeint} integrator.
+\end{itemize}
+Experimental values of kinetic parameters\cite{bhoi} used are mentioned in Table [6.1]. 
+\begin{center}
+\begin{table}[!h]
+\centering 
+\caption{Values for Kinetic Parameter}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameters & Experimental Values & Range of Values\\
+\hline
+\multicolumn{3}{|c|}{Growth Kinetics} \\
+\hline
+$\ln(k_{g})$ & $3.41\pm 0.28 & \mu m min^{-1} $\\
+$g$ & $1.48\pm 0.04$ & $ - $\\
+\hline
+\multicolumn{3}{|c|}{Nucleation Kinetics} \\
+\hline
+$\ln(k_{j_{1}})$ & $24.74\pm0.73$ & $No. per m^{3}min$\\ 
+$k_{j_{2}}$ & $2.7\times10^{-2}\pm 3.2\times10^{-3}$ & $-$\\
+\hline
+\end{tabular}
+
+\label{values}
+\end{table}
+\end{center}
+
+\section{Results}
+The value for the concentration profile for the time horizon was obtained as :
+\begin{figure}[h!] 
+\begin{center}
+\includegraphics[width=4in]{concentration.png}
+\end{center}
+\caption{Concentration Profile}
+\end{figure}
+
+\section{Conclusion}
+
+\begin{itemize}
+\item
+\end{itemize}

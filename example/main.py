@@ -88,7 +88,7 @@ def model(parameters,delta_t = 1):
 			C = y_mat[t,0]
 			G = calG(T,C,parameters)
 			B = calB(y_mat[t,:],T,parameters)
-
+			print B
 			#print G
 
 			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
@@ -172,10 +172,10 @@ if __name__ == "__main__" :
 	parameters = {}
 
 	F = 150.14
-	parameters["kg"] = np.exp(-14.5)
+	parameters["kg"] = np.exp(3.41)
 	parameters["g"] = 1.48
-	parameters["kj_1"] = np.exp(20.205)
-	parameters["kj_2"] = 0.02165
+	parameters["kj_1"] = np.exp(24.74)
+	parameters["kj_2"] = 2.7*10**-2
 	parameters["rho"] = 1568*10^3
 	parameters["kv"] = 	math.pi/6
 	parameters["Cc"] = 1568*10**3/F
