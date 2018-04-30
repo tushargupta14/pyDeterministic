@@ -44,8 +44,9 @@
 \contentsline {paragraph}{Objective Function}{27}{section*.135}
 \contentsline {paragraph}{Constraints}{27}{section*.137}
 \contentsline {section}{\numberline {6.2}Solution Technique : Hamiltonian Steepest Ascent with PCE}{27}{section.140}
-\contentsline {section}{\numberline {6.3}Results}{28}{section.142}
-\contentsline {section}{\numberline {6.4}Conclusion}{28}{section.144}
+\contentsline {paragraph}{Algorithm}{28}{section*.142}
+\contentsline {section}{\numberline {6.3}Results}{28}{section.148}
+\contentsline {section}{\numberline {6.4}Conclusion}{29}{section.151}
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{29}{dummy.145}
+\contentsline {chapter}{Bibliography}{30}{dummy.152}
