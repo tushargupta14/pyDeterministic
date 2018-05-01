@@ -26,7 +26,7 @@ y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad 
 Thus, the complete model involving the moment equations consists of nine state equations. 
 
 \subsection{Solution Technique : Steepest Ascent Hamiltonian}
-
+\label{Hamiltonian}
 The method involves use of the \textbf{Maximum Principle} discussed by Diwekar et al.\cite{diwekar} in detail. The algorithm of Steepest Ascent utilizes this principle using the Hamiltonian Derivative to move towards the optimum value of temperature and maximise the objective function. A two-point boundary-value-problem is constructed using state equations and additionally defined adjoint equations which has been explained in detail futher.\\
 The formulation results in two point boundary value problem, since initial conditions for the state variables and final conditions for the adjoint variables are available. The method also involves introduction of nine additional variables, known as adjoints ($z_{i}$), corresponding to each of the state variable ($y_{i}$), which must satisfy the \textbf{Hamiltonian equation} represented by :
 \begin{equation}

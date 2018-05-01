@@ -127,7 +127,8 @@ where $a_{i_{1}}^d$  are deterministic coefficients for each term in the expansi
 truncated to a finite number of terms. Then the maximum polynomial order for the basis function, q needs to be defined.
 The number of terms now become $P_{PCE} = \frac{(n_{0}+q)!}{n_{0}!q!} -1 $. \\
 Using these notations a truncated PCE expansion can be represented as follows:
-\begin{equation}
+\begin{equation} 
+\label{poly}
 y^{d} \approx \sum_{i=1}^{P_{PCE}} a_{i}^{d}\phi_{\theta}
 \end{equation}
 
@@ -150,12 +151,52 @@ inner product of $y(\theta)$ with each basis functions $\phi_{i}$ to determine t
 y_{i} = \frac{\left\langle f(x,\lambda)\phi_{i} \right\rangle }{\left\langle \phi^{2}_{i} \right\rangle }
 \end{equation}
 Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}.\\
-The work under consideration here uses a non-intrusive approach. The model $y=X(x,\lambda)$ is represented by the modelling equations of Section(\ref{modeleq}). $x$ are the state variables and $\lambda$'s are the kinetic parameters. 
-\subsection{Solving a system of O.D.E using P.C.E approach}
+The work under consideration here uses a non-intrusive approach. The model $y=X(x,\lambda)$ is represented by the modelling equations of Section(\ref{modeleq}). $x$ are the state variables and $\lambda$'s are the kinetic parameters.
 
-The generalized polynomial chaos framework is widely used to propagate the time invariant stochastic uncertainties through the nonlinear system dynamics and has been proved to be more efficient than traditional control methods. Thus this speciality has been exploited in our case to model the seeded batch crystallizer.\\
-The uncertainities in the model are due to the following kinetic parameters :
+\subsection{Usage of PCE in Batch Crystallization}
 
+The model under consideration is composed of the state equations and kinetics mentioned in Section(\ref{modeleq}), which are :
+
+\begin{align} 
+\frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y{8}) \\
+\frac{dy_{2}}{dt} &= 0 \\
+\frac{dy_{3}}{dt} &= G(t)y_{2}  \\
+\frac{dy_{4}}{dt} &= 2G(t)y_{3} \\
+\frac{dy_{5}}{dt} &= 3G(t)y_{4} \\
+\frac{dy_{6}}{dt} &= B(t)  \\
+\frac{dy_{7}}{dt} &= G(t)y_{6}  \\
+\frac{dy_{8}}{dt} &= 2G(t)y_{7}  \\
+\frac{dy_{9}}{dt} &= 3G(t)y_{8}  \\
+\end{align}  
+
+Here, the state varibles($y_{i}$) act as the uncertain outputs which is caused by errors in process parameters used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). As a result, uncertainities in the parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$) are propogated into the model using P.C.E during optimal control.\\
+A non-intrusive approach is followed for the above task where the integrals are calculated by generating samples of the above process and evaluating the model at these pre-determined points.
+\paragraph{Algorithm} is as follows : 
+\begin{enumerate}
+\item Following the general representation, $y_{i}$ can be written as :
+\begin{align*}
+y_{i} = f(x(\theta),\lambda_{i}(\theta))
+\end{align*}
+where x is the input temperature(T), $\lambda_{i}$'s are process the parameters and $\theta$ is the random variable.
+%% Can add a example expression here
+\item The process model consists of 6 uncertainities which computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
+\item Samples are generated for the model at $N$ points. The sampling technique used is the Gaussian Quadratures along with Hermite Polynomials to represent state variables $(y_{i})$ into Eq(5.17).
+
+\item For each of the above sample $y^{j}_{i} = f(T^{j}(\theta),\lambda(\theta) $ ,  the optimization problem is solved using the Steepest Ascent Hamiltonian method discussed in Section(4.1.1).
+
+\item The optimum value of the input temperature $T^{j}(\theta)$ at these samples is used to construct the PCE's for $T(\theta)$ and $\lambda(\theta)$ as given by Equations(5.18).
+
+\item $y^{j}_{i}$'s for each sample are used to evaluate :
+\begin{equation}
+y_{i} = \frac{1}{\left\langle \phi^{2}_{i}\right\rangle }\frac{1}{N} \sum_{j=1}^{N} y^{j}\phi_{i}(\theta)
+\end{equation}
+Here, $\phi_{i}$ are the coefficients of the orthogonal polynomials being used for PCE estimation.  
+
+\item As the above Equation averages over N samples, the resultant $y_{i}$ maximises the objective function, given by $ \mathbf{E} \left\lbrace  y_{5}-y_{9} \right\rbrace $). 
+
+\end{enumerate} 
+
+The kinetic parameter values used for the above model are given below :
 \begin{center}
 \begin{table}[!h]
 \centering
@@ -181,20 +222,7 @@ $b$ & $1.45$ & $1.3775-1.5225$\\
 \label{Table3}
 \end{table}
 \end{center}
-\paragraph{Non-Intrusive Approach} estimates the integrals based on N samples of the whole space of basis functions. \textbf{Intrusive Appraoch} on the other hand, solves it analytically using the basis functions but requires the system to be separable in terms of uncertain parameters and inputs(polynomial-in-states representation). \\
-Thus, Point Collocation Approach(Non-Intrusive) is selected for modeling the uncertainities. 
 
-\paragraph{Algorithm}
-\begin{enumerate}
-\item The process model consists of 6 uncertainities which computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
-\item Samples are generated using the distribution using Gaussian Quadrature Scheme.
-\item The function is evaluated at each of these samples to evalute the integrals numerically to determine the PCE coefficients.
-\item At each sample, optimization of the model is performed using the Determinstic Approach explained in Section(\ref{deterministic}).
-\item The convergence criteria and the constraints remain same as the above referenced method.
-\end{enumerate}
-
-
-\paragraph{Objective Function} is given by eq \ref{objective}. 
 
 
 \subsection{Results}
