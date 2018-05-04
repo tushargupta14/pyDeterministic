@@ -6,8 +6,10 @@ import math
 
 def Temp(t):
 
-	y = 45 - 20*(t/(240.0))**(0.33)
-	return y
+	##y = 45 - 20*(t/(240.0))**(0.33)
+	##y = 45 - (20/240)*()
+	x =  45.0 - (20.0)*(t/(240.0))
+	return x
 
 def SS(C,T):
 
@@ -27,7 +29,7 @@ def calG(T,C,params):
 
 	S = SS(C,T)
 	#print S
-	growth_rate = kg*(S**g)*60
+	growth_rate = kg*(S**g)
 
 	return growth_rate
 
@@ -41,7 +43,14 @@ def calB(y,T,params) :
 	Cs = 5*(10**-5)*(T**2) - 0.001*T + 0.0236
 	#S = y[0]/Cs
 	#print -k_j2*((math.log(Cc/(Cs*(10**6)/F))**3)/(math.log(y[0]/Cs)**2))
-	B = k_j1*(y[0]/Cs)*np.exp(-k_j2*((math.log(Cc/(Cs*(10**6)/F))**3)/(math.log(y[0]/Cs)**2)))*60    ######
+	S = SS(y[0],T)
+
+	if S!=0 :
+		S = y[0]/Cs
+	else :
+		return 0 
+
+	B = k_j1*S*np.exp(-k_j2*(math.log(Cc/(Cs*10**6/F))**3/math.log(S)**2))    ######
 	#print B
 	return B
 
@@ -55,7 +64,7 @@ def DG_dy(T,C,params):
 	
 	S = SS(C,T)
 	
-	return kg*(S**(g-1))*60*g/Cs
+	return kg*(S**(g-1))*g/Cs
 
 
 def DB_dy(T,C,y,params):

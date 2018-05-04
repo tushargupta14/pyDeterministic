@@ -90,11 +90,14 @@ def model(parameters,delta_t = 1):
 			B = calB(y_mat[t,:],T,parameters)
 			print B
 			#print G
-
-			y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
+			dy_vec = y_ODE(y_mat[t,:],t,T,C,G,B,parameters)
+			dy_vec = np.array([i*delta_t for i in dy_vec])
+			#y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))				
+			y_mat[t+delta_t,:] = y_mat[t,:] + dy_vec
+			#y = odeint(y_ODE,y_mat[t,:],t_horizon,args = (T,C,G,B,parameters))
 			
-			y_mat[t+delta_t,:] = y[-1,:]
-
+			#y_mat[t+delta_t,:] = y[-1,:]
+		"""
 	 	print "Z backward ..."
 		for t in range(t0,tf,delta_t):
 
@@ -157,7 +160,7 @@ def model(parameters,delta_t = 1):
 
 				T_vec[t] = check_constraint(T_vec[t],y_mat[t,0],DH_vec[iteration,t],M)
 	
-		
+		"""
 
 		iteration+=1
 		t = np.linspace(t0,tf,num= 240)

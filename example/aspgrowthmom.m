@@ -25,10 +25,10 @@ end
 
 % Calculate moment
 %average
-kg = exp(-14.5);
-g = 1.5475;
-kJ1 =exp(20.205);
-kJ2 = 0.02165;
+kg = exp(3.14);
+g = 1.48;
+kJ1 =exp(24.74);
+kJ2 = 0.027;
 
 
 
@@ -36,8 +36,8 @@ Roc = 1568*10^3; %gm/m3
 
 cc = Roc/M; %mol/m3
 
-J = kJ1*(real(y(6)/cstar))*exp(-kJ2*((log(cc/(cstar*10^6/M))^3)/(log(real(y(6)/cstar)))^2))*60;
-G = kg*S^g*60*10^6;
+J = kJ1*(real(y(6)/cstar))*exp(-kJ2*((log(cc/(cstar*10^6/M)))^3/(log(real(y(6)/cstar)))^2));
+G = kg*S^g;
 
 
 kv = pi/6;
