@@ -12,3 +12,5 @@ This undertakes the use of [**Maximum Principle**](https://en.wikipedia.org/wiki
 1. **Ito Processes** are used to incorporate the uncertainities which are present in the kinetic parameters. This is used in conjuction with the Hamiltonian method employed above.
 2. **Polynomial Chaos Expansions** is a novel technique and has been rarely used in Batch Crystallization which is the main focus here. 
 
+### Polynomial Chaos Expansions
+
