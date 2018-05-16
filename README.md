@@ -1,4 +1,4 @@
-## Non Linear Model Predictive Control
+# Deterministic and Stochastic Optimal Control of a Batch Cooling Crystallizer
 
 The work done here deals with 2 methods for determining Optimal Temperature Control profile for batch Cyrstallization process.
 
