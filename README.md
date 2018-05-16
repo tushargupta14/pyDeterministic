@@ -7,3 +7,8 @@ The work done here deals with 2 methods for determining Optimal Temperature Cont
 
 ### Deterministic Optimal Control 
 This undertakes the use of [**Maximum Principle**](https://en.wikipedia.org/wiki/Pontryagin%27s_maximum_principle) using the Hamiltonian Derivative to move towards the _optimum_ value of Temperature at each time step.
+
+### Stochastic Optimal Control
+1. **Ito Processes** are used to incorporate the uncertainities which are present in the kinetic parameters. This is used in conjuction with the Hamiltonian method employed above.
+2. **Polynomial Chaos Expansions** is a novel technique and has been rarely used in Batch Crystallization which is the main focus here. 
+
