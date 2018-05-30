@@ -35,7 +35,8 @@
 
 %% The `ecrc' package must be called to make the CRC functionality available
 \usepackage{ecrc}
-
+\usepackage{biblatex}
+\addbibresource{mybibfile.bib}
 %% The ecrc package defines commands needed for running heads and logos.
 %% For running heads, you can set the journal name, the volume, the starting page and the authors
 
@@ -145,22 +146,37 @@
 \dochead{}
 %% Use \dochead if there is an article header, e.g. \dochead{Short communication}
 
-\title{}
+\title{Deterministic and Stochastic Optimal Control for Batch Cooling Crystallization}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{<author name>}
 %% \address[label1]{<address>}
 %% \address[label2]{<address>}
 
-\author{}
+\author{Tushar Gupta}
 
 \address{}
 
 \begin{abstract}
-%% Text of abstract
+Minimization of operation costs and the enhancement in product quality have been
+major concerns for all industrial processes. The field under study here is batch crystalllization which is affected heavily by the uncertainities in measurements and other
+errors.
+The current work aims to study Deterministic and Stochastic methods for Optimum
+Control in batch crystallization. All the methods involve maximising an objective function by manipulating the cooling profile. At first, the Deterministic approach uses
+experimental kinetic parameters, which is then extended to Stochastic optimization to
+incorporate uncertainities in them. Lastly, a novel approach named Polynomial Chaos
+Expansions is implemented which has been applied successfully to other domains for
+Nonlinear Model Predictive Control but was not explored in detail in the field of batch
+cooled crystalllization. It successfuly includes probability distributions for the parameters into the model to provide a more robust optimization srategy.
+
+This work analyses various optimization approaches for the batch crystallization process that are robust to model error. First, The key challenge in addressing robustness to model
+error is to propagate the uncertainty in model parameters onto the
+control or optimization objective.
 \end{abstract}
 
 \begin{keyword}
+Stochastic Optimal Control \sep Polynomial Chaos Expansions \sep Robust Optimization \sep Batch Crystallization \sep Predictive Control
+\sep Optimum Temperature Profile
 %% keywords here, in the form: keyword \sep keyword
 
 %% MSC codes here, in the form: \MSC code \sep code
@@ -176,8 +192,29 @@
 % \linenumbers
 
 %% main text
-\section{}
-\label{}
+\section{Introduction}
+\label{intro}
+Numerous industries today, such as pharmaceutical, chemical, photographic etc. employ the Batch crystallization process for the preparation of crystalline products with high degree of purity. A common goal of each crystallization process is to obtain a narrower Particle size distribution (PSD) of the desired product. The PSD has a strong influence on the downstream processing and, hence, reproducible PSD in each operation is of prime importance. Thus, finding an effective control strategy to obtain the resulting crystals with a desired Crystal Size Distribution becomes significant in order for improving the performance of both the batch crystallization process and the subsequent processes which depend on it. \par
+Crystallization is the (natural or artificial) process where the atoms
+or molecules are highly organized into a solid structure known as a crystal. Some of the ways which crystals form are through precipitating 
+from a solution, melt or more rarely deposited directly from a gas. In order for crystallization to take place a solution must be "\textit{supersaturated}". \textbf{Supersaturation}$(\Delta{C})$  is a condition in which the solute concentration in the solution is
+higher than the solubility. It acts as the driving force for the crystallization process and is mathematically expressed  as : 
+\begin{equation}
+\Delta{C} = C - C_{s}
+\end{equation}
+where $C_{s}$ is the concentration of the solute in the saturated solution.
+In the following work, the method in focus is cooling crystallization in which superstauration magnitude is determined by the cooling rate. Thus, determination of an optimal cooling rate or a temperature trajectory is the objective of the currrent research work. \par 
+This work formulates and analyses various control strategies for a cooling crystallization process described by using the population balance equation and obtain the solution for the optimal temperature profile using deterministic and stochastic methods. \textbf{Deterministic Optimal Control} aims at finding the an optimum temperature profile to maximise an objective function selected to achieve a desired volume of the product.
+Herein, the experimental kinetic parameters are employed to simulate a batch crystalllization process. \textbf{Stochastic Optimal Control} undertakes the task of quantifying the uncertainites which creep in due to experimentation. It aims to achive a maximum expected value for the desired product, simultaneously incorporating randomness in the process parameters into the model. Namely, Two methods \textbf{Ito Process} and a novel approach \textbf{Polynomial Chaos Expansions} are employed for this purpose. \par
+
+Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by Mullin and Nyvlt \cite{mullin} in 1971. They studied the laboratory-scale crystallization of potassium sulfate and ammonium sulfate using a temperature controller and observed improvement in the crystal size and quality under programmed cooling. 
+Later, in 1974, A. G. Jones \cite{agjones} presented a mathematical theory based on moment transformations of population balance equations. He used the continuous maximum principle to predict optimal cooling curves.
+Rawlings et al. \cite{rawlings} discussed issues in crystal size measurement using laser light scattering experiments and optimal control problem formulation. In 1994, Miller and Rawlings \cite{miller_rawlings}  discussed the uncertain bounds on model parameter estimates for a batch crystallization system. 
+Most importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\cite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project . Grosso et al.\cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. Ma et al.\cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. 
+The focus of the current work is to be able to handle parametric uncertainties in mathematical formulations of batch crystallization process.
+\cite{Dirac1953888}
+
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -196,25 +233,23 @@
 
 %% References with BibTeX database:
 
-\bibliographystyle{elsarticle-num}
-\bibliography{<your-bib-database>}
-
+%\bibliography{mybibfile}
+%\bibliographystyle{ieeetr}
 %% Authors are advised to use a BibTeX database file for their reference list.
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
 
 %% For references without a BibTeX database:
 
-% \begin{thebibliography}{00}
+%\begin{thebibliography}{00}
 
-%% \bibitem must have the following form:
-%%   \bibitem{key}...
-%%
+%\bibitem must have the following form:
+ %\bibitem{key}...
+	
+ %\bibitem{}
 
-% \bibitem{}
+%\end{thebibliography}
 
-% \end{thebibliography}
-
-\end{document}
+%\end{document}
 
 %%
 %% End of file `ecrc-template.tex'. 
