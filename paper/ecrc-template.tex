@@ -35,8 +35,7 @@
 
 %% The `ecrc' package must be called to make the CRC functionality available
 \usepackage{ecrc}
-\usepackage{biblatex}
-\addbibresource{mybibfile.bib}
+\usepackage{amsmath}
 %% The ecrc package defines commands needed for running heads and logos.
 %% For running heads, you can set the journal name, the volume, the starting page and the authors
 
@@ -194,28 +193,111 @@ Stochastic Optimal Control \sep Polynomial Chaos Expansions \sep Robust Optimiza
 %% main text
 \section{Introduction}
 \label{intro}
-Numerous industries today, such as pharmaceutical, chemical, photographic etc. employ the Batch crystallization process for the preparation of crystalline products with high degree of purity. A common goal of each crystallization process is to obtain a narrower Particle size distribution (PSD) of the desired product. The PSD has a strong influence on the downstream processing and, hence, reproducible PSD in each operation is of prime importance. Thus, finding an effective control strategy to obtain the resulting crystals with a desired Crystal Size Distribution becomes significant in order for improving the performance of both the batch crystallization process and the subsequent processes which depend on it. \par
-Crystallization is the (natural or artificial) process where the atoms
-or molecules are highly organized into a solid structure known as a crystal. Some of the ways which crystals form are through precipitating 
+Numerous industries today, such as pharmaceutical, chemical, photographic etc. employ the batch crystallization process for the preparation of crystalline products with high degree of purity. A common goal of each crystallization process is to obtain a narrower Particle size distribution (PSD) of the desired product. The PSD has a strong influence on the downstream processing and, hence, reproducible PSD in each operation is of prime importance. Thus, finding an effective control strategy to obtain the resulting crystals with a desired Crystal Size Distribution becomes significant in order for improving the performance of both the batch crystallization process and the subsequent processes which depend on it. \par
+Crystallization is the (natural or artificial) process where the atoms or molecules are highly organized into a solid structure known as a crystal. Some of the ways which crystals form are through precipitating 
 from a solution, melt or more rarely deposited directly from a gas. In order for crystallization to take place a solution must be "\textit{supersaturated}". \textbf{Supersaturation}$(\Delta{C})$  is a condition in which the solute concentration in the solution is
-higher than the solubility. It acts as the driving force for the crystallization process and is mathematically expressed  as : 
+higher than the solubility. It acts as the driving force for the crystallization process and affects the final quantity of product formed. It is mathematically expressed  as : 
 \begin{equation}
 \Delta{C} = C - C_{s}
 \end{equation}
 where $C_{s}$ is the concentration of the solute in the saturated solution.
-In the following work, the method in focus is cooling crystallization in which superstauration magnitude is determined by the cooling rate. Thus, determination of an optimal cooling rate or a temperature trajectory is the objective of the currrent research work. \par 
-This work formulates and analyses various control strategies for a cooling crystallization process described by using the population balance equation and obtain the solution for the optimal temperature profile using deterministic and stochastic methods. \textbf{Deterministic Optimal Control} aims at finding the an optimum temperature profile to maximise an objective function selected to achieve a desired volume of the product.
-Herein, the experimental kinetic parameters are employed to simulate a batch crystalllization process. \textbf{Stochastic Optimal Control} undertakes the task of quantifying the uncertainites which creep in due to experimentation. It aims to achive a maximum expected value for the desired product, simultaneously incorporating randomness in the process parameters into the model. Namely, Two methods \textbf{Ito Process} and a novel approach \textbf{Polynomial Chaos Expansions} are employed for this purpose. \par
+In the following work, the method in focus is cooling crystallization in which superstauration magnitude is determined by the cooling rate. Thus, determination of an optimal cooling rate or a temperature trajectory becomes the objective of the currrent study. \par 
+This work formulates and analyses various control strategies for a cooling crystallization process represented through the population balance equation. \textbf{Deterministic Optimal Control} aims at finding the an optimum temperature profile to maximise an objective function selected to achieve a desired volume of the product.
+Herein, the experimental kinetic parameters are employed to simulate a batch crystalllization process. \textbf{Stochastic Optimal Control} undertakes the task of quantifying the uncertainites which creep in due to experimentation. It aims to achive a maximum expected value for the desired product, simultaneously incorporating randomness in the process parameters into the model. Namely, two methods \textbf{Ito Process} and a novel approach \textbf{Polynomial Chaos Expansions} are employed for this purpose. \par
 
-Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by Mullin and Nyvlt \cite{mullin} in 1971. They studied the laboratory-scale crystallization of potassium sulfate and ammonium sulfate using a temperature controller and observed improvement in the crystal size and quality under programmed cooling. 
+Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by Mullin and Nyvlt \cite{mullin} in 1971.
 Later, in 1974, A. G. Jones \cite{agjones} presented a mathematical theory based on moment transformations of population balance equations. He used the continuous maximum principle to predict optimal cooling curves.
 Rawlings et al. \cite{rawlings} discussed issues in crystal size measurement using laser light scattering experiments and optimal control problem formulation. In 1994, Miller and Rawlings \cite{miller_rawlings}  discussed the uncertain bounds on model parameter estimates for a batch crystallization system. 
-Most importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\cite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project . Grosso et al.\cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. Ma et al.\cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. 
-The focus of the current work is to be able to handle parametric uncertainties in mathematical formulations of batch crystallization process.
-\cite{Dirac1953888}
+ost importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\lcite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project.\par
+Stochastic modeling of particulate processes and parameter estimation using the experimentally measured particle sizes has attracted many researchers. Grosso et al.\cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. Ma et al.\cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. Monte Carlo simulations have also been used to propogate uncertainities but often present the problem of high computational demand, for which approximations are proposed.  Nagy and Braatz (2007) \cite{nagy} have shown that Polynomial Chaos Expansions(PCE) is a computationally efficient alternative to Monte Carlo simulations for propagating uncertainty in dynamic models. PCE is based on orthogonal basis functions thus requiring smaller function evaluations for the calculation of numerical integrations needed for obtaining statistical moments. The computational advantages of PCEs for robust control and optimization has been shown by Nagy and Braatz \cite{nagy}, Kim et al.\cite{kim}, Kumar and Budman\cite{kumar}. \par
+The focus of the current research activity is to incorporate parametric uncertainties in the mathematical formulations of batch crystallization process for building a robust model. In the deterministic approach, kinetic parameters from the experimental data have been used to model the system. Next, stochastic Ito processes are used to assimilate the errors in the experimental data. Finally, PCE are demostrated as an effective and novel method to achieve the desired objective function value. A case study of an unseeded crystallization process is also included to authenticate the methodology.
+
+\section{Mathematical Background} \label{model}
+
+Analysis of a particulate system seeks to synthesize the behavior of the population of particles and its environment from the behavior of single particles in their local environments. The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \\
+A population balance formulation describes the process of crystal size distribution with time most effectively. Thus, modeling of a batch crystallizer involves the use of population balances to model the crystal size prediction and the mass balance on the system can be modeled as a simple differential equation having concentration as the state variable.
+The population balance can be expressed as eq :
+
+\begin{equation} \label{populationbalance}
+	\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B  \nolinebreak
+\end{equation}
+where \textbf{n} is the number density distribution, \textbf{t} is the time, \textbf{r} represents the characteristic dimension for size measurements, \textbf{G} is the crystal growth rate, and \textbf{B} is the nucleation rate. Both growth and nucleation processes describe crystallization kinetics, and their expression may vary, depending on the system under consideration.
+
+In this work, the system under consideration is potassium sulfate, which has been studied earlier for its kinetics by Hu et al. \cite{hu}, Shi et al. \cite{shi}, and Paengjuntuek et al.\cite{paeng}. The expressions are given as follows: \\
+
+Nucleation kinetics$^{(5-7)}$ are defined by :
+\begin{equation}
+B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}
+\end{equation}  
 
 
+Growth Kinetics$^{(5-7)}$ are given by:
+\begin{equation}
+G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}
+\end{equation}
+where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. $C_{s}(T)$ is the saturation concentration at a given temperature. The following equations are used to evaluate the saturation and metastable concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}. \\
+\begin{align}
+C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \\
+C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2} \label{meta}
+\end{align} 
+The mass balance, in terms of concentration of the solute in the solution, is expressed as :
+\begin{equation}
+\frac{dC}{dt} = -3\rho{}k_{v}G(t)\mu_{2}(t)
+\end{equation}
+where $\rho{}$ is the density of the crystals, $k_{v}$ the volumetric shape factor, and $\mu_{2}$ is the second moment of particle size distribution (PSD).
+Since $n(r,t)$ represents the population density of the crystals, the i-th moment of the particle size distribution(PSD) is given by :
+\begin{equation} \label{moments}
+\mu_{i} = \int_{0}^{\infty} r^{i}n(r,t) dr
+\end{equation}
+The above equations along with the Population Balance Equation(PBE) represent a complete model of a seeded batch crystallizer. 
+Population balance equations are multidimensional, which poses a problem with their implementation in complex control functions, hence use of a model order reduction becomes imperative.\par
+For simplification, we reduce the population balance equations into \textbf{Moment balance equations} which has been estabilished as an efficient method by Yenkie et al.\cite{yenkie}. This is done by multiplying the equation (\ref{populationbalance})  with $r^{i}$ on both sides to generate the expression given by equation (\ref{moments}). Converting the model into Ordinary differential equations proves to be advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment method leads to a reduced-order model given by Equations (15-24).\\ 
+%%%% Insert table of parameters
+Separate moment equations are used for the seed and nuclei classes of crystals, and they are defined as : \\
+\begin{align}
+\mu^{n}_{i} &= \int_{0}^{r_{g}} r^{i}n(r,t) dr \\
+\mu^{s}_{i} &= \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
+\end{align} \\
+\textbf{n} in the superscript represents the nucleated crystal whereas \textbf{s} stands for the seeded crystal, $\boldsymbol{r_{g}}$ gives the critical radius separating the two. The moment equations for nucleated and seeded crystals become as follows\cite{yenkie} :
 
+\begin{enumerate}
+
+\item Nucleated crystals\cite{hu,paeng} 
+\begin{align}
+\frac{d\mu_{0}^{n}}{dt} &= B(t) \\
+\frac{d\mu_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
+\end{align}
+
+\item Seeded crystals\cite{hu,paeng}
+\begin{align}
+\frac{d\mu_{0}^{s}}{dt} &= G(t) \\
+\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 
+\end{align}
+
+\end{enumerate}
+The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. 
+The complete set of differential equations are \cite{yenkie} :
+\begin{align} 
+\frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y{8}) \\
+\frac{dy_{2}}{dt} &= 0 \\
+\frac{dy_{3}}{dt} &= G(t)y_{2}  \\
+\frac{dy_{4}}{dt} &= 2G(t)y_{3} \\
+\frac{dy_{5}}{dt} &= 3G(t)y_{4} \\
+\frac{dy_{6}}{dt} &= B(t)  \\
+\frac{dy_{7}}{dt} &= G(t)y_{6}  \\
+\frac{dy_{8}}{dt} &= 2G(t)y_{7}  \\
+\frac{dy_{9}}{dt} &= 3G(t)y_{8}  \\
+\end{align} 
+Here the state variables $y_{i}$ are given by : 
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
+\end{equation*}
+
+
+\section{Deterministic Optimal Control}
+
+\subsection{\textit{Case Study : Seeded batch crystallization}}
+In this section, we derive an optimal control strategy for a batch crystallization process in which seed crystals have been introduced to aid the formation of the product.
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix
@@ -233,23 +315,25 @@ The focus of the current work is to be able to handle parametric uncertainties i
 
 %% References with BibTeX database:
 
+
 %\bibliography{mybibfile}
 %\bibliographystyle{ieeetr}
 %% Authors are advised to use a BibTeX database file for their reference list.
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
 
 %% For references without a BibTeX database:
-
-%\begin{thebibliography}{00}
+\newpage
+\section{References}
+\begin{thebibliography}{1}
 
 %\bibitem must have the following form:
- %\bibitem{key}...
+ \bibitem{key}...
 	
  %\bibitem{}
 
-%\end{thebibliography}
+\end{thebibliography}
 
-%\end{document}
+\end{document}
 
 %%
 %% End of file `ecrc-template.tex'. 
