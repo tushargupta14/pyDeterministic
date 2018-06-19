@@ -160,17 +160,13 @@
 Minimization of operation costs and the enhancement in product quality have been
 major concerns for all industrial processes. The field under study here is batch crystalllization which is affected heavily by the uncertainities in measurements and other
 errors.
-The current work aims to study Deterministic and Stochastic methods for Optimum
-Control in batch crystallization. All the methods involve maximising an objective function by manipulating the cooling profile. At first, the Deterministic approach uses
-experimental kinetic parameters, which is then extended to Stochastic optimization to
-incorporate uncertainities in them. Lastly, a novel approach named Polynomial Chaos
-Expansions is implemented which has been applied successfully to other domains for
+This work analyses various optimization approaches for the batch crystallization process that are robust to model error. All of the methods involve maximising an objective function by manipulating the cooling profile. At first, the Deterministic approach uses experimental kinetic parameters, which is then extended to Stochastic optimization to incorporate uncertainities in them. Lastly, a novel approach named Polynomial Chaos Expansions is implemented which has been applied successfully to other domains for
 Nonlinear Model Predictive Control but was not explored in detail in the field of batch
 cooled crystalllization. It successfuly includes probability distributions for the parameters into the model to provide a more robust optimization srategy.
 
-This work analyses various optimization approaches for the batch crystallization process that are robust to model error. First, The key challenge in addressing robustness to model
-error is to propagate the uncertainty in model parameters onto the
-control or optimization objective.
+ %The key challenge in addressing robustness to model
+%error is to propagate the uncertainty in model parameters onto the
+%%control or optimization objective.
 \end{abstract}
 
 \begin{keyword}
@@ -213,8 +209,8 @@ Stochastic modeling of particulate processes and parameter estimation using the 
 The focus of the current research activity is to incorporate parametric uncertainties in the mathematical formulations of batch crystallization process for building a robust model. In the deterministic approach, kinetic parameters from the experimental data have been used to model the system. Next, stochastic Ito processes are used to assimilate the errors in the experimental data. Finally, PCE are demostrated as an effective and novel method to achieve the desired objective function value. A case study of an unseeded crystallization process is also included to authenticate the methodology.
 
 \section{Mathematical Background} \label{model}
-
-Analysis of a particulate system seeks to synthesize the behavior of the population of particles and its environment from the behavior of single particles in their local environments. The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \\
+This section introduces the underlying concepts needed to build a computational model of a crystallization process which involves regulating the population of particles, also termed as a particulate process. 
+The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \\
 A population balance formulation describes the process of crystal size distribution with time most effectively. Thus, modeling of a batch crystallizer involves the use of population balances to model the crystal size prediction and the mass balance on the system can be modeled as a simple differential equation having concentration as the state variable.
 The population balance can be expressed as eq :
 
@@ -297,7 +293,9 @@ y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad 
 \section{Deterministic Optimal Control}
 
 \subsection{\textit{Case Study : Seeded batch crystallization}}
-In this section, we derive an optimal control strategy for a batch crystallization process in which seed crystals have been introduced to aid the formation of the product.
+Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain Temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{dewikar}. This is prefered over other techniques such as dynamic programing which involves the use of partial differential equations, however maximum principle can be implemented through first order ODEs.   
+
+
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix

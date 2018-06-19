@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  18 JUN 2018 23:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  20 JUN 2018 02:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,22 +647,22 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+txmia on input line 186.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 186.
+LaTeX Font Info:    Try loading font information for U+msa on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 186.
+LaTeX Font Info:    Try loading font information for U+msb on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 186.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 182.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
@@ -672,28 +672,28 @@ File: utxsyc.fd 2000/12/15 v3.1
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 206.
+Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
  <SDlogo-3p.pdf, id=2, 169.8345pt x 33.9669pt>
 File: SDlogo-3p.pdf Graphic file (type pdf)
 
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf used on input line 206.
+Package pdftex.def Info: SDlogo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 169.83408pt x 33.96681pt.
-LaTeX Font Info:    Try loading font information for OT1+txss on input line 206
+LaTeX Font Info:    Try loading font information for OT1+txss on input line 202
 .
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 17.09995pt on input line 206.
+(Font)              scaled to size 17.09995pt on input line 202.
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
  <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 206.
+Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
 File: SDlogo-3p.pdf Graphic file (type pdf)
  <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf used on input line 206.
+Package pdftex.def Info: SDlogo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 169.83408pt x 33.96681pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -708,23 +708,23 @@ Overfull \vbox (49.74303pt too high) has occurred while \output is active []
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf>]
 
-Package natbib Warning: Citation `mullin' on page 2 undefined on input line 208
+Package natbib Warning: Citation `mullin' on page 2 undefined on input line 204
 .
 
 
 Package natbib Warning: Citation `agjones' on page 2 undefined on input line 20
-9.
+5.
 
 
 Package natbib Warning: Citation `rawlings' on page 2 undefined on input line 2
-10.
+06.
 
 
 Package natbib Warning: Citation `miller_rawlings' on page 2 undefined on input
- line 210.
+ line 206.
 
 ! Undefined control sequence.
-l.211 ...ion has also been done by Hu et al.\lcite
+l.207 ...ion has also been done by Hu et al.\lcite
                                                   {hu}, Shi et al.\cite{shi}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -733,91 +733,95 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `shi' on page 2 undefined on input line 211.
+Package natbib Warning: Citation `shi' on page 2 undefined on input line 207.
 
 
-Package natbib Warning: Citation `paeng' on page 2 undefined on input line 211.
+Package natbib Warning: Citation `paeng' on page 2 undefined on input line 207.
 
 
 
-Package natbib Warning: Citation `corriou' on page 2 undefined on input line 21
-1.
+Package natbib Warning: Citation `corriou' on page 2 undefined on input line 20
+7.
 
 
-Package natbib Warning: Citation `grosso' on page 2 undefined on input line 212
+Package natbib Warning: Citation `grosso' on page 2 undefined on input line 208
 .
 
 
-Package natbib Warning: Citation `ma' on page 2 undefined on input line 212.
+Package natbib Warning: Citation `ma' on page 2 undefined on input line 208.
 
 
-Package natbib Warning: Citation `nagy' on page 2 undefined on input line 212.
+Package natbib Warning: Citation `nagy' on page 2 undefined on input line 208.
 
 
-Package natbib Warning: Citation `nagy' on page 2 undefined on input line 212.
+Package natbib Warning: Citation `nagy' on page 2 undefined on input line 208.
 
 
-Package natbib Warning: Citation `kim' on page 2 undefined on input line 212.
+Package natbib Warning: Citation `kim' on page 2 undefined on input line 208.
 
 
-Package natbib Warning: Citation `kumar' on page 2 undefined on input line 212.
+Package natbib Warning: Citation `kumar' on page 2 undefined on input line 208.
 
 
 [2]
 
-Package natbib Warning: Citation `hu' on page 3 undefined on input line 226.
+Package natbib Warning: Citation `hu' on page 3 undefined on input line 222.
 
 
-Package natbib Warning: Citation `shi' on page 3 undefined on input line 226.
+Package natbib Warning: Citation `shi' on page 3 undefined on input line 222.
 
 
-Package natbib Warning: Citation `paeng' on page 3 undefined on input line 226.
+Package natbib Warning: Citation `paeng' on page 3 undefined on input line 222.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
-
- []
-
-
-Package natbib Warning: Citation `shi' on page 3 undefined on input line 238.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Package natbib Warning: Citation `yenkie' on page 3 undefined on input line 254
+Package natbib Warning: Citation `shi' on page 3 undefined on input line 234.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
+
+ []
+
+
+Package natbib Warning: Citation `yenkie' on page 3 undefined on input line 250
 .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 250--253
 
  []
 
 
-Package natbib Warning: Citation `yenkie' on page 3 undefined on input line 261
+Package natbib Warning: Citation `yenkie' on page 3 undefined on input line 257
 .
 
 
-Package natbib Warning: Citation `hu' on page 3 undefined on input line 265.
+Package natbib Warning: Citation `hu' on page 3 undefined on input line 261.
 
 
-Package natbib Warning: Citation `paeng' on page 3 undefined on input line 265.
+Package natbib Warning: Citation `paeng' on page 3 undefined on input line 261.
 
 
 
-Package natbib Warning: Citation `hu' on page 3 undefined on input line 271.
+Package natbib Warning: Citation `hu' on page 3 undefined on input line 267.
 
 
-Package natbib Warning: Citation `paeng' on page 3 undefined on input line 271.
+Package natbib Warning: Citation `paeng' on page 3 undefined on input line 267.
 
 
 [3]
 
-Package natbib Warning: Citation `yenkie' on page 4 undefined on input line 279
+Package natbib Warning: Citation `yenkie' on page 4 undefined on input line 275
 .
+
+
+Package natbib Warning: Citation `dewikar' on page 4 undefined on input line 29
+6.
 
 [4]
 
@@ -825,10 +829,10 @@ Package natbib Warning: There were undefined citations.
 
 [5] (./ecrc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 4175 strings out of 493029
- 53937 string characters out of 6136235
+ 4176 strings out of 493029
+ 53946 string characters out of 6136235
  126615 words of memory out of 5000000
- 7578 multiletter control sequences out of 15000+600000
+ 7579 multiletter control sequences out of 15000+600000
  46769 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,31p,1253b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -842,7 +846,7 @@ tic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ecrc-template.pdf (5 pages, 130523 bytes).
+Output written on ecrc-template.pdf (5 pages, 130794 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
