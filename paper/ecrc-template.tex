@@ -266,15 +266,33 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 
 \item Seeded crystals\cite{hu,paeng}
 \begin{align}
-\frac{d\mu_{0}^{s}}{dt} &= G(t) \\
+\mu_{0}^{s} &= constant \\ \label{seed}
 \frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 
 \end{align}
-
 \end{enumerate}
 The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. 
-The complete set of differential equations are \cite{yenkie} :
+
+
+
+\section{Deterministic Optimal Control}
+
+\subsection{\textit{Case Study : Seeded batch crystallization}}
+Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{dewikar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle being its ability to extend to stochastic calculus which is explained in the next section. \par 
+In a seeded crystallization process it is essential to keep the nucleation phenomena to minimum as in the early stages of growth nucleated crystals might compete with the seeded ones for growth. This ensures uniformity in the shape and size of the final product. It is achieved by incorporating the volume of nucleated in the \textbf{objective fuction}. Third moment($\mu_{3}$) represents volume in a crystallization model as evident from Equation(\ref{moments}) and is used as follows :
+\begin{equation}
+\max_{T(t)}\lbrace{\mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\rbrace } 
+\end{equation}
+The active constraints for the process are given by : 
+\begin{equation}
+C_{s}\leqslant C \leqslant C_{m}
+\end{equation}
+$C_{m}$ is the metastable concentration described by Equation(\ref{meta}). The state variables $y_{i}$ for the process are given by : 
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
+\end{equation*}
+Using these variable the state equations become \cite{yenkie} :
 \begin{align} 
-\frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y{8}) \\
+\frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y_{8}) \\
 \frac{dy_{2}}{dt} &= 0 \\
 \frac{dy_{3}}{dt} &= G(t)y_{2}  \\
 \frac{dy_{4}}{dt} &= 2G(t)y_{3} \\
@@ -284,17 +302,47 @@ The complete set of differential equations are \cite{yenkie} :
 \frac{dy_{8}}{dt} &= 2G(t)y_{7}  \\
 \frac{dy_{9}}{dt} &= 3G(t)y_{8}  \\
 \end{align} 
-Here the state variables $y_{i}$ are given by : 
-\begin{equation*}
-y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
-\end{equation*}
 
 
-\section{Deterministic Optimal Control}
+Thus, the complete model involving the moment equations consists of nine state equations.
+\subsection{\textit{Solution technique : Steepest ascent Hamiltonian}} 
 
-\subsection{\textit{Case Study : Seeded batch crystallization}}
-Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain Temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{dewikar}. This is prefered over other techniques such as dynamic programing which involves the use of partial differential equations, however maximum principle can be implemented through first order ODEs.   
-
+The algorithm of Steepest Ascent utilizes this principle using the Hamiltonian Derivative to move towards the optimum value of temperature and maximise the objective function. A two-point boundary-value-problem is constructed using state equations and additionally defined adjoint equations which has been explained in detail futher.\\
+The formulation results in two point boundary value problem, since initial conditions for the state variables and final conditions for the adjoint variables are available. The method also involves introduction of nine additional variables, known as adjoints ($z_{i}$), corresponding to each of the state variable ($y_{i}$), which must satisfy the \textbf{Hamiltonian equation} represented by :
+\begin{equation}
+H &= \sum_{i = 1}^{9} z_{i}f(y_{i},t,T) 
+\end{equation}
+The state variables and objective function can be described as :
+\begin{align*}
+&\max_{T(t)} \lbrace{ y_{5}(t_{f}) - y_{9}(t_{f})}\rbrace \\
+&\frac{dy_{i}}{dt} = f(y_{i},t,T) \\
+&\frac{dz_{i}}{dt} = \sum_{j=1}^{9} z_{j}\frac{\partial f(y_{i},t,T)}{\partial y_{i}} = f(y_{i},z_{i},t,T) \\
+\end{align*}
+with the following initial conditions:\\
+$t_{0} = 0$ and $t_{f} = 1800s$ (batch time)
+\begin{align*}
+&y_{i}(t_{0}) = \left[ 0.1743 \quad 66.66 \quad 1.83\times10^{4}\quad 5.05\times10^{6} \quad 1.93\times10^{9} \quad 0.867 \quad 0 \quad 0 \quad 0 \right] \\
+&z_{i}(t_{f}) = \left[  0 \quad 0 \quad 0 \quad 0 \quad 1 \quad 0 \quad 0 \quad 0 \quad -1 \right] 
+\end{align*}
+\paragraph{Algorithm}
+\begin{enumerate}
+\item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon.
+\item The differential equations for state variables are integrated using the initial conditions for a time step of 1s .
+\item The value of the adjoint variables are computed by backward integration for the same time step used in the previous.
+\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides},  is used in an additional variable corresponding to each of the state and adjoint variable is introduced.
+\item The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, respectively.
+\item The Hamiltonian derivative is now calculated at each time step  as :
+\begin{align}
+&\theta = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i}}{dT} \\
+&\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right)
+\end{align}
+\item The  convergence criterion $(\frac{dH}{dT}<$ tolerance) is verified. If it is not satisfied, the temperature $T(t)$ is updated using this gradient\cite{yenkie}.
+\begin{equation}
+T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right)
+\end{equation}
+\item The concentration is evaluated  at that time step and compared with first with the saturation concentration ($C_{s}$) and the metastable concentration($C_{m}$) to validate the active constraints.
+\item Iterations of above steps are repeated.
+\end{enumerate}
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
