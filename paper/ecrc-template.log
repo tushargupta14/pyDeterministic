@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  21 JUN 2018 01:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  24 JUN 2018 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -510,13 +510,18 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip51
 \rot@float@box=\box32
 \rot@mess@toks=\toks23
-) (./ecrc-template.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
+)
+(./ecrc-template.aux)
 \openout1 = `ecrc-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 120.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 120
 .
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 120.
@@ -816,6 +821,9 @@ Package natbib Warning: Citation `paeng' on page 3 undefined on input line 267.
 
 [3]
 
+Package natbib Warning: Citation `shi' on page 4 undefined on input line 273.
+
+
 Package natbib Warning: Citation `dewikar' on page 4 undefined on input line 28
 0.
 
@@ -834,44 +842,47 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[5]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 333.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
+File: omstxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 333.
+ [5]
 
 Package natbib Warning: Citation `benavides' on page 6 undefined on input line 
-332.
+336.
 
 
-Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 339
+Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 343
 .
 
 [6]
 
 Package natbib Warning: There were undefined citations.
 
-[7] (./ecrc-template.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[7] (./ecrc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 4178 strings out of 493029
- 53963 string characters out of 6136235
- 126624 words of memory out of 5000000
- 7581 multiletter control sequences out of 15000+600000
+ 5701 strings out of 493029
+ 87110 string characters out of 6136235
+ 169695 words of memory out of 5000000
+ 9097 multiletter control sequences out of 15000+600000
  46769 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,31p,1253b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfo
-nts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on ecrc-template.pdf (7 pages, 145986 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
+ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ecrc-template.pdf (7 pages, 146249 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
