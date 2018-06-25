@@ -231,9 +231,9 @@ Growth Kinetics$^{(5-7)}$ are given by:
 \begin{equation}
 G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}
 \end{equation}
-where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. $C_{s}(T)$ is the saturation concentration at a given temperature. The following equations are used to evaluate the saturation and metastable concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}. \\
+where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. The values for these kinetic parameters for the given system have been mentioned in Table\ref{Table1}. The following equations are used to evaluate the saturation($C_{s}$) and metastable($C_{m}$) concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}. \\
 \begin{align}
-C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \\
+C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \label{sat}\\
 C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2} \label{meta}
 \end{align} 
 The mass balance, in terms of concentration of the solute in the solution, is expressed as :
@@ -272,7 +272,30 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 \end{enumerate}
 The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics\cite{shi}. 
 
-
+\begin{center}
+\begin{table}[!h]
+\centering
+\caption{Parameter Values for Batch Crystallizer\cite{hu,paeng}}
+\begin{tabular}{|c|c|}
+\hline
+Parameters & Experimental Values \\
+\hline
+\multicolumn{2}{|c|}{Growth Kinetics} \\
+\hline
+$k_{g}$ & $1.44\times10^{8} \mu m s^{-1}$ \\
+$E_{g}/R$ & $4859K$ \\
+$g$ & $1.5$ \\
+\hline
+\multicolumn{2}{|c|}{Nucleation Kinetics} \\
+\hline
+$k_{b}$ & $285 (s \mu m^{3})^{-1}$ \\ 
+$E_{b}/R$ & $7517K$ \\
+$b$ & $1.45$ \\
+\hline
+\end{tabular}
+\label{Table1}
+\end{table}
+\end{center}
 
 \section{Deterministic Optimal Control}
 
@@ -331,22 +354,28 @@ with the initial and final conditions:
 The steps followed to solve the optimal control problem have been discussed in detail below.
 \begin{itemize}
 \item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon.
-\item The differential equations for state variables are integrated using the initial conditions for a time step of 1s .
-\item The value of the adjoint variables are computed by backward integration for the same time step used in the previous.
-\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides},  is used in an additional variable corresponding to each of the state and adjoint variable is introduced.
-\item The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, respectively.
-\item The Hamiltonian derivative is now calculated at each time step  as :
-\begin{align}
-&\theta = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i}}{dT} \\
-&\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right)
-\end{align}
-\item The  convergence criterion $(\frac{dH}{dT}<$ tolerance) is verified. If it is not satisfied, the temperature $T(t)$ is updated using this gradient\cite{yenkie}.
+\item The differential equations for state variables are integrated in the forward direction using the given initial conditions.
+\item The values of the adjoint variables are computed by backward integration of the adjoint equations given by eqs. \ref{adjoints}.
+\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides}, is used in which an additional variable corresponding to each of the state and adjoint variable is introduced. The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, which is given by eq(\ref{thetafi}).
 \begin{equation}
-T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right)
+&\theta_{i} = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i}}{dT} \label{thetafi} 
 \end{equation}
-\item The concentration is evaluated  at that time step and compared with first with the saturation concentration ($C_{s}$) and the metastable concentration($C_{m}$) to validate the active constraints.
-\item Iterations of above steps are repeated.
+\item The Hamiltonian derivative is now calculated at each time step by the eq(\ref{hamiltd})
+\begin{equation}
+&\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) \label{hamiltd}
+\end{equation}
+\item The  computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using the relation \cite{yenkie} given by eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
+\begin{equation} 
+T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right) \label{temp}
+\end{equation}
+\item The concentration is evaluated  at that time step and compared with first with the saturation concentration ($C_{s}$) and then the metastable concentration($C_{m}$) to validate the active constraints. If it found to be lesser than saturation value or greater than the metastable value, eqs (\ref{sat}) and (\ref{meta}) are used to compute the new temperature respectively. 
+\item Iterations of above steps are repeated until the convergence criteria is achieved.
 \end{itemize}
+
+
+\subsection{\textit{Results}}
+
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections

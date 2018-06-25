@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  24 JUN 2018 23:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  25 JUN 2018 23:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,16 +824,23 @@ Package natbib Warning: Citation `paeng' on page 3 undefined on input line 267.
 Package natbib Warning: Citation `shi' on page 4 undefined on input line 273.
 
 
-Package natbib Warning: Citation `dewikar' on page 4 undefined on input line 28
-0.
+Package natbib Warning: Citation `hu' on page 4 undefined on input line 278.
 
 
-Package natbib Warning: Citation `yenkie' on page 4 undefined on input line 293
+Package natbib Warning: Citation `paeng' on page 4 undefined on input line 278.
+
+
+
+Package natbib Warning: Citation `dewikar' on page 4 undefined on input line 30
+3.
+
+
+Package natbib Warning: Citation `yenkie' on page 4 undefined on input line 316
 .
 
 [4]
 ! Misplaced alignment tab character &.
-l.313 H &
+l.336 H &
          = \sum_{i = 1}^{9} z_{i}f(y_{i},t,T)
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -842,20 +849,40 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 333.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 356.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 333.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 356.
  [5]
 
 Package natbib Warning: Citation `benavides' on page 6 undefined on input line 
-336.
+359.
+
+! Misplaced alignment tab character &.
+l.361 &
+       \theta_{i} = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.365 &
+       \frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
 
-Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 343
+Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 367
 .
 
 [6]
@@ -864,13 +891,13 @@ Package natbib Warning: There were undefined citations.
 
 [7] (./ecrc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 5701 strings out of 493029
- 87110 string characters out of 6136235
- 169695 words of memory out of 5000000
- 9097 multiletter control sequences out of 15000+600000
- 46769 words of font info for 107 fonts, out of 8000000 for 9000
+ 5716 strings out of 493029
+ 87256 string characters out of 6136235
+ 171695 words of memory out of 5000000
+ 9110 multiletter control sequences out of 15000+600000
+ 48708 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,31p,1253b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,31p,1253b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/
 8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/
@@ -882,7 +909,7 @@ ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on ecrc-template.pdf (7 pages, 146249 bytes).
+Output written on ecrc-template.pdf (7 pages, 147468 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
