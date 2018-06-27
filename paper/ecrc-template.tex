@@ -375,13 +375,95 @@ T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right) \label{temp}
 
 \subsection{\textit{Results}}
 
-The integration of differential equations was performed in python using the odeint routine from the scipy open source package. The optimum temperature profile is obtained as .
+The integration of differential equations was performed in python using the odeint routine from the scipy open source package.
+The change of the Hamiltonian Derivative($\frac{dH}{dT}$) after each iteration can be seen from Figures (\ref{it1})-(\ref{it2}). After the final iteration, values of the derivative converge within tolerance limits which signifies reaching an optimal point. The resultant optimal temperature profile is show in Figure (\ref{Dtemp}). The system attains a constant value of $300 K$ at $\sim1700 s$. The decreasing temperature profile is indicative of the cooling crystalllization. Also, the objective function can be observed to reach a maximum value in the Figure(). The concentration profile of solute in the system is given by the Figure \ref{Dconc}. 
+\begin{figure}[h!] \label{Dtemp}
+\begin{center}
+\includegraphics[width=4in]{images/Dtemp.eps}
+\end{center}
+\caption{The cooling profile for the controlled variable T(t) obtained at the final iteration}
+\end{figure}
+\begin{figure}[h!] 
+\begin{center}
+\includegraphics[width=4in]{images/Dobj.eps}
+\end{center}
+\caption{Objective Function ($\mu_{3}^{s}(t) - \mu_{3}^{n}(t)$)}
+\end{figure}
+\begin{figure}[h!] \label{it1}
+  \centering 
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/h1.eps}
+    \caption{Iteration 1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/h2.eps}
+    \caption{Iteration 2}
+  \end{minipage}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/h3.eps}
+    \caption{Iteration 3}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/h4.eps}
+    \caption{Iteration 4}
+  \end{minipage}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/h5.eps}
+    \caption{Iteration 5}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}\label{it2}
+    \includegraphics[width=\textwidth]{images/h6.eps}
+    \caption{Iteration 6}
+  \end{minipage}
+\end{figure}
 
+\begin{figure}[h!] 
+
+\begin{center} \label{Dconc}
+\includegraphics[width=4in]{images/Dconc.png}
+\end{center}
+\caption{The Concentration profile as obtained.}
+\end{figure}
 
 \section{Optimal Control using Uncertainity Quantification}
 Kinetic parameters are generally empirical constants determined by fitting experimental data to the model, and, hence, are a source of uncertainty within the system. Two methods are discussed here to quantify these uncertainities and thereby perform build a more robust dynamic optimization.
 
 \subsection{Stochastic Optimal Control using Ito Processes}
+
+From several previous works it has been shown that the dynamic uncertainties
+such as the batch reactors\cite{benavides2} and batch distillation,\cite{diwekar}, can be represented using stochastic processes called as the Ito processes.  We characterize the time-dependent uncertainties in the state variables using Ito processes.\\
+The advantage lies in the ability to integrate the equations using the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. \\
+In batch crystallization kinetics, the growth and nucleation expressions have empirical constants shown in Table \ref{Table1}, they can be assumed to follow a Gaussian distribution\cite{yenkie}. By studying the nature of the dynamic uncertainty plots of the process variables and their correlation to Ito processes, it has been observed that the uncertainties can be best modeled with a simple Ito process known as \textbf{Brownian motion} with drift\cite{diwekar,wong}. It can be defined as:
+\begin{equation} \label{gen}
+dy = a(y,t)dt + b(y,t)dz
+\end{equation}
+where $dz$ is the increment of the Wiener process equal to $\varepsilon_{t}(\Delta t)^{1/2}$, and a(y,t) and b(y,t) are known functions. The random value $\varepsilon_{t}$  has a unit normal distribution with zero mean
+and a standard deviation of 1. To estimate the values of the functions a and b, a generalized method presented by Diwekar\cite{diwekar} has been used.\\
+In this work, equation(\ref{gen}) has been used to incorporate the uncertainties into the moment equations which are\cite{yenkie} :
+\begin{align}
+dy_{1} &= \left[-3\rho k_{v}G(t)(y_{4}+y{8})\right]\Delta t + g_{1}\varepsilon_{1}\sqrt{\Delta t} \\
+dy_{2} &= 0 \\
+dy_{3} &= (G(t)y_{2})\Delta t +g_{3}\varepsilon_{3}\sqrt{\Delta t} \\
+dy_{4} &= (2G(t)y_{3})\Delta t + g_{4}\varepsilon_{4}\sqrt{\Delta t} \\
+dy_{5} &= (3G(t)y_{4})\Delta t + g_{5}\varepsilon_{5}\sqrt{\Delta t} \\
+dy_{6} &= (B(t))\Delta t + g_{6}\varepsilon_{6}\sqrt{\Delta t} \\
+dy_{7} &= (G(t)y_{6})\Delta t + g_{7}\varepsilon_{7}\sqrt{\Delta t} \\
+dy_{8} &= (2G(t)y_{7})\Delta t +g_{8}\varepsilon_{8}\sqrt{\Delta t} \\
+dy_{9} &= (3G(t)y_{8})\Delta t + g_{9}\varepsilon_{9}\sqrt{\Delta t} \\
+\end{align}
+$a(y,t)$ in each equation is replaced by the corresponding deterministic function   for the state variable.\\
+Here, the $g_{i}$ values represent the variance in the variable for which they are associated. They are calculated by recording the variance of the differences in $y_{i}$, which is divided by the time
+interval $\Delta t$, and then the square root of this value is taken.
+
 
 
 %% The Appendices part is started with the command \appendix;
@@ -408,6 +490,7 @@ Kinetic parameters are generally empirical constants determined by fitting exper
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
 
 %% For references without a BibTeX database:
+\clearpage
 \newpage
 \section{References}
 \begin{thebibliography}{1}

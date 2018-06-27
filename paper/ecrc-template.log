@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  26 JUN 2018 01:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  27 JUN 2018 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,34 +885,236 @@ might try typing `S' now just to see what is salvageable.
 Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 367
 .
 
-[6]
+Package epstopdf Info: Source file: <images/Dtemp.eps>
+(epstopdf)                    date: 2018-04-29 15:38:28
+(epstopdf)                    size: 46056 bytes
+(epstopdf)             Output file: <images/Dtemp-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-27 00:07:20
+(epstopdf)                    size: 17459 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/Dtemp-eps-converted
+-to.pdf images/Dtemp.eps>
+(epstopdf)             \includegraphics on input line 382.
+Package epstopdf Info: Output file is already uptodate.
+<images/Dtemp-eps-converted-to.pdf, id=39, 421.575pt x 316.18124pt>
+File: images/Dtemp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/Dtemp-eps-converted-to.pdf>
+Package pdftex.def Info: images/Dtemp-eps-converted-to.pdf used on input line 3
+82.
+(pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
+Package epstopdf Info: Source file: <images/Dobj.eps>
+(epstopdf)                    date: 2018-04-29 15:40:24
+(epstopdf)                    size: 110623 bytes
+(epstopdf)             Output file: <images/Dobj-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-27 00:20:09
+(epstopdf)                    size: 20240 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/Dobj-eps-converted-
+to.pdf images/Dobj.eps>
+(epstopdf)             \includegraphics on input line 388.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/Dobj-eps-converted-to.pdf, id=40, 429.605pt x 339.2675pt>
+File: images/Dobj-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/Dobj-eps-converted-to.pdf>
+Package pdftex.def Info: images/Dobj-eps-converted-to.pdf used on input line 38
+8.
+(pdftex.def)             Requested size: 289.07999pt x 228.2968pt.
+Package epstopdf Info: Source file: <images/h1.eps>
+(epstopdf)                    date: 2018-04-29 16:02:26
+(epstopdf)                    size: 110729 bytes
+(epstopdf)             Output file: <images/h1-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:40:49
+(epstopdf)                    size: 19242 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h1-eps-converted-to
+.pdf images/h1.eps>
+(epstopdf)             \includegraphics on input line 395.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h1-eps-converted-to.pdf, id=41, 421.575pt x 316.18124pt>
+File: images/h1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h1-eps-converted-to.pdf>
+Package pdftex.def Info: images/h1-eps-converted-to.pdf used on input line 395.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+Package epstopdf Info: Source file: <images/h2.eps>
+(epstopdf)                    date: 2018-04-29 16:02:07
+(epstopdf)                    size: 109906 bytes
+(epstopdf)             Output file: <images/h2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:42:32
+(epstopdf)                    size: 18949 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h2-eps-converted-to
+.pdf images/h2.eps>
+(epstopdf)             \includegraphics on input line 400.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h2-eps-converted-to.pdf, id=42, 421.575pt x 316.18124pt>
+File: images/h2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h2-eps-converted-to.pdf>
+Package pdftex.def Info: images/h2-eps-converted-to.pdf used on input line 400.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+Package epstopdf Info: Source file: <images/h3.eps>
+(epstopdf)                    date: 2018-04-29 16:00:46
+(epstopdf)                    size: 109969 bytes
+(epstopdf)             Output file: <images/h3-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:42:32
+(epstopdf)                    size: 18349 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h3-eps-converted-to
+.pdf images/h3.eps>
+(epstopdf)             \includegraphics on input line 407.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h3-eps-converted-to.pdf, id=43, 421.575pt x 316.18124pt>
+File: images/h3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h3-eps-converted-to.pdf>
+Package pdftex.def Info: images/h3-eps-converted-to.pdf used on input line 407.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+Package epstopdf Info: Source file: <images/h4.eps>
+(epstopdf)                    date: 2018-04-29 16:00:29
+(epstopdf)                    size: 110161 bytes
+(epstopdf)             Output file: <images/h4-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:42:33
+(epstopdf)                    size: 17555 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h4-eps-converted-to
+.pdf images/h4.eps>
+(epstopdf)             \includegraphics on input line 412.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h4-eps-converted-to.pdf, id=44, 421.575pt x 316.18124pt>
+File: images/h4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h4-eps-converted-to.pdf>
+Package pdftex.def Info: images/h4-eps-converted-to.pdf used on input line 412.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+Package epstopdf Info: Source file: <images/h5.eps>
+(epstopdf)                    date: 2018-04-29 15:59:47
+(epstopdf)                    size: 110105 bytes
+(epstopdf)             Output file: <images/h5-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:43:14
+(epstopdf)                    size: 16112 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h5-eps-converted-to
+.pdf images/h5.eps>
+(epstopdf)             \includegraphics on input line 419.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h5-eps-converted-to.pdf, id=45, 421.575pt x 316.18124pt>
+File: images/h5-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h5-eps-converted-to.pdf>
+Package pdftex.def Info: images/h5-eps-converted-to.pdf used on input line 419.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+Package epstopdf Info: Source file: <images/h6.eps>
+(epstopdf)                    date: 2018-04-29 15:59:24
+(epstopdf)                    size: 110009 bytes
+(epstopdf)             Output file: <images/h6-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-26 23:43:15
+(epstopdf)                    size: 13894 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/h6-eps-converted-to
+.pdf images/h6.eps>
+(epstopdf)             \includegraphics on input line 424.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/h6-eps-converted-to.pdf, id=46, 421.575pt x 316.18124pt>
+File: images/h6-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/h6-eps-converted-to.pdf>
+Package pdftex.def Info: images/h6-eps-converted-to.pdf used on input line 424.
+
+(pdftex.def)             Requested size: 187.19714pt x 140.39867pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/Dconc.png, id=47, 443.40656pt x 373.395pt>
+File: images/Dconc.png Graphic file (type png)
+ <use images/Dconc.png>
+Package pdftex.def Info: images/Dconc.png used on input line 432.
+(pdftex.def)             Requested size: 289.07999pt x 243.45026pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `benavides2' on page 6 undefined on input line
+ 443.
+
+
+Package natbib Warning: Citation `diwekar' on page 6 undefined on input line 44
+3.
+
+
+Package natbib Warning: Citation `yenkie' on page 6 undefined on input line 445
+.
+
+
+Package natbib Warning: Citation `diwekar' on page 6 undefined on input line 44
+5.
+
+
+Package natbib Warning: Citation `wong' on page 6 undefined on input line 445.
+
+[6] [7 <./images/Dtemp-eps-converted-to.pdf> <./images/Dobj-eps-converted-to.pd
+f>]
+
+Package natbib Warning: Citation `diwekar' on page 8 undefined on input line 45
+0.
+
+
+Package natbib Warning: Citation `yenkie' on page 8 undefined on input line 451
+.
+
+[8 <./images/h1-eps-converted-to.pdf> <./images/h2-eps-converted-to.pdf> <./ima
+ges/h3-eps-converted-to.pdf> <./images/h4-eps-converted-to.pdf> <./images/h5-ep
+s-converted-to.pdf> <./images/h6-eps-converted-to.pdf>] [9 <./images/Dconc.png 
+(PNG copy)>]
 
 Package natbib Warning: There were undefined citations.
 
-[7] (./ecrc-template.aux) ) 
+[10
+
+] (./ecrc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 5716 strings out of 493029
- 87256 string characters out of 6136235
+ 5801 strings out of 493029
+ 88943 string characters out of 6136235
  171695 words of memory out of 5000000
- 9110 multiletter control sequences out of 15000+600000
- 48708 words of font info for 110 fonts, out of 8000000 for 9000
+ 9179 multiletter control sequences out of 15000+600000
+ 57001 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,31p,1253b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/
-8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
-ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ecrc-template.pdf (7 pages, 148938 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r
+.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
+/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on ecrc-template.pdf (10 pages, 290445 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 170 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
