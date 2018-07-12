@@ -118,7 +118,7 @@
 %\hyphenation{author another created financial paper re-commend-ed Post-Script}
 
 % declarations for front matter
-
+\bibliographystyle{elsarticle-num}
 \begin{document}
 
 \begin{frontmatter}
@@ -206,11 +206,14 @@ Herein, the experimental kinetic parameters are employed to simulate a batch cry
 Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by Mullin and Nyvlt \cite{mullin} in 1971.
 Later, in 1974, A. G. Jones \cite{agjones} presented a mathematical theory based on moment transformations of population balance equations. He used the continuous maximum principle to predict optimal cooling curves.
 Rawlings et al. \cite{rawlings} discussed issues in crystal size measurement using laser light scattering experiments and optimal control problem formulation. In 1994, Miller and Rawlings \cite{miller_rawlings}  discussed the uncertain bounds on model parameter estimates for a batch crystallization system. 
-ost importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\lcite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project.\par
+ost importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\cite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project.\par
 Stochastic modeling of particulate processes and parameter estimation using the experimentally measured particle sizes has attracted many researchers. Grosso et al.\cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. Ma et al.\cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. Monte Carlo simulations have also been used to propogate uncertainities but often present the problem of high computational demand, for which approximations are proposed.  Nagy and Braatz (2007) \cite{nagy} have shown that Polynomial Chaos Expansions(PCE) is a computationally efficient alternative to Monte Carlo simulations for propagating uncertainty in dynamic models. PCE is based on orthogonal basis functions thus requiring smaller function evaluations for the calculation of numerical integrations needed for obtaining statistical moments. The computational advantages of PCEs for robust control and optimization has been shown by Nagy and Braatz \cite{nagy}, Kim et al.\cite{kim}, Kumar and Budman\cite{kumar}. \par
 The focus of the current research activity is to incorporate parametric uncertainties in the mathematical formulations of batch crystallization process for building a robust model. In the deterministic approach, kinetic parameters from the experimental data have been used to model the system. Next, stochastic Ito processes are used to assimilate the errors in the experimental data. Finally, PCE are demostrated as an effective and novel method to achieve the desired objective function value. A case study of an unseeded crystallization process is also included to authenticate the methodology.
 
-\section{Mathematical Background} \label{model}
+\section{Mathematical Background} 
+
+\subsection{Seeded batch Crystallization} \label{model}
+
 This section introduces the underlying concepts needed to build a computational model of a crystallization process which involves regulating the population of particles, also termed as a particulate process. 
 The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \\
 A population balance formulation describes the process of crystal size distribution with time most effectively. Thus, modeling of a batch crystallizer involves the use of population balances to model the crystal size prediction and the mass balance on the system can be modeled as a simple differential equation having concentration as the state variable.
@@ -299,11 +302,46 @@ $b$ & $1.45$ \\
 \end{enumerate}
 The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics\cite{shi}. 
 
+\subsection{Polynomial Chaos Expansions}
+A Polynomial Chaos Expansion (PCE) describes a random process as a spectral expansion of random variables($\theta_{i}$), using orthogonal basis functions, $\Phi_{i}$ (Ghanem and Spanos, 1990,Ghanem and Spanos, 1997). For example, any second-order (finite variance) random process $y^{d}$, can be described using a PCE as follows:
+\begin{equation}
+y^{d} = a_{0}^{d}\phi_{0} + \sum_{i_{1}=1}^{\infty} a_{i_{1}}^{d}\phi_{1}(\theta_{i_{i1}}) + \sum_{i_{1}=1}^{\infty}\sum_{i_{2}=1}^{i_{1}} a_{i_{1}i_{2}}^d\phi_{2}(\theta_{i_{1}},\theta_{i_{2}})
+\end{equation}
+where $a_{i_{1}}^d$  are deterministic coefficients for each term in the expansion. The number of independent sources of random variables $(\theta_{i_{1}}, \theta_{i_{2}})$, generally defines the dimensionality, $n_{0}$. For practical application these expansions can be
+truncated to a finite number of terms. Then the maximum polynomial order for the basis function, q needs to be defined.
+The number of terms now become $P_{PCE} = \frac{(n_{0}+q)!}{n_{0}!q!} -1 $. 
+Using these notations a truncated PCE expansion can be represented as follows:
+\begin{equation} 
+\label{poly}
+y^{d} \approx \sum_{i=1}^{P_{PCE}} a_{i}^{d}\phi_{\theta}
+\end{equation}
+
+The orthogonality property of the basis functions($\phi_{i}$) is used for the  calculation of the coefficients when propagating uncertainty from the input random variables$(\theta_{i_{1}}, \theta_{i_{2}})$, to the output random
+variables ($y^{d}$).
+The choice of the basis functions $\phi_{i}$ depends on the type of stochastic distribution to be represented, i.e. normal or uniform. In our case the parameters follow a Gaussian distribution\cite{yenkie}, which uses Hermite Polynomials to describe the probability distribution in the least number of terms.\par
+Thus, given a process model with uncertain output, $y = X(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\theta)$ from $x(\theta), \lambda(\theta)$ using the process model. Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.
+\begin{align}
+x(\theta) &= \sum_{i=1}^{P_{PCE}} x_{i}\phi(\theta)
+\lambda(\theta) &= \sum_{i=1}^{P_{PCE}} \lambda_{i}\phi(\theta)
+\end{align}
+\begin{align}
+&x_{i} = \frac{\int x\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle } \quad
+&\lambda_{i} = \frac{\int \lambda\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle }
+\end{align}
+where $g(\theta)$ is probability distribution function (pdf) of $\theta$. 
+The next step is to develop PCE for $y(\theta)$ from  $x(\theta)$, and $\lambda(\theta)$, which can be done by evaluating the
+inner product of $y(\theta)$ with each basis functions $\phi_{i}$ to determine the ith- PCE coefficient.
+\begin{equation}
+y_{i} = \frac{\left\langle f(x,\lambda)\phi_{i} \right\rangle }{\left\langle \phi^{2}_{i} \right\rangle }
+\end{equation}
+Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}.
+The work under consideration here uses a non-intrusive approach. The model $y=X(x,\lambda)$ is represented by the modelling equations of Section(\ref{modeleq}). $x$ are the state variables and $\lambda$'s are the kinetic parameters.
+
 
 \section{Deterministic Optimal Control}\label{secdet}
 
 \subsection{\textit{Case Study : Seeded batch crystallization}}
-Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{dewikar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle is its ability to adapt to stochastic calculus which is explained in the next section. \par 
+Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{diwekar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle is its ability to adapt to stochastic calculus which is explained in the next section. \par 
 In a seeded crystallization process it is essential to keep the nucleation phenomena to minimum as in the early stages of growth, nucleated crystals might compete with the seeded ones for growth. This ensures uniformity in the shape and size of the final product. It is achieved by incorporating the volume of nucleated in the \textbf{objective fuction}. Third moment($\mu_{3}$) represents volume in a crystallization model as evident from Equation(\ref{moments}) and is used as follows :
 \begin{equation}
 \max_{T(t)}\lbrace{\mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\rbrace } 
@@ -448,7 +486,7 @@ Kinetic parameters used in the Section(\ref{secdet}) are empirical constants der
 %%%%%
 % Give proper  references here 
 %%%%%
-Several previous works(\cite{diwekar}) have shown that the dynamic uncertainties present in batch reactors\cite{benavides2} and batch distillations\cite{diwekar}, can be represented using stochastic processes termed as Ito processes. We characterize the time-dependent uncertainties in the state variables using Ito processes known as \textbf{Brownian motion} with drift\cite{diwekar,wong}. The advantage lies in the ability to integrate the equations through the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. 
+Several previous works(\cite{diwekar}) have shown that the dynamic uncertainties present in batch reactors\cite{benavides} and batch distillations\cite{diwekar}, can be represented using stochastic processes termed as Ito processes. We characterize the time-dependent uncertainties in the state variables using Ito processes known as \textbf{Brownian motion} with drift\cite{diwekar,wong}. The advantage lies in the ability to integrate the equations through the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. 
 A simple Ito process can be written as eq (\ref{gen})
 \begin{equation} \label{gen}
 dy = a(y,t)dt + b(y,t)dz
@@ -571,42 +609,9 @@ $g_{9}$ & $8.753\times10^{4}$ \\
 \end{figure}
 
 
-\subsection{Stochastic Optimal Control using Polynomial Chaos Expansions}
-\subsubsection{Introduction}
-A Polynomial Chaos Expansion (PCE) describes a random process as a spectral expansion of random variables($\theta_{i}$), using orthogonal basis functions, $\Phi_{i}$ (Ghanem and Spanos, 1990,Ghanem and Spanos, 1997). For example, any second-order (finite variance) random process $y^{d}$, can be described using a PCE as follows:
-\begin{equation}
-y^{d} = a_{0}^{d}\phi_{0} + \sum_{i_{1}=1}^{\infty} a_{i_{1}}^{d}\phi_{1}(\theta_{i_{i1}}) + \sum_{i_{1}=1}^{\infty}\sum_{i_{2}=1}^{i_{1}} a_{i_{1}i_{2}}^d\phi_{2}(\theta_{i_{1}},\theta_{i_{2}})
-\end{equation}
-where $a_{i_{1}}^d$  are deterministic coefficients for each term in the expansion. The number of independent sources of random variables $(\theta_{i_{1}}, \theta_{i_{2}})$, generally defines the dimensionality, $n_{0}$. For practical application these expansions can be
-truncated to a finite number of terms. Then the maximum polynomial order for the basis function, q needs to be defined.
-The number of terms now become $P_{PCE} = \frac{(n_{0}+q)!}{n_{0}!q!} -1 $. \\
-Using these notations a truncated PCE expansion can be represented as follows:
-\begin{equation} 
-\label{poly}
-y^{d} \approx \sum_{i=1}^{P_{PCE}} a_{i}^{d}\phi_{\theta}
-\end{equation}
+\subsection{Stochastic Optimal Control using Polynomial Chaos Expansion(PCE)}
 
-The orthogonality property of the basis functions($\phi_{i}$) is used for the  calculation of the coefficients when propagating uncertainty from the input random variables$(\theta_{i_{1}}, \theta_{i_{2}})$, to the output random
-variables ($y^{d}$).\\
-The choice of the basis functions $\phi_{i}$ depends on the type of stochastic distribution to be represented, i.e. normal or uniform. In our case the parameters follow a Gaussian distribution\cite{yenkie}, which uses Hermite Polynomials to describe the probability distribution in the least number of terms.\\
-Thus, given a process model with uncertain output, $y = X(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\theta)$ from $x(\theta), \lambda(\theta)$ using the process model. Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.
-\begin{align}
-x(\theta) &= \sum_{i=1}^{P_{PCE}} x_{i}\phi(\theta)
-\lambda(\theta) &= \sum_{i=1}^{P_{PCE}} \lambda_{i}\phi(\theta)
-\end{align}
-\begin{align}
-&x_{i} = \frac{\int x\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle } \quad
-&\lambda_{i} = \frac{\int \lambda\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle }
-\end{align}
-where $g(\theta)$ is probability distribution function (pdf) of $\theta$. 
-The next step is to develop PCE for $y(\theta)$ from  $x(\theta)$, and $\lambda(\theta)$, which can be done by evaluating the
-inner product of $y(\theta)$ with each basis functions $\phi_{i}$ to determine the ith- PCE coefficient.
-\begin{equation}
-y_{i} = \frac{\left\langle f(x,\lambda)\phi_{i} \right\rangle }{\left\langle \phi^{2}_{i} \right\rangle }
-\end{equation}
-Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}.\\
-The work under consideration here uses a non-intrusive approach. The model $y=X(x,\lambda)$ is represented by the modelling equations of Section(\ref{modeleq}). $x$ are the state variables and $\lambda$'s are the kinetic parameters.
-
+\cite{Dirac1953888}
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -625,24 +630,25 @@ The work under consideration here uses a non-intrusive approach. The model $y=X(
 
 %% References with BibTeX database:
 
+\clearpage
+\section{References}
 
-%\bibliography{mybibfile}
-%\bibliographystyle{ieeetr}
-%% Authors are advised to use a BibTeX database file for their reference list.
+\bibliography{mybibfile}
+% Authors are advised to use a BibTeX database file for their reference list.
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
 
 %% For references without a BibTeX database:
-\clearpage
-\newpage
-\section{References}
-\begin{thebibliography}{1}
+%
+%\newpage
+%\section{References}
+%\begin{thebibliography}{1}
 
 %\bibitem must have the following form:
- \bibitem{key}...
+% \bibitem{key}...
 	
  %\bibitem{}
 
-\end{thebibliography}
+%\end{thebibliography}
 
 \end{document}
 
