@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  16 JUL 2018 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  17 JUL 2018 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,64 +909,6 @@ Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
 Missing character: There is no ™ in font txr!
  [12 <./images/Sconc-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 647.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
-File: omstxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 647.
-
-
-Package natbib Warning: Citation `chaospy' on page 13 undefined on input line 6
-47.
-
-Package epstopdf Info: Source file: <images/PCEobj.eps>
-(epstopdf)                    date: 2018-04-29 18:29:20
-(epstopdf)                    size: 12354 bytes
-(epstopdf)             Output file: <images/PCEobj-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-07-16 00:25:47
-(epstopdf)                    size: 2217 bytes
-(epstopdf)             Command: <repstopdf --outfile=images/PCEobj-eps-converte
-d-to.pdf images/PCEobj.eps>
-(epstopdf)             \includegraphics on input line 654.
-Package epstopdf Info: Output file is already uptodate.
-<images/PCEobj-eps-converted-to.pdf, id=100, 597.23125pt x 845.1575pt>
-File: images/PCEobj-eps-converted-to.pdf Graphic file (type pdf)
-
-<use images/PCEobj-eps-converted-to.pdf>
-Package pdftex.def Info: images/PCEobj-eps-converted-to.pdf used on input line 
-654.
-(pdftex.def)             Requested size: 289.07999pt x 409.08844pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package epstopdf Info: Source file: <images/PCETemp.eps>
-(epstopdf)                    date: 2018-04-29 20:37:46
-(epstopdf)                    size: 47291 bytes
-(epstopdf)             Output file: <images/PCETemp-eps-converted-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=images/PCETemp-eps-convert
-ed-to.pdf images/PCETemp.eps>
-(epstopdf)             \includegraphics on input line 661.
-runsystem(repstopdf --outfile=images/PCETemp-eps-converted-to.pdf images/PCETem
-p.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <images/PCETemp-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-07-16 00:29:03
-(epstopdf)                    size: 18629 bytes.
-<images/PCETemp-eps-converted-to.pdf, id=101, 903.375pt x 313.17pt>
-File: images/PCETemp-eps-converted-to.pdf Graphic file (type pdf)
-
-<use images/PCETemp-eps-converted-to.pdf>
-Package pdftex.def Info: images/PCETemp-eps-converted-to.pdf used on input line
- 661.
-(pdftex.def)             Requested size: 289.07999pt x 100.21643pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 Package epstopdf Info: Source file: <images/PCEConc.eps>
 (epstopdf)                    date: 2018-04-29 20:55:26
 (epstopdf)                    size: 45641 bytes
@@ -975,29 +917,25 @@ Package epstopdf Info: Source file: <images/PCEConc.eps>
 (epstopdf)                    size: 24620 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/PCEConc-eps-convert
 ed-to.pdf images/PCEConc.eps>
-(epstopdf)             \includegraphics on input line 669.
+(epstopdf)             \includegraphics on input line 668.
 Package epstopdf Info: Output file is already uptodate.
-<images/PCEConc-eps-converted-to.pdf, id=102, 463.7325pt x 383.4325pt>
+
+<images/PCEConc-eps-converted-to.pdf, id=100, 463.7325pt x 383.4325pt>
 File: images/PCEConc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/PCEConc-eps-converted-to.pdf>
 Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf used on input line
- 669.
+ 668.
 (pdftex.def)             Requested size: 289.07999pt x 239.02455pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13]
-
-LaTeX Warning: Text page 14 contains only floats.
-
-[14 <./images/PCEobj-eps-converted-to.pdf> <./images/PCETemp-eps-converted-to.p
-df>] [15 <./images/PCEConc-eps-converted-to.pdf>] (./ecrc-template.bbl)
+[13] [14 <./images/PCEConc-eps-converted-to.pdf>] (./ecrc-template.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[16
+[15
 
 ] (./ecrc-template.aux)
 
@@ -1005,10 +943,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5946 strings out of 493029
- 90881 string characters out of 6136235
+ 5921 strings out of 493029
+ 90292 string characters out of 6136235
  171695 words of memory out of 5000000
- 9315 multiletter control sequences out of 15000+600000
+ 9295 multiletter control sequences out of 15000+600000
  58906 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,31p,1253b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1023,10 +961,10 @@ nts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb
 dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on ecrc-template.pdf (16 pages, 311398 bytes).
+Output written on ecrc-template.pdf (15 pages, 295153 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 152 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

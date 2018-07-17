@@ -81,4 +81,9 @@ R.~Ghanem, P.~D. Spanos, Polynomial chaos in stochastic finite elements,
 R.~G. Ghanem, P.~D. Spanos, Spectral techniques for stochastic finite elements,
   Archives of Computational Methods in Engineering 4~(1) (1997) 63--100.
 
+\bibitem{chaospy}
+J.~Feinberg, H.~P. Langtangen, Chaospy: An open source tool for designing
+  methods of uncertainty quantification, Journal of Computational Science 11
+  (2015) 46--57.
+
 \end{thebibliography}

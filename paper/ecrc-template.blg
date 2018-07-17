@@ -6,45 +6,45 @@ Database file #1: mybibfile.bib
 Warning--I didn't find a database entry for "nagy"
 Warning--I didn't find a database entry for "kim"
 Warning--I didn't find a database entry for "kumar"
-You've used 17 entries,
+You've used 18 entries,
             2937 wiz_defined-function locations,
-            787 strings with 7786 characters,
-and the built_in function-call counts, 5089 in all, are:
-= -- 517
-> -- 140
+            794 strings with 7963 characters,
+and the built_in function-call counts, 5358 in all, are:
+= -- 546
+> -- 147
 < -- 1
-+ -- 58
-- -- 41
-* -- 397
-:= -- 706
-add.period$ -- 17
-call.type$ -- 17
-change.case$ -- 16
++ -- 61
+- -- 43
+* -- 415
+:= -- 743
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 134
-empty$ -- 554
-format.name$ -- 56
-if$ -- 1276
+cite$ -- 18
+duplicate$ -- 142
+empty$ -- 583
+format.name$ -- 59
+if$ -- 1345
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 18
-newline$ -- 59
-num.names$ -- 17
-pop$ -- 89
+int.to.str$ -- 18
+missing$ -- 19
+newline$ -- 62
+num.names$ -- 18
+pop$ -- 94
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 291
+skip$ -- 308
 stack$ -- 0
-substring$ -- 421
-swap$ -- 17
+substring$ -- 440
+swap$ -- 18
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 49
-width$ -- 19
-write$ -- 143
+while$ -- 52
+width$ -- 20
+write$ -- 151
 (There were 3 warnings)
