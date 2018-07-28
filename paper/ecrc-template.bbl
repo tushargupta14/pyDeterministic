@@ -1,89 +1,121 @@
-\begin{thebibliography}{10}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\expandafter\ifx\csname href\endcsname\relax
-  \def\href#1#2{#2} \def\path#1{#1}\fi
+\begin{thebibliography}{}
 
-\bibitem{mullin}
-J.~Mullin, J.~N{\`y}vlt, Programmed cooling of batch crystallizers, Chemical
-  Engineering Science 26~(3) (1971) 369--377.
+\bibitem[Benavides and Diwekar, 2012]{benavides}
+Benavides, P.~T. and Diwekar, U. (2012).
+\newblock Optimal control of biodiesel production in a batch reactor: Part ii:
+  Stochastic control.
+\newblock {\em Fuel}, 94:218--226.
 
-\bibitem{agjones}
-A.~Jones, Optimal operation of a batch cooling crystallizer, Chemical
-  Engineering Science 29~(5) (1974) 1075--1087.
+\bibitem[Corriou and Rohani, 2008]{corriou}
+Corriou, J.-P. and Rohani, S. (2008).
+\newblock A new look at optimal control of a batch crystallizer.
+\newblock {\em AIChE journal}, 54(12):3188--3206.
 
-\bibitem{rawlings}
-J.~B. Rawlings, W.~R. Witkowski, J.~W. Eaton, Modelling and control of
-  crystallizers, Powder technology 69~(1) (1992) 3--9.
+\bibitem[Diwekar, 2008]{diwekar}
+Diwekar, U. (2008).
+\newblock {\em Introduction to applied optimization}, volume~22.
+\newblock Springer Science \& Business Media.
 
-\bibitem{miller_rawlings}
-S.~M. Miller, J.~B. Rawlings, Model identification and control strategies for
-  batch cooling crystallizers, AIChE Journal 40~(8) (1994) 1312--1327.
+\bibitem[Eugene and Moshe, 1965]{wong}
+Eugene, W. and Moshe, Z. (1965).
+\newblock On the relation between ordinary and stochastic differential
+  equations.
+\newblock {\em International Journal of Engineering Science}, 3(2):213--229.
 
-\bibitem{hu}
-Q.~Hu, S.~Rohani, A.~Jutan, Modelling and optimization of seeded batch
-  crystallizers, Computers \& chemical engineering 29~(4) (2005) 911--918.
+\bibitem[Feinberg and Langtangen, 2015]{chaospy}
+Feinberg, J. and Langtangen, H.~P. (2015).
+\newblock Chaospy: An open source tool for designing methods of uncertainty
+  quantification.
+\newblock {\em Journal of Computational Science}, 11:46--57.
 
-\bibitem{shi}
-D.~Shi, N.~H. El-Farra, M.~Li, P.~Mhaskar, P.~D. Christofides, Predictive
-  control of particle size distribution in particulate processes, Chemical
-  Engineering Science 61~(1) (2006) 268--281.
+\bibitem[Ghanem and Spanos, 1990]{ghanem}
+Ghanem, R. and Spanos, P.~D. (1990).
+\newblock Polynomial chaos in stochastic finite elements.
+\newblock {\em Journal of Applied Mechanics}, 57(1):197--202.
 
-\bibitem{paeng}
-W.~Paengjuntuek, A.~Arpornwichanop, P.~Kittisupakorn, Product quality
-  improvement of batch crystallizers by a batch-to-batch optimization and
-  nonlinear control approach, Chemical Engineering Journal 139~(2) (2008)
-  344--350.
+\bibitem[Ghanem and Spanos, 1997]{ghanem1997}
+Ghanem, R.~G. and Spanos, P.~D. (1997).
+\newblock Spectral techniques for stochastic finite elements.
+\newblock {\em Archives of Computational Methods in Engineering}, 4(1):63--100.
 
-\bibitem{corriou}
-J.-P. Corriou, S.~Rohani, A new look at optimal control of a batch
-  crystallizer, AIChE journal 54~(12) (2008) 3188--3206.
+\bibitem[Grosso et~al., 2011]{grosso}
+Grosso, M., Cogoni, G., Baratti, R., and Romagnoli, J.~A. (2011).
+\newblock Stochastic approach for the prediction of psd in crystallization
+  processes: Formulation and comparative assessment of different stochastic
+  models.
+\newblock {\em Industrial \& Engineering Chemistry Research}, 50(4):2133--2143.
 
-\bibitem{grosso}
-M.~Grosso, G.~Cogoni, R.~Baratti, J.~A. Romagnoli, Stochastic approach for the
-  prediction of psd in crystallization processes: Formulation and comparative
-  assessment of different stochastic models, Industrial \& Engineering
-  Chemistry Research 50~(4) (2011) 2133--2143.
+\bibitem[Hu et~al., 2005]{hu}
+Hu, Q., Rohani, S., and Jutan, A. (2005).
+\newblock Modelling and optimization of seeded batch crystallizers.
+\newblock {\em Computers \& chemical engineering}, 29(4):911--918.
 
-\bibitem{ma}
-D.~L. Ma, S.~H. Chung, R.~D. Braatz, Worst-case performance analysis of optimal
-  batch control trajectories, AIChE journal 45~(7) (1999) 1469--1476.
+\bibitem[Jones, 1974]{agjones}
+Jones, A. (1974).
+\newblock Optimal operation of a batch cooling crystallizer.
+\newblock {\em Chemical Engineering Science}, 29(5):1075--1087.
 
-\bibitem{yenkie}
-K.~M. Yenkie, U.~Diwekar, Stochastic optimal control of seeded batch
-  crystallizer applying the ito process, Industrial \& Engineering Chemistry
-  Research 52~(1) (2012) 108--122.
+\bibitem[Kim and Braatz, 2012]{kim}
+Kim, K. K.~K. and Braatz, R.~D. (2012).
+\newblock Probabilistic analysis and control of uncertain dynamic systems:
+  Generalized polynomial chaos expansion approaches.
+\newblock pages 44--49.
 
-\bibitem{diwekar}
-U.~Diwekar, Introduction to applied optimization, Vol.~22, Springer Science \&
-  Business Media, 2008.
+\bibitem[Kumar and Budman, 2014]{kumar}
+Kumar, D. and Budman, H. (2014).
+\newblock Robust nonlinear mpc based on volterra series and polynomial chaos
+  expansions.
+\newblock {\em Journal of Process Control}, 24(1):304--317.
 
-\bibitem{benavides}
-P.~T. Benavides, U.~Diwekar, Optimal control of biodiesel production in a batch
-  reactor: Part ii: Stochastic control, Fuel 94 (2012) 218--226.
+\bibitem[Ma et~al., 1999]{ma}
+Ma, D.~L., Chung, S.~H., and Braatz, R.~D. (1999).
+\newblock Worst-case performance analysis of optimal batch control
+  trajectories.
+\newblock {\em AIChE journal}, 45(7):1469--1476.
 
-\bibitem{wong}
-W.~Eugene, Z.~Moshe, On the relation between ordinary and stochastic
-  differential equations, International Journal of Engineering Science 3~(2)
-  (1965) 213--229.
+\bibitem[Miller and Rawlings, 1994]{miller_rawlings}
+Miller, S.~M. and Rawlings, J.~B. (1994).
+\newblock Model identification and control strategies for batch cooling
+  crystallizers.
+\newblock {\em AIChE Journal}, 40(8):1312--1327.
 
-\bibitem{ramirez}
-V.~Rico-Ramirez, U.~M. Diwekar, Stochastic maximum principle for optimal
-  control under uncertainty, Computers \& Chemical Engineering 28~(12) (2004)
-  2845--2849.
+\bibitem[Mullin and N{\`y}vlt, 1971]{mullin}
+Mullin, J. and N{\`y}vlt, J. (1971).
+\newblock Programmed cooling of batch crystallizers.
+\newblock {\em Chemical Engineering Science}, 26(3):369--377.
 
-\bibitem{ghanem}
-R.~Ghanem, P.~D. Spanos, Polynomial chaos in stochastic finite elements,
-  Journal of Applied Mechanics 57~(1) (1990) 197--202.
+\bibitem[Nagy and Braatz, 2007]{nagy}
+Nagy, Z. and Braatz, R. (2007).
+\newblock Distributional uncertainty analysis using power series and polynomial
+  chaos expansions.
+\newblock {\em Journal of Process Control}, 17(3):229--240.
 
-\bibitem{ghanem1997}
-R.~G. Ghanem, P.~D. Spanos, Spectral techniques for stochastic finite elements,
-  Archives of Computational Methods in Engineering 4~(1) (1997) 63--100.
+\bibitem[Paengjuntuek et~al., 2008]{paeng}
+Paengjuntuek, W., Arpornwichanop, A., and Kittisupakorn, P. (2008).
+\newblock Product quality improvement of batch crystallizers by a
+  batch-to-batch optimization and nonlinear control approach.
+\newblock {\em Chemical Engineering Journal}, 139(2):344--350.
 
-\bibitem{chaospy}
-J.~Feinberg, H.~P. Langtangen, Chaospy: An open source tool for designing
-  methods of uncertainty quantification, Journal of Computational Science 11
-  (2015) 46--57.
+\bibitem[Rawlings et~al., 1992]{rawlings}
+Rawlings, J.~B., Witkowski, W.~R., and Eaton, J.~W. (1992).
+\newblock Modelling and control of crystallizers.
+\newblock {\em Powder technology}, 69(1):3--9.
+
+\bibitem[Rico-Ramirez and Diwekar, 2004]{ramirez}
+Rico-Ramirez, V. and Diwekar, U.~M. (2004).
+\newblock Stochastic maximum principle for optimal control under uncertainty.
+\newblock {\em Computers \& Chemical Engineering}, 28(12):2845--2849.
+
+\bibitem[Shi et~al., 2006]{shi}
+Shi, D., El-Farra, N.~H., Li, M., Mhaskar, P., and Christofides, P.~D. (2006).
+\newblock Predictive control of particle size distribution in particulate
+  processes.
+\newblock {\em Chemical Engineering Science}, 61(1):268--281.
+
+\bibitem[Yenkie and Diwekar, 2012]{yenkie}
+Yenkie, K.~M. and Diwekar, U. (2012).
+\newblock Stochastic optimal control of seeded batch crystallizer applying the
+  ito process.
+\newblock {\em Industrial \& Engineering Chemistry Research}, 52(1):108--122.
 
 \end{thebibliography}

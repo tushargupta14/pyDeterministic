@@ -1,50 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ecrc-template.aux
-The style file: elsarticle-num.bst
+The style file: apalike.bst
 Database file #1: mybibfile.bib
-Warning--I didn't find a database entry for "nagy"
-Warning--I didn't find a database entry for "kim"
-Warning--I didn't find a database entry for "kumar"
-You've used 18 entries,
-            2937 wiz_defined-function locations,
-            794 strings with 7963 characters,
-and the built_in function-call counts, 5358 in all, are:
-= -- 546
-> -- 147
-< -- 1
-+ -- 61
-- -- 43
-* -- 415
-:= -- 743
-add.period$ -- 18
-call.type$ -- 18
-change.case$ -- 17
-chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 142
-empty$ -- 583
-format.name$ -- 59
-if$ -- 1345
-int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 19
-newline$ -- 62
-num.names$ -- 18
-pop$ -- 94
+Warning--empty journal in kim
+You've used 21 entries,
+            1935 wiz_defined-function locations,
+            614 strings with 7036 characters,
+and the built_in function-call counts, 8676 in all, are:
+= -- 885
+> -- 306
+< -- 17
++ -- 100
+- -- 98
+* -- 784
+:= -- 1474
+add.period$ -- 63
+call.type$ -- 21
+change.case$ -- 153
+chr.to.int$ -- 21
+cite$ -- 22
+duplicate$ -- 301
+empty$ -- 629
+format.name$ -- 145
+if$ -- 1688
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 22
+newline$ -- 108
+num.names$ -- 63
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 154
 quote$ -- 0
-skip$ -- 308
+skip$ -- 235
 stack$ -- 0
-substring$ -- 440
-swap$ -- 18
-text.length$ -- 1
+substring$ -- 768
+swap$ -- 28
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 52
-width$ -- 20
-write$ -- 151
-(There were 3 warnings)
+type$ -- 124
+warning$ -- 1
+while$ -- 83
+width$ -- 0
+write$ -- 274
+(There was 1 warning)

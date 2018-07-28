@@ -31,7 +31,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% The '3p' and 'times' class options of elsarticle are used for Elsevier CRC
-\documentclass[3p,times]{elsarticle}
+\documentclass[3p,times,authoryear]{elsarticle}
 
 %% The `ecrc' package must be called to make the CRC functionality available
 \usepackage{ecrc}
@@ -47,7 +47,7 @@
 \firstpage{1}
 
 %% Give the name of the journal
-\journalname{Procedia Computer Science}
+\journalname{Chemical Engineering Science}
 
 %% Give the author list to appear in the running head
 %% Example \runauth{C.V. Radhakrishnan et al.}
@@ -76,7 +76,9 @@
 
 %% The amssymb package provides various useful mathematical symbols
 \usepackage{amssymb}
-
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\setcitestyle{authoryear,open={(},close={)}}
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
 
@@ -104,7 +106,7 @@
 %%
 %% \biboptions{comma,round}
 
-% \biboptions{}
+%\biboptions{sort&compress,comma}
 
 % if you have landscape tables
 \usepackage[figuresright]{rotating}
@@ -119,7 +121,7 @@
 %\hyphenation{author another created financial paper re-commend-ed Post-Script}
 
 % declarations for front matter
-\bibliographystyle{elsarticle-num}
+%\bibliographystyle{elsarticle-num}
 \begin{document}
 
 \begin{frontmatter}
@@ -170,6 +172,7 @@ cooled crystalllization. It successfuly includes probability distributions for t
  %The key challenge in addressing robustness to model
 %error is to propagate the uncertainty in model parameters onto the
 %%control or optimization objective.
+
 \end{abstract}
 
 \begin{keyword}
@@ -204,19 +207,20 @@ In the following work, the method in focus is cooling crystallization in which s
 This work formulates and analyses various control strategies for a cooling crystallization process represented through the population balance equation. \textbf{Deterministic Optimal Control} aims at finding the an optimum temperature profile to maximise an objective function selected to achieve a desired volume of the product.
 Herein, the experimental kinetic parameters are employed to simulate a batch crystalllization process. \textbf{Stochastic Optimal Control} undertakes the task of quantifying the uncertainites which creep in due to experimentation. It aims to achive a maximum expected value for the desired product, simultaneously incorporating randomness in the process parameters into the model. Namely, two methods \textbf{Ito Process} and a novel approach \textbf{Polynomial Chaos Expansions} are employed for this purpose. \par
 
-Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by Mullin and Nyvlt \cite{mullin} in 1971.
-Later, in 1974, A. G. Jones \cite{agjones} presented a mathematical theory based on moment transformations of population balance equations. He used the continuous maximum principle to predict optimal cooling curves.
-Rawlings et al. \cite{rawlings} discussed issues in crystal size measurement using laser light scattering experiments and optimal control problem formulation. In 1994, Miller and Rawlings \cite{miller_rawlings}  discussed the uncertain bounds on model parameter estimates for a batch crystallization system. 
-ost importantly optimal temperature prediction for batch crystallization has also been done by Hu et al.\cite{hu}, Shi et al.\cite{shi}, Paengjuntuek et al.\cite{paeng}, and Corriou and Rohani.\cite{corriou}, the data and knowledge from which have been used in further work in this project.\par
-Stochastic modeling of particulate processes and parameter estimation using the experimentally measured particle sizes has attracted many researchers. Grosso et al.\cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. Ma et al.\cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. Monte Carlo simulations have also been used to propogate uncertainities but often present the problem of high computational demand, for which approximations are proposed.  Nagy and Braatz (2007) \cite{nagy} have shown that Polynomial Chaos Expansions(PCE) is a computationally efficient alternative to Monte Carlo simulations for propagating uncertainty in dynamic models. PCE is based on orthogonal basis functions thus requiring smaller function evaluations for the calculation of numerical integrations needed for obtaining statistical moments. The computational advantages of PCEs for robust control and optimization has been shown by Nagy and Braatz \cite{nagy}, Kim et al.\cite{kim}, Kumar and Budman\cite{kumar}. \par
+Most of the reported works in the this field deal with the determination of optimal temperature or supersaturation trajectory for the batch crystallizer. The concept of programmed cooling in batch crystallizers was first discussed by \cite{mullin}.
+Later, \cite{agjones} presented a mathematical theory based on moment transformations of population balance equations. He used the continuous maximum principle to predict optimal cooling curves.
+\cite{rawlings} discussed issues in crystal size measurement using laser light scattering experiments and optimal control problem formulation. \cite{miller_rawlings}  discussed the uncertain bounds on model parameter estimates for a batch crystallization system. 
+Most importantly optimal temperature prediction for batch crystallization has also been done by \cite{hu}, \cite{shi}, \cite{paeng} and \cite{corriou}, the data and knowledge from which have been used in further work in this project.\par
+Stochastic modeling of particulate processes and parameter estimation using the experimentally measured particle sizes has attracted many researchers. \cite{grosso} presented a stochastic approach for modeling PSD and comparative assessments of different models. \cite{ma} presented a worse-case performance analysis of optimal control trajectories by considering features such as the computational effort, parametric uncertainty and control implementation inaccuracies. Monte Carlo simulations have also been used to propogate uncertainities but often present the problem of high computational demand, for which this work proposes Polynomial Chaos Expansions(PCEs) as an alternative. The computational advantages of PCEs for robust control and optimization has been shown by \cite{nagy}, \cite{kim} and \cite{kumar}. \par
 The focus of the current research activity is to incorporate parametric uncertainties in the mathematical formulations of batch crystallization process for building a robust model. In the deterministic approach, kinetic parameters from the experimental data have been used to model the system. Next, stochastic Ito processes are used to assimilate the errors in the experimental data. Finally, PCE are demostrated as an effective method for non-linear optimization in batch reactors. A case study of an unseeded crystallization process is also included to authenticate the methodology.
+%It is based on orthogonal basis functions thus requiring smaller function evaluations for the calculation of numerical integrations needed for obtaining statistical moments.
 
 \section{Materials and methods} \label{model}
 
 %\subsection{Seeded batch Crystallization} 
 
 This section introduces the underlying concepts needed to build a computational model of a crystallization process which involves regulating the population of particles, also termed as a particulate process. 
-The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \\
+The population is described by the density of a suitable extensive variable, usually the \textbf{number of particles}, but sometimes by other variables such as the mass or volume of particles. The usual transport equations expressing conservation laws for material systems apply to the behavior of single particles. Particulate processes are characterized by properties such as particle shape, size, surface area, mass, and product purity. \par
 A population balance formulation describes the process of crystal size distribution with time most effectively. Thus, modeling of a batch crystallizer involves the use of population balances to model the crystal size prediction and the mass balance on the system can be modeled as a simple differential equation having concentration as the state variable.
 The population balance can be expressed as eq :
 
@@ -225,19 +229,19 @@ The population balance can be expressed as eq :
 \end{equation}
 where \textbf{n} is the number density distribution, \textbf{t} is the time, \textbf{r} represents the characteristic dimension for size measurements, \textbf{G} is the crystal growth rate, and \textbf{B} is the nucleation rate. Both growth and nucleation processes describe crystallization kinetics, and their expression may vary, depending on the system under consideration.
 
-In this work, the system under consideration is potassium sulfate, which has been studied earlier for its kinetics by Hu et al. \cite{hu}, Shi et al. \cite{shi}, and Paengjuntuek et al.\cite{paeng}. The expressions are given as follows: \\
+In this work, the system under consideration is potassium sulfate, which has been studied earlier for its kinetics by \cite{hu}, \cite{shi} and \cite{paeng}. The equations expressing the kinetics and values for the kinetic parameters have been derived form these literary works. 
 
-Nucleation kinetics$^{(5-7)}$ are defined by :
+Nucleation kinetics are defined by :
 \begin{equation}
 B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}
 \end{equation}  
 
 
-Growth Kinetics$^{(5-7)}$ are given by:
+Growth Kinetics are given by:
 \begin{equation}
 G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}
 \end{equation}
-where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. The values for these kinetic parameters for the given system have been mentioned in Table\ref{Table1}. The following equations are used to evaluate the saturation($C_{s}$) and metastable($C_{m}$) concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C)\cite{shi}. \\
+where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. The values for these parameters for the given system have been mentioned in Table \ref{Table1}. The following equations are used to evaluate the saturation($C_{s}$) and metastable($C_{m}$) concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C) (\cite{shi}). \\
 \begin{align}
 C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \label{sat}\\
 C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2} \label{meta}
@@ -253,20 +257,38 @@ Since $n(r,t)$ represents the population density of the crystals, the i-th momen
 \begin{equation} \label{moments}
 \mu_{i} = \int_{0}^{\infty} r^{i}n(r,t) dr
 \end{equation}
-The above equations along with the Population Balance Equation(PBE) represent a complete model of a seeded batch crystallizer. 
+The above equations along with the Population Balance Equation(PBE) (\ref{populationbalance}) represent a complete model of a seeded batch crystallizer. 
 Population balance equations are multidimensional, which poses a problem with their implementation in complex control functions, hence use of a model order reduction becomes imperative.\par
-For simplification, we reduce the population balance equations into \textbf{Moment balance equations} which has been estabilished as an efficient method by Yenkie et al.\cite{yenkie}. This is done by multiplying the equation (\ref{populationbalance})  with $r^{i}$ on both sides to generate the expression given by equation (\ref{moments}). Converting the model into Ordinary differential equations proves to be advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment method leads to a reduced-order model given by \Crefrange{g1}{n1}
-%%%% Insert table of parameters
+For simplification, we reduce the population balance equations into \textbf{Moment balance equations} which has been estabilished as an efficient method by \cite{yenkie}. This is done by multiplying the equation (\ref{populationbalance})  with $r^{i}$ on both sides to generate the expression given by equation (\ref{moments}). Converting the model into Ordinary differential equations proves to be advantageous, since it is difficult and time-consuming to formulate an optimization problem involving PBEs. Thus, the moment method leads to a reduced-order model given by \Crefrange{g1}{n1}
+
 Separate moment equations are used for the seed and nuclei classes of crystals, and they are defined as : \\
 \begin{align}
 \mu^{n}_{i} &= \int_{0}^{r_{g}} r^{i}n(r,t) dr \\
 \mu^{s}_{i} &= \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
 \end{align} \\
-\textbf{n} in the superscript represents the nucleated crystal whereas \textbf{s} stands for the seeded crystal, $\boldsymbol{r_{g}}$ gives the critical radius separating the two. The moment equations for nucleated and seeded crystals are obtained as follows\cite{yenkie} :
+\textbf{n} in the superscript represents the nucleated crystal whereas \textbf{s} stands for the seeded crystal, $\boldsymbol{r_{g}}$ gives the critical radius separating the two. The resultatnt moment equations for nucleated and seeded crystals as follows (\cite{yenkie}) :
+
+\begin{enumerate}
+
+\item Nucleated crystals
+\begin{align}
+\frac{d\mu_{0}^{n}}{dt} &= B(t) \label{g1}\\
+\frac{d\mu_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
+\end{align}
+
+\item Seeded crystals
+\begin{align}
+\mu_{0}^{s} &= constant \\ \label{seed}
+\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \label{n1} 
+\end{align}
+\end{enumerate}
+The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics\cite{shi}. 
+\par 
+Detailed steps used for each of the optimization techniques has been mentioned in the respective sections.
 \begin{center}
 \begin{table}[!h]
 \centering
-\caption{Parameter Values for Batch Crystallizer\cite{hu,paeng}}
+\caption{Parameter Values for Batch Crystallizer}
 \begin{tabular}{|c|c|}
 \hline
 Parameters & Experimental Values \\
@@ -287,23 +309,6 @@ $b$ & $1.45$ \\
 \label{Table1}
 \end{table}
 \end{center}
-\begin{enumerate}
-
-\item Nucleated crystals\cite{hu,paeng} 
-\begin{align}
-\frac{d\mu_{0}^{n}}{dt} &= B(t) \label{g1}\\
-\frac{d\mu_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
-\end{align}
-
-\item Seeded crystals\cite{hu,paeng}
-\begin{align}
-\mu_{0}^{s} &= constant \\ \label{seed}
-\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \label{n1} 
-\end{align}
-\end{enumerate}
-The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics\cite{shi}. 
-\par 
-Detailed steps used for each of the optimization techniques has been mentioned in the respective sections.
 \section{Deterministic Optimal Control}\label{secdet}
 
 \subsection{\textit{Case Study : Seeded batch crystallization}}
@@ -446,7 +451,7 @@ The resultant optimal temperature profile is shown in Figure (\ref{Dtemp}). The 
 \section{Optimal Control using Uncertainity Quantification}
 
 
-Kinetic parameters used in the Section(\ref{secdet}) are empirical constants derived by fitting experimental data to the model, and hence, are a source of errors within the model .The exact values of the parameters are unknown and thus are termed as uncertainties. These errors tend to produce to sub-optimal results when used for real-world applications. In the next section, we convert the deterministic problem into a stochastic one wherein the kinetic constants are treated as random variables to include variation in there values into the final output produced by the model. Two methods are proposed to address the given problem. 
+The kinetic parameters used in the Section(\ref{secdet}) are empirical constants which are derived by experimental data \cite{hu,shi,paeng}, and hence, are a source of errors within the model .The exact values of the parameters are unknown and thus are termed as uncertainties. These errors tend to produce to sub-optimal results when used for real-world applications. In the next section, we convert the deterministic problem into a stochastic one wherein the kinetic constants are treated as random variables to include variation in there values into the final output produced by the model. Two methods are proposed to address the given problem. 
 
 \subsection{Stochastic Optimal Control using Ito Processes}
 
@@ -578,7 +583,7 @@ $g_{9}$ & $8.753\times10^{4}$ \\
 
 \subsection{Stochastic Optimal Control using Polynomial Chaos Expansion(PCE)}
 
-The generalized polynomial chaos (PC) framework has been proven as a computationally efficient surrogate for uncertainty propagation through the nonlinear system dynamics, as opposed to the Monte-Carlo simulations. In the following work, we use PCE to fit the crystallizatioin model using orthogonal polynomials an thus generate samples in an effective manner. 
+The generalized polynomial chaos (PC) framework has been proven as a computationally efficient alternative for uncertainty propagation through a  nonlinear system, as opposed to the Monte-Carlo simulations. In the following work, we use PCE to fit the crystallization model using orthogonal polynomials and compare the performance with the other methods in this domain. 
 %\cite{mesbah,fagiano,huschto,kim2013}
 
 \subsubsection{Mathemetical Background}
@@ -613,7 +618,7 @@ Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires c
 
 \subsubsection{Usage of PCE in Batch Crystallization}
 
-Extending the concepts from the previous section, the state varibles($y_{i}$)(\Crefrange{eq1}{eq9}) act as the uncertain outputs which is caused by uncertainities present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). Temperatue($T(t)$) acts as the input variable $x$ in the above system. The PC expansion coefficients can be determined using the probabilistic collocation methods. Using these methods, N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the nonlinear process model \Crefrange{obj}{adjoints}. The PC expansion coefficients can then be obtained in a least squares sense through minimizing the residuals between the PC expansion and the nonlinear model predictions. The complete algorithm is mentioned below.
+Extending the concepts from the previous section, the state varibles($y_{i}$)(\Crefrange{eq1}{eq9}) act as the uncertain outputs which is caused by uncertainities present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). Temperatue($T(t)$) acts as the input variable $x$ in the above system. The PC expansion coefficients can be determined using the probabilistic collocation methods. Using these methods, N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the nonlinear process model \Crefrange{obj}{adjoints}. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the nonlinear model predictions. The complete algorithm is mentioned below.
 
 \textbf{Algorithm}:
 \begin{enumerate}
