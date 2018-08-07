@@ -6,6 +6,12 @@ Benavides, P.~T. and Diwekar, U. (2012).
   Stochastic control.
 \newblock {\em Fuel}, 94:218--226.
 
+\bibitem[Bhoi et~al., 2017]{bhoi}
+Bhoi, S., Lenka, M., and Sarkar, D. (2017).
+\newblock Particle engineering by optimization for the unseeded batch cooling
+  crystallization of l-asparagine monohydrate.
+\newblock {\em CrystEngComm}, 19(42):6373--6382.
+
 \bibitem[Corriou and Rohani, 2008]{corriou}
 Corriou, J.-P. and Rohani, S. (2008).
 \newblock A new look at optimal control of a batch crystallizer.
@@ -66,6 +72,12 @@ Kumar, D. and Budman, H. (2014).
 \newblock Robust nonlinear mpc based on volterra series and polynomial chaos
   expansions.
 \newblock {\em Journal of Process Control}, 24(1):304--317.
+
+\bibitem[Lindenberg and Mazzotti, 2011]{lindenberg}
+Lindenberg, C. and Mazzotti, M. (2011).
+\newblock Continuous precipitation of l-asparagine monohydrate in a micromixer:
+  Estimation of nucleation and growth kinetics.
+\newblock {\em AIChE journal}, 57(4):942--950.
 
 \bibitem[Ma et~al., 1999]{ma}
 Ma, D.~L., Chung, S.~H., and Braatz, R.~D. (1999).

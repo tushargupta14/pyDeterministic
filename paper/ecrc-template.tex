@@ -266,7 +266,7 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 \mu^{n}_{i} &= \int_{0}^{r_{g}} r^{i}n(r,t) dr \\
 \mu^{s}_{i} &= \int_{r_{g}}^{\infty} r^{i}n(r,t) dr
 \end{align} \\
-\textbf{n} in the superscript represents the nucleated crystal whereas \textbf{s} stands for the seeded crystal, $\boldsymbol{r_{g}}$ gives the critical radius separating the two. The resultatnt moment equations for nucleated and seeded crystals as follows (\cite{yenkie}) :
+\textbf{n} in the superscript represents the nucleated crystal whereas \textbf{s} stands for the seeded crystal, $\boldsymbol{r_{g}}$ gives the critical radius separating the two. The resultatnt moment equations for nucleated and seeded crystals are as follows (\cite{yenkie}) :
 
 \begin{enumerate}
 
@@ -282,13 +282,13 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 \frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \label{n1} 
 \end{align}
 \end{enumerate}
-The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics\cite{shi}. 
-\par 
-Detailed steps used for each of the optimization techniques has been mentioned in the respective sections.
+The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics (\cite{shi}). 
+\par
+The crystallization model defined above has been used to compare the performance of different types of optimization techniques, both in the deterministic and stochastic domain, which is explained in detail in the susequent sections.
 \begin{center}
 \begin{table}[!h]
 \centering
-\caption{Parameter Values for Batch Crystallizer}
+\caption{Experimental values of Kinetic Parameters}
 \begin{tabular}{|c|c|}
 \hline
 Parameters & Experimental Values \\
@@ -312,7 +312,7 @@ $b$ & $1.45$ \\
 \section{Deterministic Optimal Control}\label{secdet}
 
 \subsection{\textit{Case Study : Seeded batch crystallization}}
-Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by Diwekar\cite{diwekar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle is its ability to adapt to stochastic calculus which is explained in the next section. \par 
+Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by \cite{diwekar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle is its ability to adapt to stochastic calculus which is explained in the next section. \par 
 In a seeded crystallization process it is essential to keep the nucleation phenomena to minimum as in the early stages of growth, nucleated crystals might compete with the seeded ones for growth. This ensures uniformity in the shape and size of the final product. It is achieved by incorporating the volume of nucleated in the \textbf{objective fuction}. Third moment($\mu_{3}$) represents volume in a crystallization model as evident from Equation(\ref{moments}) and is used as follows :
 \begin{equation}
 \max_{T(t)}\lbrace{\mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\rbrace } 
@@ -325,7 +325,7 @@ $C_{m}$ is the metastable concentration described by Equation(\ref{meta}). The s
 \begin{equation} \label{states}
 y_{i} = \left[\quad C \quad \mu_{0}^{s} \quad \mu_{1}^{s}\quad \mu_{2}^{s}\quad \mu_{3}^{s}\quad \mu_{0}^{n}\quad \mu_{1}^{n}\quad \mu_{2}^{n}\quad \mu_{3}^{n}\quad\right]  
 \end{equation}
-Using the above notations the state equations can be realized as \cite{yenkie} :
+Using the above notations the state equations can be realized as (\cite{yenkie}) :
 \begin{align} 
 \frac{dy_{1}}{dt} &= -3\rho k_{v}G(t)(y_{4}+y_{8}) \label{eq1}\\
 \frac{dy_{2}}{dt} &= 0 \label{eq2}\\
@@ -342,7 +342,7 @@ Using the above notations the state equations can be realized as \cite{yenkie} :
 Thus, the complete model involving the moment equations consists of nine state equations.
 \subsection{\textit{Solution technique}} \label{soltech} 
 
-The algorithm of Steepest Ascent utilizes the Maximum Principle using the Hamiltonian to move towards the optimum value of temperature and maximise the objective function. To formulate the equations an adjoint varible ($z_{i}$) is defined corresponding to each state variable ($y_{i}$) The adjoint variable staisfy the relations given by eq \ref{adjoints}. Using the state and the adjoint equations, a two-point boundary-value-problem is constructed. Here, the intial values for the states and the final conditions for the adjoint variables are known beforhand.
+The algorithm of Steepest Ascent utilizes the Maximum Principle using the Hamiltonian to move towards the optimum value of temperature and maximise the objective function. To formulate the equations an adjoint varible ($z_{i}$) is defined corresponding to each state variable ($y_{i}$) The adjoint variable staisfy the relations given by eq \ref{adjoints}. Using the state and the adjoint equations, a two-point boundary-value-problem is constructed. Here, the intial values for the states and the final conditions for the adjoint variables are known beforehand.
 The Hamiltonian can now be defined by eq \ref{hamilt}.
 \begin{equation} \label{hamilt}
  H &= \sum_{i = 1}^{9} z_{i}f(y_{i},t,T) 
@@ -368,7 +368,7 @@ The steps followed to solve the optimal control problem have been discussed in d
 \item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon.
 \item The differential equations for state variables are integrated in the forward direction using the given initial conditions.
 \item The values of the adjoint variables are computed by backward integration of the adjoint equations given by eqs. \ref{adjoints}.
-\item For evaluation of the Hamiltonian derivative, an analytical method proposed by Benavides and Diwekar\cite{benavides}, is used in which an additional variable corresponding to each of the state and adjoint variable is introduced. The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, which is given by eq(\ref{thetafi}).
+\item For evaluation of the Hamiltonian derivative, an analytical method proposed by \cite{benavides}, is used in which an additional variable corresponding to each of the state and adjoint variable is introduced. The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, which is given by eq(\ref{thetafi}).
 \begin{equation}
 \theta_{i} = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i}}{dT} \label{thetafi} 
 \end{equation}
@@ -376,7 +376,7 @@ The steps followed to solve the optimal control problem have been discussed in d
 \begin{equation}
 \frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) \label{hamiltd}
 \end{equation}
-\item The  computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using the relation \cite{yenkie} given by eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
+\item The  computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
 \begin{equation} 
 T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right) \label{temp}
 \end{equation}
@@ -451,19 +451,19 @@ The resultant optimal temperature profile is shown in Figure (\ref{Dtemp}). The 
 \section{Optimal Control using Uncertainity Quantification}
 
 
-The kinetic parameters used in the Section(\ref{secdet}) are empirical constants which are derived by experimental data \cite{hu,shi,paeng}, and hence, are a source of errors within the model .The exact values of the parameters are unknown and thus are termed as uncertainties. These errors tend to produce to sub-optimal results when used for real-world applications. In the next section, we convert the deterministic problem into a stochastic one wherein the kinetic constants are treated as random variables to include variation in there values into the final output produced by the model. Two methods are proposed to address the given problem. 
+The kinetic parameters used in the Section(\ref{secdet}) are empirical constants which are obtained through experimentation and hence, are a source of errors into the model. The exact values of the parameters are unknown and thus are termed as uncertainties which go on to produce sub-optimal results when used in real-world applications. In the next section, we convert the deterministic problem into a stochastic one, wherein the kinetic constants are treated as random variables to include variation in there values into the final output produced by the model. Thus, two methods are analysed to address the given problem. 
 
 \subsection{Stochastic Optimal Control using Ito Processes}
 
 %%%%%
 % Give proper  references here 
 %%%%%
-Several previous works(\cite{diwekar}) have shown that the dynamic uncertainties present in batch reactors\cite{benavides} and batch distillations\cite{diwekar}, can be represented using stochastic processes termed as Ito processes. We characterize the time-dependent uncertainties in the state variables using Ito processes known as \textbf{Brownian motion} with drift\cite{diwekar,wong}. The advantage lies in the ability to integrate the equations through the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. 
+Several previous works have shown that the dynamic uncertainties present in batch reactors (\cite{benavides}) and batch distillations (\cite{diwekar}), can be represented using stochastic processes known as Ito processes. We characterize the time-dependent uncertainties in the state variables using Ito processes known as Brownian motion with drift (\cite{diwekar,wong}). The advantage lies in the ability to integrate the equations through the principles of stochastic calculus and the use of stochastic maximum principle to solve for the optimal temperature profile. 
 A simple Ito process can be written as eq (\ref{gen})
 \begin{equation} \label{gen}
 dy = a(y,t)dt + b(y,t)dz
 \end{equation}
-where $dz$ is the increment of the Wiener process equal to $\varepsilon_{t}(\Delta t)^{1/2}$, and a(y,t) and b(y,t) are known functions. The random value $\varepsilon_{t}$ has a unit normal distribution with zero mean and a standard deviation of 1. To estimate the values of the functions a and b, a generalized method presented by Diwekar\cite{diwekar} has been used.\par
+where $dz$ is the increment of the Wiener process equal to $\varepsilon_{t}(\Delta t)^{1/2}$, and a(y,t) and b(y,t) are known functions. The random value $\varepsilon_{t}$ has a unit normal distribution with zero mean and a standard deviation of 1. To estimate the values of the functions a and b, a generalized method presented by \cite{diwekar} has been used.\par
 In this work, equation(\ref{gen}) is used to modify the deterministic state (\Crefrange{eq1}{eq9}) to incorporate the uncertainties into the moment equations as follows :
 \begin{align}
 dy_{1} &= \left(-3\rho k_{v}G(t)(y_{4}+y{8})\right)\Delta t + g_{1}\varepsilon_{1}\sqrt{\Delta t} \label{steq1}\\
@@ -477,17 +477,17 @@ dy_{8} &= (2G(t)y_{7})\Delta t +g_{8}\varepsilon_{8}\sqrt{\Delta t} \\
 dy_{9} &= (3G(t)y_{8})\Delta t + g_{9}\varepsilon_{9}\sqrt{\Delta t} \label{steq2} 
 \end{align}
 $a(y,t)$ in each equation is replaced by the corresponding deterministic function for the state variable. Here, the $g_{i}$ values represent the variance in the variable for which they are associated. They are calculated by recording the variance of the differences ($y_{i}^{t} - y_{i}^{t-1}$), which is divided by the time interval $\Delta t$, and then the square root of this value is taken. \par
-The stochastic system defined by the \Crefrange{steq1}{steq2} treats the kinetic parameters as random variables for which the variations are propagated through the coefficients $g_{i}$ into the final output of the model. These parameters are modeled here using a Gaussian probabilistic distribution based on a previous study done by Yenkie et al.\cite{yenkie}. Table (\ref{stochastic}) provides the range of values exhibited by the kinetic constants. Consequently, the \textbf{objective function} is also modified in Equation(\ref{Sobj}) for its evaluation in the stochastic domain.   
-\begin{equation} \label{Sobj}
-\max_{T} L = \mathbf{E}\left[ \mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\right]
+The stochastic system defined by the \Crefrange{steq1}{steq2} treats the kinetic parameters as random variables for which the variations are propagated through the coefficients $g_{i}$ into the final output of the model. The range of values exhibited by the kinetic constants can be seen in the Table (\ref{stochastic}) (\cite{hu}, \cite{shi} and \cite{paeng}). We use a Gaussian probabilistic distribution (\cite{yenkie}) to incorpoarte the variations into the model. Consequently, the objective function is also modified in \ref{Sobjeq} for its evaluation in the stochastic domain.   
+\begin{equation} 
+\max_{T} L = \mathbf{E}\left[ \mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\right] \label{Sobjeq}
 \end{equation}
 Here, $\mathbf{E}$ is the expected value of the variable. The new objective function
 maximizes the expected value of mass of the seeded crystals for an optimal temperature profile in presence of errors or uncertainties in values of concentration or the moments, thus making it more suited to real world scenarios. The \textbf{Active Constraints} and \textbf{Initial Conditions} remain the same as mentioned in Section (\ref{secdet}).
 
 \begin{center}
-\begin{table}[!h] \label{stochastic}
+\begin{table}[!h]
 \centering
-\caption{Kinetic Parameter Uncertainties\cite{hu,shi,paeng}}
+\caption{Uncertainties in Kinetic Parameters}  \label{stochastic}
 \begin{tabular}{|c|c|c|} 
 \hline
 Parameters & Experimental Values & Range of Values\\
@@ -511,8 +511,8 @@ $b$ & $1.45$ & $1.3775-1.5225$\\
 \end{center}
 
 \subsubsection{Solution Technique}
-The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle\cite{ramirez}, through the Steepest Ascent Hamiltonian method similar to Section(\ref{soltech}).
-The Hamiltonian for this section is modified to incorporate the uncertainties as\cite{yenkie} :
+The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle (\cite{ramirez}), through the Steepest Ascent Hamiltonian method similar to Section (\ref{soltech}).
+The Hamiltonian for this section is modified to incorporate the uncertainties as (\cite{yenkie}):
 \begin{equation}
 H = \sum_{i=1}^{9} \left( z_{i}f_{i} + \omega_{i}\frac{g_{y_{i}}^2}{2} \right)
 \end{equation}
@@ -587,7 +587,7 @@ The generalized polynomial chaos (PC) framework has been proven as a computation
 %\cite{mesbah,fagiano,huschto,kim2013}
 
 \subsubsection{Mathemetical Background}
-A Polynomial Chaos Expansion (PCE) describes a random process as a spectral expansion of random variables($\theta_{i}$), using orthogonal basis functions, $\Phi_{i}$ (Ghanem and Spanos, 1990\cite{ghanem}, Ghanem and Spanos, 1997\cite{ghanem1997}). For example, any second-order (finite variance) random process $y^{d}$, can be described using a PCE as follows:
+A Polynomial Chaos Expansion (PCE) describes a random process as a spectral expansion of random variables($\theta_{i}$), using orthogonal basis functions, $\Phi_{i}$ (\cite{ghanem}, \cite{ghanem1997}). For example, any second-order (finite variance) random process $y^{d}$, can be described using a PCE as follows:
 \begin{equation}
 y^{d} = a_{0}^{d}\phi_{0} + \sum_{i_{1}=1}^{\infty} a_{i_{1}}^{d}\phi_{1}(\theta_{i_{i1}}) + \sum_{i_{1}=1}^{\infty}\sum_{i_{2}=1}^{i_{1}} a_{i_{1}i_{2}}^d\phi_{2}(\theta_{i_{1}},\theta_{i_{2}})
 \end{equation}
@@ -675,10 +675,131 @@ All the source scripts for using PCE with the crystallization model were written
 \caption{The Concentration profile}
 \end{figure}
 
-
-\section{Conclusion}
-
 \section{Case Study}
+
+In the following case study we aim to build a predictive model for batch crystallization of L-Asparagine Monohyrdate(LAM) by using the concepts developed in the previous section and at the same time validate the performance of Polynomial Chaos Expansions (PCEs) on an unseeded batch crystallization scenario.   
+
+\subsection{Mathematical Background}
+
+
+The kinetics of crystal formation are modeled using the population balance equations(PBE) in \ref{populationbalance}, where the nucleation rate expression for LAM crystals is given by \cite{lindenberg} :
+\begin{equation}
+B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) 
+\end{equation}
+in which $C_{c}$ represents the  molar density of LAM crystals. Here, $k_{j_{1}}$ and $k_{j_{2}}$ are
+empirical parameters. The growth rate is now given by the power-law expression given by \cite{nagy} and \cite{nagy2}:
+\begin{equation}
+G = k_{g}(S-1)^{g}
+\end{equation}
+The supersaturation ratio, S, is defined as :
+\begin{equation}
+S = C/C^{*}
+\end{equation}
+where $C^{*}$ represents the saturation concentration of LAM crystals. The solubility of these crystals can be expressed as:
+\begin{equation}
+C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
+\end{equation}
+
+The values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}, k_{j_{2}}} ]$ have been mentioned in the \ref{Table4} (\cite{bhoi}).
+
+
+\begin{center}
+\begin{table}[!h]
+\centering 
+\caption{Kinetic Parameters} \label{Table4}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameters & Experimental Values & Range of Values\\
+\hline
+\multicolumn{3}{|c|}{Growth Kinetics} \\
+\hline
+$\ln(k_{g})$ & $3.41\pm 0.28 & \mu m min^{-1} $\\
+$g$ & $1.48\pm 0.04$ & $ - $\\
+\hline
+\multicolumn{3}{|c|}{Nucleation Kinetics} \\
+\hline
+$\ln(k_{j_{1}})$ & $24.74\pm0.73$ & $No. per m^{3}min$\\ 
+$k_{j_{2}}$ & $2.7\times10^{-2}\pm 3.2\times10^{-3}$ & $-$\\
+\hline
+\end{tabular}
+
+\label{values}
+\end{table}
+\end{center}
+
+Method of Moments has been used to reduce the PBE to ODE's as stated in Section \ref{modeleq}. The mass balance for LAM crystals also remains the same from there, with the difference being the absence of seeded crystals.\\
+
+The ODEs for the model are given by :
+\begin{align}
+\frac{du_{0}}{dt} &= B \\
+\frac{du_{j}}{dt} &= jG\mu_{j-1}
+\end{align}
+for  $j = 1,2,3,4 $
+\\
+The determination of the optimal temperature profile for maximizing the weight mean size is a highly studied objective for a crystallization process.Thus, 
+\paragraph{Objective Function} becomes :
+\begin{align}
+\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t_{f} 
+\end{align}
+\paragraph{Constraints}
+\begin{align}
+T_{min} &\leqslant T(t) \leqslant T_{max} \\
+\frac{dT}{dt} &\leqslant 0
+\end{align}
+The state variables can be represented as :
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
+\end{equation*}
+Here we do not divide the moments in seeded and nucleated ones.\\
+The Hamiltonian method described in the previous sections was employed to solve the optimaization problem along with the uncertainity quantification being done using Polynomial Chaos Expansions. The new state equations, constraints and kinetics as described above are used to define the problem.\\
+
+\subsection{Solution Technique : Hamiltonian Steepest Ascent with PCE}
+
+Equations(6.5-6.6) take place as the new state equations and the uncertain parameters are mentioned in Table 6.1. The constraint(Eq 6.9)) depicts a cooling profile for the crystallizer. The obejective function here (Eq 6.7) differs from the one used in Section(\ref{deterministic}) so as to calculate the final maximum mean size of the crystals.\\ 
+Key Differences :
+\begin{itemize}
+\item The batch time for the model was taken to be 240 min($t_{f}$).
+\item An initial concentration value of 0.073 $g/L$ was taken to obtain the cooling profile. All the moments were intialised to 0.
+\item The ODEs were integrated using Python \textbf{scipy's} \textbf{odeint} integrator.
+\end{itemize}
+
+\paragraph{Algorithm}
+\begin{enumerate}
+\item The process model consists of 4 uncertainities which computationally prohibits the evaluation. Thus, the experiment has been done on $k_{g}$ and $g$, employing a joint distribution of the parameters.
+\item Samples are generated using the distribution using Gaussian Quadrature Scheme.
+\item The function is evaluated at each of these samples to evalute the integrals numerically to determine the PCE coefficients.
+\item At each sample, optimization of the model is performed using the Determinstic Approach explained in Section(\ref{deterministic}).
+\item The convergence criteria and the constraints remain same as the above referenced method.
+\end{enumerate}
+
+\subsection{Results}
+The value for the concentration profile for the time horizon was obtained as :
+\begin{figure}[h!] 
+\begin{center}
+\includegraphics[width=4in]{AppConc.png}
+\end{center}
+\caption{Concentration Profile}
+\end{figure}
+
+The value for the temperature profile was obtained as :
+\begin{figure}[h!] 
+\begin{center}
+\includegraphics[width=4in]{AppTemp.png}
+\end{center}
+\caption{Temperature Profile}
+\end{figure}
+
+\subsection{Conclusion}
+
+\begin{itemize}
+\item The final value of the objective function($\mu_{4}/\mu_{3}$), ie. the mean crystal size was obtained at : $300 \mu m$
+\item The model performs at par with other cooling policies such as cubic cooling policy($251 \mu m$)\cite{bhoi}. This proves the efficacy of P.C.E in the field of batch crystallization.
+\end{itemize}
+
+
+\secstion{Conclusion}
+
+
 
 
 %% The Appendices part is started with the command \appendix;

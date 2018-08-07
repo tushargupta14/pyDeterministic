@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  28 JUL 2018 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  7 AUG 2018 09:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,20 +521,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box33
 \@float@everytoks=\toks25
 \@floatcapt=\box34
-) (./ecrc-template.aux
-
-LaTeX Warning: Label `Sobj' multiply defined.
-
-
-LaTeX Warning: Label `Sobj@cref' multiply defined.
-
-)
+) (./ecrc-template.aux)
 \openout1 = `ecrc-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 125.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 125
 .
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 125.
@@ -908,37 +901,183 @@ Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13] [14 <./images/PCEConc-eps-converted-to.pdf>] (./ecrc-template.bbl)
-[15
 
-] (./ecrc-template.aux)
+Package natbib Warning: Citation `lindenberg' on page 13 undefined on input lin
+e 685.
 
-LaTeX Warning: There were multiply-defined labels.
+
+Package natbib Warning: Citation `nagy2' on page 13 undefined on input line 690
+.
+
+[13]
+
+Package natbib Warning: Citation `bhoi' on page 14 undefined on input line 703.
+
+
+! Extra }, or forgotten $.
+<template> \unskip \hfil }
+                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
+l.716 $\ln(k_{g})$ & $3.41\pm 0.28 &
+                                     \mu m min^{-1} $\\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.716 $\ln(k_{g})$ & $3.41\pm 0.28 &
+                                     \mu m min^{-1} $\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.716 $\ln(k_{g})$ & $3.41\pm 0.28 &
+                                     \mu m min^{-1} $\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.716 $\ln(k_{g})$ & $3.41\pm 0.28 & \mu
+                                         m min^{-1} $\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Reference `modeleq' on page 14 undefined on input line 730.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 730--731
+
+ []
+
+[14 <./images/PCEConc-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 752--755
+
+ []
+
+
+LaTeX Warning: Reference `deterministic' on page 15 undefined on input line 758
+.
+
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 761.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
+File: omstxr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 761.
+
+
+LaTeX Warning: Reference `deterministic' on page 15 undefined on input line 771
+.
+
+
+Overfull \hbox (9.8502pt too wide) in paragraph at lines 771--772
+[]\OT1/txr/m/n/10 At each sam-ple, op-ti-miza-tion of the model is per-formed u
+s-ing the De-ter-min-stic Ap-proach ex-plained in Section([]). 
+ []
+
+
+LaTeX Warning: File `AppConc.png' not found on input line 779.
+
+
+! Package pdftex.def Error: File `AppConc.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.779 \includegraphics[width=4in]{AppConc.png}
+                                              
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: File `AppTemp.png' not found on input line 787.
+
+
+! Package pdftex.def Error: File `AppTemp.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.787 \includegraphics[width=4in]{AppTemp.png}
+                                              
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `bhoi' on page 15 undefined on input line 796.
+
+
+! Undefined control sequence.
+l.800 \secstion
+               {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15] [16] [17] (./ecrc-template.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[18
+
+] (./ecrc-template.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5924 strings out of 493029
- 90378 string characters out of 6136235
+ 5962 strings out of 493029
+ 90910 string characters out of 6136235
  170771 words of memory out of 5000000
- 9298 multiletter control sequences out of 15000+600000
- 58906 words of font info for 136 fonts, out of 8000000 for 9000
+ 9330 multiletter control sequences out of 15000+600000
+ 59074 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,34p,1088b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfo
-nts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on ecrc-template.pdf (15 pages, 296140 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/tx
+ex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on ecrc-template.pdf (18 pages, 314364 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 165 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

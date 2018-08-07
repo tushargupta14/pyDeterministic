@@ -3,46 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ecrc-template.aux
 The style file: apalike.bst
 Database file #1: mybibfile.bib
+Warning--I didn't find a database entry for "nagy2"
 Warning--empty journal in kim
-You've used 21 entries,
+You've used 23 entries,
             1935 wiz_defined-function locations,
-            614 strings with 7036 characters,
-and the built_in function-call counts, 8676 in all, are:
-= -- 885
-> -- 306
-< -- 17
-+ -- 100
-- -- 98
-* -- 784
-:= -- 1474
-add.period$ -- 63
-call.type$ -- 21
-change.case$ -- 153
-chr.to.int$ -- 21
-cite$ -- 22
-duplicate$ -- 301
-empty$ -- 629
-format.name$ -- 145
-if$ -- 1688
+            628 strings with 7438 characters,
+and the built_in function-call counts, 9527 in all, are:
+= -- 972
+> -- 337
+< -- 18
++ -- 110
+- -- 108
+* -- 864
+:= -- 1618
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 168
+chr.to.int$ -- 23
+cite$ -- 24
+duplicate$ -- 329
+empty$ -- 691
+format.name$ -- 159
+if$ -- 1853
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 108
-num.names$ -- 63
-pop$ -- 105
+missing$ -- 24
+newline$ -- 118
+num.names$ -- 69
+pop$ -- 115
 preamble$ -- 1
-purify$ -- 154
+purify$ -- 169
 quote$ -- 0
-skip$ -- 235
+skip$ -- 256
 stack$ -- 0
-substring$ -- 768
-swap$ -- 28
+substring$ -- 848
+swap$ -- 30
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
+type$ -- 136
 warning$ -- 1
-while$ -- 83
+while$ -- 91
 width$ -- 0
-write$ -- 274
-(There was 1 warning)
+write$ -- 300
+(There were 2 warnings)
