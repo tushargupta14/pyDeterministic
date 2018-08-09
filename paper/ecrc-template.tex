@@ -511,13 +511,13 @@ $b$ & $1.45$ & $1.3775-1.5225$\\
 \end{center}
 
 \subsubsection{Solution Technique}
-The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle (\cite{ramirez}), through the Steepest Ascent Hamiltonian method similar to Section (\ref{soltech}).
-The Hamiltonian for this section is modified to incorporate the uncertainties as (\cite{yenkie}):
+The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle (\cite{ramirez}), through the Steepest Ascent Hamiltonian method similar to Section (\ref{soltech}). Consequently, the Hamiltonian for this section is modified to incorporate the uncertainties as (\cite{yenkie}):
 \begin{equation}
-H = \sum_{i=1}^{9} \left( z_{i}f_{i} + \omega_{i}\frac{g_{y_{i}}^2}{2} \right)
+H = \sum_{i=1}^{9} \left( z_{i}f_{i} + \omega_{i}\frac{g_{y_{i}}^2}{2} \right) \label{SHamil}
 \end{equation}
-Here, $f_{i}$ are the deterministic functions used on L.H.S for the . $\omega_{i}$ is an additional adjoint variable defined to calculate the Hamiltonian.
-The \textbf{Algorithm} for the method remains same as mentioned in Section (4.1.1) with minor changes.
+Here, $f_{i}$ are the deterministic parts of the corresponding state variables, used on the R.H.S in \Crefrange{steq1}{steq2}. $\omega_{i}$ is an additional adjoint variable defined to calculate the Hamiltonian.
+The stochastic optimal control problem has been solved in a manner similar to the deterministic problem in \Section (\ref{soltech}) with changes in the state equations (\Crefrange{steq1}{steq2}), objective function (\ref{Sobjeq}), Hamiltonian (\ref{SHamil}) and the number of adjoint variables. The initial and the final conditions for the variables $y_{i}$ and $z_{i}$ remain the same respectively. The \textbf{Algorithm} is explained in detail below. 
+
 \begin{enumerate}
 \item  Steps (1-4) are repeated. 
 \item The variable θi corresponds to each of the state variable yi and the variable ∮ i corresponds to each of the adjoint variable zi , Ψi corresponding to each ωi respectively.
@@ -687,9 +687,9 @@ The kinetics of crystal formation are modeled using the population balance equat
 B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) 
 \end{equation}
 in which $C_{c}$ represents the  molar density of LAM crystals. Here, $k_{j_{1}}$ and $k_{j_{2}}$ are
-empirical parameters. The growth rate is now given by the power-law expression given by \cite{nagy} and \cite{nagy2}:
+empirical parameters. The growth rate (\cite{nagy} and \cite{nagy2}) is now given by the power-law expression in \ref{newgrowth}. 
 \begin{equation}
-G = k_{g}(S-1)^{g}
+G = k_{g}(S-1)^{g} \label{newgrowth}
 \end{equation}
 The supersaturation ratio, S, is defined as :
 \begin{equation}
@@ -699,9 +699,7 @@ where $C^{*}$ represents the saturation concentration of LAM crystals. The solub
 \begin{equation}
 C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
 \end{equation}
-
-The values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}, k_{j_{2}}} ]$ have been mentioned in the \ref{Table4} (\cite{bhoi}).
-
+The experimental values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}}, k_{j_{2}}}]$ (\cite{bhoi}) have been mentioned in the Table \ref{Table4} .
 
 \begin{center}
 \begin{table}[!h]
@@ -734,8 +732,7 @@ The ODEs for the model are given by :
 \frac{du_{0}}{dt} &= B \\
 \frac{du_{j}}{dt} &= jG\mu_{j-1}
 \end{align}
-for  $j = 1,2,3,4 $
-\\
+for  $j = 1,2,3,4 $ \\
 The determination of the optimal temperature profile for maximizing the weight mean size is a highly studied objective for a crystallization process.Thus, 
 \paragraph{Objective Function} becomes :
 \begin{align}
