@@ -225,7 +225,7 @@ A population balance formulation describes the process of crystal size distribut
 The population balance can be expressed as eq :
 
 \begin{equation} \label{populationbalance}
-	\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B  \nolinebreak
+\frac{\partial{n(r,t)}}{\partial{t}} + \frac{\partial{G(r,t)n(r,t)}}{\partial{r}} = B  
 \end{equation}
 where \textbf{n} is the number density distribution, \textbf{t} is the time, \textbf{r} represents the characteristic dimension for size measurements, \textbf{G} is the crystal growth rate, and \textbf{B} is the nucleation rate. Both growth and nucleation processes describe crystallization kinetics, and their expression may vary, depending on the system under consideration.
 
@@ -272,14 +272,14 @@ Separate moment equations are used for the seed and nuclei classes of crystals, 
 
 \item Nucleated crystals
 \begin{align}
-\frac{d\mu_{0}^{n}}{dt} &= B(t) \label{g1}\\
+\frac{d\mu_{0}^{n}}{dt} &= B(t) \label{g1} \\
 \frac{d\mu_{i}^{n}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3
 \end{align}
 
 \item Seeded crystals
 \begin{align}
-\mu_{0}^{s} &= constant \\ \label{seed}
-\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3 \label{n1} 
+\mu_{0}^{s} &= constant  \label{seed} \\ 
+\frac{d\mu_{i}^{s}}{dt} &= iG(t)u_{i-1}^{n}(t) \quad  i = 1,2,3  \label{n1} 
 \end{align}
 \end{enumerate}
 The total moment is obtained as the summation $\mu_{i}^{t} = \mu_{i}^{n} + \mu_{i}^{s}$. Here, $\mu_{0}^{s}$ represents the amount of seeded crystals and hence remains constant. Also, fourth-order moments and higher do not affect third-order moments and lower, implying that only the first four moments and concentration can adequately represent the crystallization dynamics (\cite{shi}). 
@@ -344,8 +344,8 @@ Thus, the complete model involving the moment equations consists of nine state e
 
 The algorithm of Steepest Ascent utilizes the Maximum Principle using the Hamiltonian to move towards the optimum value of temperature and maximise the objective function. To formulate the equations an adjoint varible ($z_{i}$) is defined corresponding to each state variable ($y_{i}$) The adjoint variable staisfy the relations given by eq \ref{adjoints}. Using the state and the adjoint equations, a two-point boundary-value-problem is constructed. Here, the intial values for the states and the final conditions for the adjoint variables are known beforehand.
 The Hamiltonian can now be defined by eq \ref{hamilt}.
-\begin{equation} \label{hamilt}
- H &= \sum_{i = 1}^{9} z_{i}f(y_{i},t,T) 
+\begin{equation} 
+H = \sum_{i = 1}^{9} z_{i}f(y_{i},t,T) \label{hamilt}
 \end{equation}
 The complete model with the objective function is given by \Crefrange{obj}{adjoints}:
 \begin{equation} \label{obj}
@@ -366,17 +366,24 @@ with the initial and final conditions:
 The steps followed to solve the optimal control problem have been discussed in detail below.
 \begin{enumerate}
 \item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon.
-\item The differential equations for state variables are integrated in the forward direction using the given initial conditions.
-\item The values of the adjoint variables are computed by backward integration of the adjoint equations given by eqs. \ref{adjoints}.
+\item The differential equations for state variables($y_{i}$) are integrated in the forward direction using the given initial conditions.
+\item The values of the adjoint variables($z_{i}$) are computed by backward integration of the adjoint equations given by eqs. \ref{adjoints}.
 \item For evaluation of the Hamiltonian derivative, an analytical method proposed by \cite{benavides}, is used in which an additional variable corresponding to each of the state and adjoint variable is introduced. The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, which is given by eq(\ref{thetafi}).
 \begin{equation}
 \theta_{i} = \frac{dy_{i}}{dT} \quad and \quad \phi_{i} = \frac{dz_{i}}{dT} \label{thetafi} 
 \end{equation}
-\item The Hamiltonian derivative is now calculated at each time step by the eq(\ref{hamiltd})
-\begin{equation}
-\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) \label{hamiltd}
-\end{equation}
-\item The  computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
+\item The variables $\theta_{i}$ and $\phi_{i}$ along with $y_{i}$ and $z_{i}$ give the derivative of Hamiltonian by \ref{hamiltd}. The differential equaltions used for computing $\theta_{i}$ and $\phi_{i}$ are obtained by the following method :  
+\begin{align}
+\frac{d\left( \frac{dy_{i}}{dt}  \right)}{dT} &= \frac{d\left( \frac{dy_{i}}{dT}  \right)}{dt} = \frac{d\theta_{i}}{dt} \label{theta}\\
+\frac{d\left( \frac{dz_{i}}{dt}  \right)}{dT} &= \frac{d\left( \frac{dz_{i}}{dT}  \right)}{dt} = \frac{d\phi_{i}}{dt} \label{phi}
+\end{align}
+The intial conditions used for forward integration of $\frac{d\theta_{i}}{dt}$ are $\theta_{i}(t_{0}) = \left[  0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \right]$ and the final conditions used for the backward integration of $\frac{d\phi_{i}}{dt}$ are $\phi_{i}(t_{f}) = \left[  0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \right]$  
+\item The Hamiltonian derivative is now calculated at each time step by \ref{hamiltd}. 
+\begin{align}
+\frac{dH}{dT} &= \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) \\
+\frac{dH}{dT} &= \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right) \theta_{i}  + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right) \phi_{i}  \label{hamiltd} 
+\end{align}
+\item The computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
 \begin{equation} 
 T^{new}(t) = T^{old}(t) + M\left(\frac{dH}{dT} \right) \label{temp}
 \end{equation}
@@ -511,24 +518,46 @@ $b$ & $1.45$ & $1.3775-1.5225$\\
 \end{center}
 
 \subsubsection{Solution Technique}
-The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle (\cite{ramirez}), through the Steepest Ascent Hamiltonian method similar to Section (\ref{soltech}). Consequently, the Hamiltonian for this section is modified to incorporate the uncertainties as (\cite{yenkie}):
+The optimization problem for the given system is solved by extending the maximum principle to the Stochastic Maximum Principle (\cite{ramirez}), through the Steepest Ascent Hamiltonian method similar to Section (\ref{soltech}). Consequently, the Hamiltonian for this section is modified to incorporate the uncertainties as :
 \begin{equation}
-H = \sum_{i=1}^{9} \left( z_{i}f_{i} + \omega_{i}\frac{g_{y_{i}}^2}{2} \right) \label{SHamil}
+H = \sum_{i=1}^{9} \left( z_{i}F_{i} + \omega_{i}\frac{g_{y_{i}}^2}{2} \right) \label{SHamil}
 \end{equation}
-Here, $f_{i}$ are the deterministic parts of the corresponding state variables, used on the R.H.S in \Crefrange{steq1}{steq2}. $\omega_{i}$ is an additional adjoint variable defined to calculate the Hamiltonian.
-The stochastic optimal control problem has been solved in a manner similar to the deterministic problem in \Section (\ref{soltech}) with changes in the state equations (\Crefrange{steq1}{steq2}), objective function (\ref{Sobjeq}), Hamiltonian (\ref{SHamil}) and the number of adjoint variables. The initial and the final conditions for the variables $y_{i}$ and $z_{i}$ remain the same respectively. The \textbf{Algorithm} is explained in detail below. 
+Here, $F_{i}$ are the expressions, used on the R.H.S in \Crefrange{eq1}{eq9}. The stochastic optimal control problem has been solved in a manner similar to the deterministic problem in section (\ref{soltech}) with changes in the state equations (\Crefrange{steq1}{steq2}), objective function (\ref{Sobjeq}), Hamiltonian (\ref{SHamil}) and the number of adjoint variables. The adjoint equation formulas for the stochastic formulation are shown below in \ref{z} and \ref{omega} (\cite{yenkie}). The initial and the final conditions for the variables $y_{i}$ and $z_{i}$ remain the same respectively whereas $\omega_{i}$'s are integrated in the backward direction using $\omega_{i}(t_{f}) = \left[  0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \right]$ 
+
+\begin{align}
+\frac{dz_{j}}{dt} &= \sum_{i=1}^{9} \left[ - \frac{\partial F_{i}}{\partial y_{j}} z_{i} - \frac{1}{2} \left(\frac{\partial g_{i}^{2}}{\partial y_{j}}\right)\omega_{i} \right] \label{z}
+\end{align}
+\begin{equation}
+\frac{d \omega_{j}}{dt} = \sum_{i=1}^{9} \left[ -2 \omega_{i} \frac{\partial F_{i}}{\partial y_{j}} - z_{i} \frac{\partial^{2} F_{i}}{\partial y_{j}^{2}} - \frac{1}{2} \omega_{i} \left( \frac{\partial^{2} g_{i}^{2}}{\partial y_{j}^{2}} \right) \right] \label{omega} 
+\end{equation}
+%
+
+The algorithm followed has explained in detail below. 
 
 \begin{enumerate}
-\item  Steps (1-4) are repeated. 
-\item The variable θi corresponds to each of the state variable yi and the variable ∮ i corresponds to each of the adjoint variable zi , Ψi corresponding to each ωi respectively.
-\item The variable $\theta_{i}$ corresponds to each of the state variable $y_{i}$ and the variable $\phi_{i}$ corresponds to each of the adjoint variable $z_{i}$, $\psi_{i}$ for each $\omega_{i}$ respectively.
-
-\item The Hamiltonian derivative is now calculated at each time step  as :
+\item An initial temperature $T(t) = 323 K$ is assumed for the entire time horizon with $\Delta t = 1s$.
+\item The differential equations for state variables, $y_{i}$ are integrated in the forward direction at each of the above time points.
+\item The values of the adjoint variables $z_{i}$ and $\omega_{i}$ are computed by backward integration of the adjoint differential equations. 
+\item Corresponding to each state and adjoint variable an addition variable is introduced to compute the hamiltonian derivative(\cite{benavides}).
 \begin{align}
-&\theta = \frac{dy_{i}}{dT} \quad \phi_{i} = \frac{dz_{i}}{dT} \quad \psi = \frac{d\omega_{i}}{dT} \\
-&\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dw_{i}}\right)\left(\frac{dw_{i}}{dT} \right)
+\theta_{i} = \frac{dy_{i}}{dT} \quad \phi_{i} = \frac{dz_{i}}{dT} \quad \psi_{i} = \frac{d\omega_{i}}{dT} \label{thetafipsi} 
 \end{align}
-\item The convergence criteria and the constraints remain same as the above referenced method.
+\item Computation of $\theta_{i}$ and $\phi_{i}$ is done using the differential equations from \ref{theta} and \ref{phi} with the same initial and final conditions as the deterministic case, similarly the values for $\psi_{i}$ are calculated using the equations obtained by \ref{psi}.
+\begin{equation}
+\frac{d\left( \frac{d\omega_{i}}{dt}  \right)}{dT} = \frac{d\left( \frac{d\omega_{i}}{dT}  \right)}{dt} = \frac{d\psi_{i}}{dt} \label{psi} 
+\end{equation}
+The equations are integrated in the backward direction using the final conditions as 
+\begin{center}
+ $\psi_{i}(t_{f}) = \left[  0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \right]$ 
+\end{center} 
+\item The Hamiltonian derivative is now calculated at each time point as:
+%%&\theta = \frac{dy_{i}}{dT} \quad \phi_{i} = \frac{dz_{i}}{dT} \quad \psi = \frac{d\omega_{i}}{dT} \\
+\begin{align}
+&\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{d\omega_{i}}\right)\left(\frac{d\omega_{i}}{dT} \right)
+\end{align}
+\item The computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
+\item The concentration is evaluated  at that time step and compared with first with the saturation concentration ($C_{s}$) and then the metastable concentration($C_{m}$) to validate the active constraints. If it found to be lesser than saturation value or greater than the metastable value, eqs (\ref{sat}) and (\ref{meta}) are used to compute the new temperature respectively. 
+\item Iterations of above steps are repeated until the convergence criteria is achieved.
 \end{enumerate} 
 
 \subsubsection{Results}
@@ -699,7 +728,7 @@ where $C^{*}$ represents the saturation concentration of LAM crystals. The solub
 \begin{equation}
 C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
 \end{equation}
-The experimental values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}}, k_{j_{2}}}]$ (\cite{bhoi}) have been mentioned in the Table \ref{Table4} .
+The experimental values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}}, k_{j_{2}}]$ (\cite{bhoi}) have been mentioned in the Table \ref{Table4} .
 
 \begin{center}
 \begin{table}[!h]
@@ -711,7 +740,7 @@ Parameters & Experimental Values & Range of Values\\
 \hline
 \multicolumn{3}{|c|}{Growth Kinetics} \\
 \hline
-$\ln(k_{g})$ & $3.41\pm 0.28 & \mu m min^{-1} $\\
+$\ln(k_{g})$ & $3.41\pm 0.28$ & $\mu m min^{-1} $\\
 $g$ & $1.48\pm 0.04$ & $ - $\\
 \hline
 \multicolumn{3}{|c|}{Nucleation Kinetics} \\
@@ -794,7 +823,7 @@ The value for the temperature profile was obtained as :
 \end{itemize}
 
 
-\secstion{Conclusion}
+\section{Conclusion}
 
 
 
