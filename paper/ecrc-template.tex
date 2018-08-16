@@ -162,13 +162,7 @@
 \address{}
 
 \begin{abstract}
-Minimization of operation costs and the enhancement in product quality have been
-major concerns for all industrial processes. The field under study here is batch crystalllization which is affected heavily by the uncertainities in measurements and other
-errors.
-This work analyses various optimization approaches for the batch crystallization process that are robust to model error. All of the methods involve maximising an objective function by manipulating the cooling profile. At first, the Deterministic approach uses experimental kinetic parameters, which is then extended to Stochastic optimization to incorporate uncertainities in them. Lastly, a novel approach named Polynomial Chaos Expansions is implemented which has been applied successfully to other domains for
-Nonlinear Model Predictive Control but was not explored in detail in the field of batch
-cooled crystalllization. It successfuly includes probability distributions for the parameters into the model to provide a more robust optimization srategy.
-
+This paper presents a stochastic model predictive control(MPC) approach for nonlinear systems which are subject to time-invariant probabilistic uncertainties in model parameters. The field under study here is batch crystalllization which is affected heavily by the uncertainities in model parameters which leads to sub-par performace in process operation. Uncertanity quantification helps to mitigate this problem by by incorporating the errors, in the optimization algorithms while performing predictive control. Each of the optimization algorithms entail a cost function which maximises the amount or the expected value of the desired product. First, this work presents a determistic study to highlight the kinetics of the batch process and then draws comparison with the stochastic process to indicate an increase in performance in the later. The dynamic uncertainities in the process are modeled using Ito's lemma, stochastic calculus and stochastic maximum princile. In the end, a novel approach named Polynomial Chaos Expansions is implemented for the control strategy, which has been applied successfully to other domains for nonlinear MPC but was not explored in detail in the field of batch cooled crystalllization. It successfuly includes probability distributions for the parameters into the model to provide a more robust optimization srategy. 
  %The key challenge in addressing robustness to model
 %error is to propagate the uncertainty in model parameters onto the
 %%control or optimization objective.

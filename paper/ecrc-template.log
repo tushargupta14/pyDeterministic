@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  12 AUG 2018 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  16 AUG 2018 09:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,20 +521,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box33
 \@float@everytoks=\toks25
 \@floatcapt=\box34
-) (./ecrc-template.aux
-
-LaTeX Warning: Label `temp' multiply defined.
-
-
-LaTeX Warning: Label `temp@cref' multiply defined.
-
-)
+) (./ecrc-template.aux)
 \openout1 = `ecrc-template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 125.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 125
 .
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 125.
@@ -665,22 +658,22 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+txmia on input line 188.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 188.
+LaTeX Font Info:    Try loading font information for U+msa on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 188.
+LaTeX Font Info:    Try loading font information for U+msb on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 188.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 182.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
@@ -690,28 +683,28 @@ File: utxsyc.fd 2000/12/15 v3.1
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 208.
+Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
  <SDlogo-3p.pdf, id=2, 169.8345pt x 33.9669pt>
 File: SDlogo-3p.pdf Graphic file (type pdf)
 
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf used on input line 208.
+Package pdftex.def Info: SDlogo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 169.83408pt x 33.96681pt.
-LaTeX Font Info:    Try loading font information for OT1+txss on input line 208
+LaTeX Font Info:    Try loading font information for OT1+txss on input line 202
 .
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 17.09995pt on input line 208.
+(Font)              scaled to size 17.09995pt on input line 202.
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
  <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 208.
+Package pdftex.def Info: elsevier-logo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
 File: SDlogo-3p.pdf Graphic file (type pdf)
  <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf used on input line 208.
+Package pdftex.def Info: SDlogo-3p.pdf used on input line 202.
 (pdftex.def)             Requested size: 169.83408pt x 33.96681pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -725,12 +718,12 @@ Overfull \vbox (49.74303pt too high) has occurred while \output is active []
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
@@ -743,15 +736,15 @@ Package epstopdf Info: Source file: <images/Dtemp.eps>
 (epstopdf)                    size: 17459 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Dtemp-eps-converted
 -to.pdf images/Dtemp.eps>
-(epstopdf)             \includegraphics on input line 402.
+(epstopdf)             \includegraphics on input line 396.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/Dtemp-eps-converted-to.pdf, id=39, 421.575pt x 316.18124pt>
 File: images/Dtemp-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Dtemp-eps-converted-to.pdf>
-Package pdftex.def Info: images/Dtemp-eps-converted-to.pdf used on input line 4
-02.
+Package pdftex.def Info: images/Dtemp-eps-converted-to.pdf used on input line 3
+96.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
  [6]
 Package epstopdf Info: Source file: <images/Dobj.eps>
@@ -762,7 +755,7 @@ Package epstopdf Info: Source file: <images/Dobj.eps>
 (epstopdf)                    size: 20240 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Dobj-eps-converted-
 to.pdf images/Dobj.eps>
-(epstopdf)             \includegraphics on input line 409.
+(epstopdf)             \includegraphics on input line 403.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/Dobj-eps-converted-to.pdf, id=43, 429.605pt x 339.2675pt>
@@ -770,13 +763,13 @@ File: images/Dobj-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Dobj-eps-converted-to.pdf>
 Package pdftex.def Info: images/Dobj-eps-converted-to.pdf used on input line 40
-9.
+3.
 (pdftex.def)             Requested size: 289.07999pt x 228.2968pt.
 
 <images/Dconc.png, id=44, 443.40656pt x 373.395pt>
 File: images/Dconc.png Graphic file (type png)
  <use images/Dconc.png>
-Package pdftex.def Info: images/Dconc.png used on input line 453.
+Package pdftex.def Info: images/Dconc.png used on input line 447.
 (pdftex.def)             Requested size: 289.07999pt x 243.45026pt.
 
 
@@ -796,14 +789,14 @@ Package epstopdf Info: Source file: <images/Sobj.eps>
 (epstopdf)                    size: 19287 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Sobj-eps-converted-
 to.pdf images/Sobj.eps>
-(epstopdf)             \includegraphics on input line 592.
+(epstopdf)             \includegraphics on input line 586.
 Package epstopdf Info: Output file is already uptodate.
  <images/Sobj-eps-converted-to.pdf, id=72, 421.575pt x 316.18124pt>
 File: images/Sobj-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Sobj-eps-converted-to.pdf>
-Package pdftex.def Info: images/Sobj-eps-converted-to.pdf used on input line 59
-2.
+Package pdftex.def Info: images/Sobj-eps-converted-to.pdf used on input line 58
+6.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 Package epstopdf Info: Source file: <images/Stemp.eps>
 (epstopdf)                    date: 2018-04-29 16:12:46
@@ -813,7 +806,7 @@ Package epstopdf Info: Source file: <images/Stemp.eps>
 (epstopdf)                    size: 17942 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Stemp-eps-converted
 -to.pdf images/Stemp.eps>
-(epstopdf)             \includegraphics on input line 599.
+(epstopdf)             \includegraphics on input line 593.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/Stemp-eps-converted-to.pdf, id=73, 421.575pt x 316.18124pt>
@@ -821,7 +814,7 @@ File: images/Stemp-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Stemp-eps-converted-to.pdf>
 Package pdftex.def Info: images/Stemp-eps-converted-to.pdf used on input line 5
-99.
+93.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
 
@@ -835,14 +828,14 @@ Package epstopdf Info: Source file: <images/Sconc.eps>
 (epstopdf)                    size: 18821 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/Sconc-eps-converted
 -to.pdf images/Sconc.eps>
-(epstopdf)             \includegraphics on input line 607.
+(epstopdf)             \includegraphics on input line 601.
 Package epstopdf Info: Output file is already uptodate.
 <images/Sconc-eps-converted-to.pdf, id=74, 421.575pt x 316.18124pt>
 File: images/Sconc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/Sconc-eps-converted-to.pdf>
 Package pdftex.def Info: images/Sconc-eps-converted-to.pdf used on input line 6
-07.
+01.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
 
@@ -862,7 +855,7 @@ Package epstopdf Info: Source file: <images/PCEConc.eps>
 (epstopdf)                    size: 24620 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/PCEConc-eps-convert
 ed-to.pdf images/PCEConc.eps>
-(epstopdf)             \includegraphics on input line 702.
+(epstopdf)             \includegraphics on input line 696.
 Package epstopdf Info: Output file is already uptodate.
 
 <images/PCEConc-eps-converted-to.pdf, id=104, 463.7325pt x 383.4325pt>
@@ -870,47 +863,47 @@ File: images/PCEConc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/PCEConc-eps-converted-to.pdf>
 Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf used on input line
- 702.
+ 696.
 (pdftex.def)             Requested size: 289.07999pt x 239.02455pt.
  [14 <./images/PCEConc-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `modeleq' on page 15 undefined on input line 757.
+LaTeX Warning: Reference `modeleq' on page 15 undefined on input line 751.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 778--781
+Underfull \hbox (badness 10000) in paragraph at lines 772--775
 
  []
 
 [15]
 
-LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 784
+LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 778
 .
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 787.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 781.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 787.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 781.
 
 
-LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 797
+LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 791
 .
 
 
-Overfull \hbox (9.8502pt too wide) in paragraph at lines 797--798
+Overfull \hbox (9.8502pt too wide) in paragraph at lines 791--792
 []\OT1/txr/m/n/10 At each sam-ple, op-ti-miza-tion of the model is per-formed u
 s-ing the De-ter-min-stic Ap-proach ex-plained in Section([]). 
  []
 
 
-LaTeX Warning: File `AppConc.png' not found on input line 805.
+LaTeX Warning: File `AppConc.png' not found on input line 799.
 
 
 ! Package pdftex.def Error: File `AppConc.png' not found.
@@ -919,7 +912,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.805 \includegraphics[width=4in]{AppConc.png}
+l.799 \includegraphics[width=4in]{AppConc.png}
                                               
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -929,7 +922,7 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: File `AppTemp.png' not found on input line 813.
+LaTeX Warning: File `AppTemp.png' not found on input line 807.
 
 
 ! Package pdftex.def Error: File `AppTemp.png' not found.
@@ -938,7 +931,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 \includegraphics[width=4in]{AppTemp.png}
+l.807 \includegraphics[width=4in]{AppTemp.png}
                                               
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -953,9 +946,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
  5982 strings out of 493029
@@ -964,7 +954,7 @@ Here is how much of TeX's memory you used:
  9350 multiletter control sequences out of 15000+600000
  59074 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,34p,1088b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,34p,1376b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
@@ -977,7 +967,7 @@ ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on ecrc-template.pdf (19 pages, 319329 bytes).
+Output written on ecrc-template.pdf (19 pages, 319547 bytes).
 PDF statistics:
  169 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
