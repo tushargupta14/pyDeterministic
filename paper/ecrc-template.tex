@@ -555,7 +555,7 @@ The equations are integrated in the backward direction using the final condition
 \end{enumerate} 
 
 \subsubsection{Results}
-The stochastic differential equations are integrated using stochastic calculus through \textbf{SDE Tools} Library available in \textbf{Matlab}.A strong Taylor approximation from the \textbf{Euler Maruyama} scheme has been used to integrate the equations which has an order of convergence of 0.5. Table(\ref{t3}) contains the values for $g_{i}$ that were used as the coefficients for uncertainties for the state variables. In this case, the system reaches to a maximum value of the objective function at $\sim 800 s$ as seen in Figure(\ref{Sobj}). The obtained temperature profile is decreased to $309 K$ at the end of batch time in Figure(\ref{Stemp}). 
+The stochastic differential equations are integrated using stochastic calculus through \textbf{SDE Tools} Library available in \textbf{Matlab}.A strong Taylor approximation from the \textbf{Euler Maruyama} scheme has been used to integrate the equations which has an order of convergence of 0.5. Table (\ref{t3}) contains the values for $g_{i}$ that were used as the coefficients for uncertainties for the state variables. In this case, the system reaches to a maximum value of the objective function at $\sim 800 s$ as seen in Figure (\ref{Sobj}). The obtained temperature profile is decreased to $309 K$ at the end of batch time in Figure(\ref{Stemp}). 
 \begin{center}
 \begin{table}[!h] 
 \centering
@@ -604,22 +604,28 @@ $g_{9}$ & $8.753\times10^{4}$ \\
 \end{figure}
 
 
-\subsection{Stochastic Optimal Control using Polynomial Chaos Expansion(PCE)}
+\subsection{Stochastic Optimal Control using Polynomial Chaos Expansions}
 
-The generalized polynomial chaos (PC) framework has been proven as a computationally efficient alternative for uncertainty propagation through a  nonlinear system, as opposed to the Monte-Carlo simulations. In the following work, we use PCE to fit the crystallization model using orthogonal polynomials and compare the performance with the other methods in this domain. 
+Polynomial Chaos (PC) expansions (\cite{wiener}) have risen as efficient means of representing stochastic processes with the intention of quantifying uncertainty in differential equations. PC expansions are based on a probabilistic framework and represent stochastic quantities as spectral expansions of orthogonal polynomials. In the following work, we propose the use of PC expansions to propogate uncertainity into the crystallization model and then we compare it's performance with the other methods in this domain. 
 %\cite{mesbah,fagiano,huschto,kim2013}
 
 \subsubsection{Mathemetical Background}
-A Polynomial Chaos Expansion (PCE) describes a random process as a spectral expansion of random variables($\theta_{i}$), using orthogonal basis functions, $\Phi_{i}$ (\cite{ghanem}, \cite{ghanem1997}). For example, any second-order (finite variance) random process $y^{d}$, can be described using a PCE as follows:
+The PC expansion can be considered as a mathematical model that is able to solve stochastic problems: the response of a system under stochastic effects which can be represented via a properly constructed basis functions. A stochastic process $Y(x,t,\xi)$ with finite second-order moments and normalized random variables collected in the vector $\xi$ can be represented as follows : 
 \begin{equation}
-y^{d} = a_{0}^{d}\phi_{0} + \sum_{i_{1}=1}^{\infty} a_{i_{1}}^{d}\phi_{1}(\theta_{i_{i1}}) + \sum_{i_{1}=1}^{\infty}\sum_{i_{2}=1}^{i_{1}} a_{i_{1}i_{2}}^d\phi_{2}(\theta_{i_{1}},\theta_{i_{2}})
+Y(x,t,\xi) = \mathcal{L}(x,t,\xi)
 \end{equation}
-where $a_{i_{1}}^d$  are deterministic coefficients for each term in the expansion. The number of independent sources of random variables $(\theta_{i_{1}}, \theta_{i_{2}})$, generally defines the dimensionality, $n_{0}$. For practical application these expansions can be truncated to a finite number of terms. Then the maximum polynomial order for the basis function, q needs to be defined. The number of terms now become $P_{PCE} = \frac{(n_{0}+q)!}{n_{0}!q!} -1 $. Using these notations, a reduced PCE expansion can be represented as follows:
-\begin{equation} 
-\label{poly}
-y^{d} \approx \sum_{i=1}^{P_{PCE}} a_{i}^{d}\phi_{\theta}
+where $t \in [0, T]$ represents the time, x is the state vector, and $\mathcal{L}$ is an operator (linear or nonlinear).
+Now, $Y$ can be expressed as an infinite series of orthogonal basis functions(\cite{ghanem}, \cite{ghanem1997}), $\Phi_{i}$ with suitable deterministic coefficients $a_{i}$ as :
+\begin{equation} \label{exact}
+Y(t,\xi) =  \sum_{i=0}^{\infty} a_{i}(t)\Phi_{i}(\xi)
 \end{equation}
-
+where the representation in (\ref{exact}) is exact. However, for practical applications, Equation (\ref{exact}) is
+truncated to a limited number of basis functions M + 1 and is represented as :
+\begin{equation} \label{approx}
+Y(t,\xi) \approx \sum_{i=0}^{M} a_{i}(t)\Phi_{i}(\xi)
+\end{equation}
+The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which identifies an optimal type of polynomial function depending on the type of stochastic distribution of the random variables($\xi$) that are considered in the model. 
+\par
 The orthogonality property of the basis functions($\phi_{i}$) is used for the calculation of the coefficients when propagating uncertainty from the input random variables$(\theta_{i_{1}}, \theta_{i_{2}})$, to the output random variables ($y^{d}$).
 The choice of the basis functions $\phi_{i}$ depends on the type of stochastic distribution to be represented, i.e. normal or uniform. In our case the parameters follow a Gaussian distribution\cite{yenkie}, which uses Hermite Polynomials to describe the probability distribution in the least number of terms.\par
 Thus, given a process model with uncertain output, $y = X(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\theta)$ from $x(\theta), \lambda(\theta)$ using the process model. Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.

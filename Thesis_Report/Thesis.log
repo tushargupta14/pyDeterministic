@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  17 JUN 2018 02:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  7 AUG 2018 08:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,39 +915,6 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-
-! LaTeX Error: \begin{equation} on input line 143 ended by \end{equachaospytion
-}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.146 \end{equachaospytion}
-                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.146 \end{equachaospytion}
-                           
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.146 \end{equachaospytion}
-                           
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
 [21
 
 ]
@@ -1165,10 +1132,10 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
  ) 
 Here is how much of TeX's memory you used:
- 13232 strings out of 493029
- 186191 string characters out of 6136235
+ 13231 strings out of 493029
+ 186173 string characters out of 6136235
  259843 words of memory out of 5000000
- 16337 multiletter control sequences out of 15000+600000
+ 16336 multiletter control sequences out of 15000+600000
  15259 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,12n,46p,13135b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1188,7 +1155,7 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Thesis.pdf (38 pages, 737063 bytes).
+Output written on Thesis.pdf (38 pages, 737084 bytes).
 PDF statistics:
  681 PDF objects out of 1000 (max. 8388607)
  594 compressed objects within 6 object streams

@@ -130,6 +130,11 @@ Shi, D., El-Farra, N.~H., Li, M., Mhaskar, P., and Christofides, P.~D. (2006).
   processes.
 \newblock {\em Chemical Engineering Science}, 61(1):268--281.
 
+\bibitem[Wiener, 1938]{wiener}
+Wiener, N. (1938).
+\newblock The homogeneous chaos.
+\newblock {\em American Journal of Mathematics}, 60(4):897--936.
+
 \bibitem[Yenkie and Diwekar, 2012]{yenkie}
 Yenkie, K.~M. and Diwekar, U. (2012).
 \newblock Stochastic optimal control of seeded batch crystallizer applying the

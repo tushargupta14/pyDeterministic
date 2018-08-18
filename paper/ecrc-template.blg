@@ -4,45 +4,45 @@ The top-level auxiliary file: ecrc-template.aux
 The style file: apalike.bst
 Database file #1: mybibfile.bib
 Warning--empty journal in kim
-You've used 24 entries,
+You've used 25 entries,
             1935 wiz_defined-function locations,
-            632 strings with 7654 characters,
-and the built_in function-call counts, 10005 in all, are:
-= -- 1019
-> -- 360
-< -- 18
-+ -- 118
-- -- 116
-* -- 911
-:= -- 1700
-add.period$ -- 72
-call.type$ -- 24
-change.case$ -- 177
-chr.to.int$ -- 24
-cite$ -- 25
-duplicate$ -- 343
-empty$ -- 723
-format.name$ -- 168
-if$ -- 1944
+            640 strings with 7746 characters,
+and the built_in function-call counts, 10372 in all, are:
+= -- 1057
+> -- 367
+< -- 19
++ -- 122
+- -- 118
+* -- 942
+:= -- 1762
+add.period$ -- 75
+call.type$ -- 25
+change.case$ -- 183
+chr.to.int$ -- 25
+cite$ -- 26
+duplicate$ -- 357
+empty$ -- 753
+format.name$ -- 171
+if$ -- 2015
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 25
-newline$ -- 123
-num.names$ -- 72
-pop$ -- 122
+missing$ -- 26
+newline$ -- 128
+num.names$ -- 75
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 178
+purify$ -- 184
 quote$ -- 0
-skip$ -- 266
+skip$ -- 277
 stack$ -- 0
-substring$ -- 891
-swap$ -- 31
+substring$ -- 930
+swap$ -- 32
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
+type$ -- 148
 warning$ -- 1
-while$ -- 95
+while$ -- 99
 width$ -- 0
-write$ -- 313
+write$ -- 326
 (There was 1 warning)
