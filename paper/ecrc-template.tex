@@ -559,7 +559,7 @@ The stochastic differential equations are integrated using stochastic calculus t
 \begin{center}
 \begin{table}[!h] 
 \centering
-\caption{State Variable Uncertainty Coefficients\cite{yenkie}} \label{t3}
+\caption{State Variable Uncertainty Coefficients} \label{t3}
 \begin{tabular}{|c|c|}
 \hline
 Parameters & Values \\
@@ -624,11 +624,11 @@ truncated to a limited number of basis functions M + 1 and is represented as :
 \begin{equation} \label{approx}
 Y(t,\xi) \approx \sum_{i=0}^{M} a_{i}(t)\Phi_{i}(\xi)
 \end{equation}
-The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which identifies an optimal type of polynomial function depending on the type of stochastic distribution of the random variables($\xi$) that are considered in the model. 
+The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which maps the polynomial functions to the type of stochastic distribution of the random variables($\xi$) that are considered in the model. In our case the parameters follow a Gaussian distribution (\cite{yenkie}), which uses Hermite Polynomials to describe the probability distribution in the least number of terms.
 \par
-The orthogonality property of the basis functions($\phi_{i}$) is used for the calculation of the coefficients when propagating uncertainty from the input random variables$(\theta_{i_{1}}, \theta_{i_{2}})$, to the output random variables ($y^{d}$).
-The choice of the basis functions $\phi_{i}$ depends on the type of stochastic distribution to be represented, i.e. normal or uniform. In our case the parameters follow a Gaussian distribution\cite{yenkie}, which uses Hermite Polynomials to describe the probability distribution in the least number of terms.\par
-Thus, given a process model with uncertain output, $y = X(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\theta)$ from $x(\theta), \lambda(\theta)$ using the process model. Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.
+Thus, given a process model with uncertain output, $y = f(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\xi)$ from $x(\xi)$ and $\lambda(\theta)$ using the process model. The crystallization model given by Equations \Crefrange{obj}{adjoints} corresponds to these notations as follows. $\lambda$ is the set of uncertain kinetic parameters given in Table \ref{Table2} whereas $\xi$ is a random variable of the gaussian distribution.  
+
+Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.
 \begin{align}
 x(\theta) &= \sum_{i=1}^{P_{PCE}} x_{i}\phi(\theta)
 \lambda(\theta) &= \sum_{i=1}^{P_{PCE}} \lambda_{i}\phi(\theta)
@@ -644,7 +644,8 @@ inner product of $y(\theta)$ with each basis functions $\phi_{i}$ to determine t
 y_{i} = \frac{\left\langle f(x,\lambda)\phi_{i} \right\rangle }{\left\langle \phi^{2}_{i} \right\rangle }
 \end{equation}
 Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}.
-
+Next, The orthogonality property of the basis functions($\phi_{i}$) is used for the calculation of the coefficients when propagating uncertainty from the input random variables $\xi$, to the output variables ($Y$).
+\par
 \subsubsection{Usage of PCE in Batch Crystallization}
 
 Extending the concepts from the previous section, the state varibles($y_{i}$)(\Crefrange{eq1}{eq9}) act as the uncertain outputs which is caused by uncertainities present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). Temperatue($T(t)$) acts as the input variable $x$ in the above system. The PC expansion coefficients can be determined using the probabilistic collocation methods. Using these methods, N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the nonlinear process model \Crefrange{obj}{adjoints}. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the nonlinear model predictions. The complete algorithm is mentioned below.

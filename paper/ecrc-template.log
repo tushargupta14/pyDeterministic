@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  18 AUG 2018 20:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.8)  20 AUG 2018 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,14 +843,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11 <./images/Sobj-eps-converted-to.pdf>] [12 <./images/Stemp-eps-converted-to.
 pdf> <./images/Sconc-eps-converted-to.pdf>]
-
-Package natbib Warning: Citation `xiuwiener' on page 13 undefined on input line
- 627.
-
 Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
 Missing character: There is no ™ in font txr!
-[13]
+ [13]
 Package epstopdf Info: Source file: <images/PCEConc.eps>
 (epstopdf)                    date: 2018-04-29 20:55:26
 (epstopdf)                    size: 45641 bytes
@@ -859,14 +855,15 @@ Package epstopdf Info: Source file: <images/PCEConc.eps>
 (epstopdf)                    size: 24620 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/PCEConc-eps-convert
 ed-to.pdf images/PCEConc.eps>
-(epstopdf)             \includegraphics on input line 702.
+(epstopdf)             \includegraphics on input line 703.
 Package epstopdf Info: Output file is already uptodate.
- <images/PCEConc-eps-converted-to.pdf, id=104, 463.7325pt x 383.4325pt>
+
+<images/PCEConc-eps-converted-to.pdf, id=104, 463.7325pt x 383.4325pt>
 File: images/PCEConc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/PCEConc-eps-converted-to.pdf>
 Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf used on input line
- 702.
+ 703.
 (pdftex.def)             Requested size: 289.07999pt x 239.02455pt.
 
 
@@ -876,42 +873,42 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `modeleq' on page 14 undefined on input line 757.
+LaTeX Warning: Reference `modeleq' on page 14 undefined on input line 758.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 758--759
 
  []
 
 [14] [15 <./images/PCEConc-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 778--781
+Underfull \hbox (badness 10000) in paragraph at lines 779--782
 
  []
 
 
-LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 784
+LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 785
 .
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 787.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 788.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 787.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 788.
 
 
-LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 797
+LaTeX Warning: Reference `deterministic' on page 16 undefined on input line 798
 .
 
 
-Overfull \hbox (9.8502pt too wide) in paragraph at lines 797--798
+Overfull \hbox (9.8502pt too wide) in paragraph at lines 798--799
 []\OT1/txr/m/n/10 At each sam-ple, op-ti-miza-tion of the model is per-formed u
 s-ing the De-ter-min-stic Ap-proach ex-plained in Section([]). 
  []
 
 
-LaTeX Warning: File `AppConc.png' not found on input line 805.
+LaTeX Warning: File `AppConc.png' not found on input line 806.
 
 
 ! Package pdftex.def Error: File `AppConc.png' not found.
@@ -920,7 +917,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.805 \includegraphics[width=4in]{AppConc.png}
+l.806 \includegraphics[width=4in]{AppConc.png}
                                               
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -930,7 +927,7 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: File `AppTemp.png' not found on input line 813.
+LaTeX Warning: File `AppTemp.png' not found on input line 814.
 
 
 ! Package pdftex.def Error: File `AppTemp.png' not found.
@@ -939,7 +936,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 \includegraphics[width=4in]{AppTemp.png}
+l.814 \includegraphics[width=4in]{AppTemp.png}
                                               
 Using draft setting for this image.
 Try typing  <return>  to proceed.
@@ -948,11 +945,7 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16] [17] [18] (./ecrc-template.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-[19
+[16] [17] [18] (./ecrc-template.bbl) [19
 
 ] (./ecrc-template.aux)
 
@@ -960,10 +953,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5988 strings out of 493029
- 91191 string characters out of 6136235
+ 5990 strings out of 493029
+ 91231 string characters out of 6136235
  172771 words of memory out of 5000000
- 9356 multiletter control sequences out of 15000+600000
+ 9358 multiletter control sequences out of 15000+600000
  59074 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,34p,1376b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -979,7 +972,7 @@ ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on ecrc-template.pdf (19 pages, 320712 bytes).
+Output written on ecrc-template.pdf (19 pages, 321048 bytes).
 PDF statistics:
  169 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

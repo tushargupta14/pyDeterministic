@@ -135,6 +135,12 @@ Wiener, N. (1938).
 \newblock The homogeneous chaos.
 \newblock {\em American Journal of Mathematics}, 60(4):897--936.
 
+\bibitem[Xiu and Karniadakis, 2002]{xiuwiener}
+Xiu, D. and Karniadakis, G.~E. (2002).
+\newblock The wiener--askey polynomial chaos for stochastic differential
+  equations.
+\newblock {\em SIAM journal on scientific computing}, 24(2):619--644.
+
 \bibitem[Yenkie and Diwekar, 2012]{yenkie}
 Yenkie, K.~M. and Diwekar, U. (2012).
 \newblock Stochastic optimal control of seeded batch crystallizer applying the
