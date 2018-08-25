@@ -624,28 +624,30 @@ truncated to a limited number of basis functions M + 1 and is represented as :
 \begin{equation} \label{approx}
 Y(t,\xi) \approx \sum_{i=0}^{M} a_{i}(t)\Phi_{i}(\xi)
 \end{equation}
-The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which maps the polynomial functions to the type of stochastic distribution of the random variables($\xi$) that are considered in the model. In our case the parameters follow a Gaussian distribution (\cite{yenkie}), which uses Hermite Polynomials to describe the probability distribution in the least number of terms.
+The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which maps the polynomial functions to the type of stochastic distribution of the random variables($\xi$) that are considered in the model. In our case, the parameters follow a Gaussian distribution (\cite{yenkie}), which uses Hermite Polynomials to describe the probability distribution in the least number of terms. In particular, if the random variables $\xi$ are independent, their joint probability distribution function (PDF) corresponds to the product of the distributions of each random variable. 
 \par
-Thus, given a process model with uncertain output, $y = f(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\xi)$ from $x(\xi)$ and $\lambda(\theta)$ using the process model. The crystallization model given by Equations \Crefrange{obj}{adjoints} corresponds to these notations as follows. $\lambda$ is the set of uncertain kinetic parameters given in Table \ref{Table2} whereas $\xi$ is a random variable of the gaussian distribution.  
-
-Then the first step is to construct PCE’s of $x(\theta)$, and $\lambda(\theta)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$.
+Given a process model with uncertain output, $y = f(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\xi)$ from $x(\xi)$ and $\lambda(\xi)$ by representing each of these variables as a polynomial expansion of basis functions. The crystallization model given by \Crefrange{obj}{adjoints} corresponds to these notations as follows. $\lambda$ is the set of kinetic parameters given in Table \ref{Table2} whereas $\xi$ is a random variable of the gaussian distribution. The first step is to construct PCE’s of $x(\xi)$, and $\lambda(\xi)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$ where (\ref{orthogonal}) utilises the orthogonality condition of the basis functions.
 \begin{align}
-x(\theta) &= \sum_{i=1}^{P_{PCE}} x_{i}\phi(\theta)
-\lambda(\theta) &= \sum_{i=1}^{P_{PCE}} \lambda_{i}\phi(\theta)
+&x(\xi) = \sum_{i=0}^{M} x_{i}\phi_{i}(\xi) 
+\quad
+&\lambda(\xi) = \sum_{i=0}^{M} \lambda_{i}\phi_{i}(\xi)
 \end{align}
-\begin{align}
-&x_{i} = \frac{\int x\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle } \quad
-&\lambda_{i} = \frac{\int \lambda\phi_{i}(\theta)g(\theta) d\theta}{\left\langle \phi^{2}_{i}\right\rangle }
+\begin{align} \label{orthogonal}
+&x_{i} = \frac{\int x\phi_{i}(\xi)g(\xi) d\xi}{\left\langle \phi^{2}_{i}\right\rangle } \quad
+&\lambda_{i} = \frac{\int \lambda\phi_{i}(\xi)g(\xi) d\xi}{\left\langle \phi^{2}_{i}\right\rangle }
 \end{align}
-where $g(\theta)$ is probability distribution function (pdf) of $\theta$. 
-The next step is to develop PCE for $y(\theta)$ from  $x(\theta)$, and $\lambda(\theta)$, which can be done by evaluating the
-inner product of $y(\theta)$ with each basis functions $\phi_{i}$ to determine the ith- PCE coefficient.
+Here $g(\xi)$ is PDF of $\xi$. The next step is to develop PCE for $y(\xi)$ which can be done by evaluating the inner product of $y(\xi)$ with each of the basis functions $\phi_{i}$ to determine the ith- PCE coefficient as follows.
 \begin{equation}
 y_{i} = \frac{\left\langle f(x,\lambda)\phi_{i} \right\rangle }{\left\langle \phi^{2}_{i} \right\rangle }
 \end{equation}
-Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}.
-Next, The orthogonality property of the basis functions($\phi_{i}$) is used for the calculation of the coefficients when propagating uncertainty from the input random variables $\xi$, to the output variables ($Y$).
-\par
+Evaluating the inner product $\left\langle y\phi_{i} \right\rangle $, requires computation of multi-dimensional integrals which can be performed by one of two approaches referred to as \textbf{non-intrusive} and \textbf{intrusive}. The first are sampling-based methods requiring to
+solve the problem at hand multiple times for specific values of the random variables considered,
+chosen according to a suitable sampling strategy (\cite{xiu2010}). A deterministic problem is
+solved at each iteration. This strategy is similar to MC-based methods, with the
+important difference that the number of samples required for the computation of PC models is
+limited. The latter requires modification of the fundamental equations governing the system under
+study in order to obtain a new system of equations where the desired PC coefficients are the unknowns (\cite{eldred2009recent}). The main difference between these two
+approaches is that non-intrusive techniques are easy to implement and use existing deterministic model (Section \ref{model}) as black-box(no modifications of the system fundamental equations are required), while intrusive ones generally lead to a coupled system of equations, which can be more expensive to solve with respect to the original problem. Thus, this paper uses the non-intrusive approach to solve for the PC coefficients. The detailed approach has been explained in the following sections.
 \subsubsection{Usage of PCE in Batch Crystallization}
 
 Extending the concepts from the previous section, the state varibles($y_{i}$)(\Crefrange{eq1}{eq9}) act as the uncertain outputs which is caused by uncertainities present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). Temperatue($T(t)$) acts as the input variable $x$ in the above system. The PC expansion coefficients can be determined using the probabilistic collocation methods. Using these methods, N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the nonlinear process model \Crefrange{obj}{adjoints}. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the nonlinear model predictions. The complete algorithm is mentioned below.

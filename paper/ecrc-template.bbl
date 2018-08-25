@@ -22,6 +22,12 @@ Diwekar, U. (2008).
 \newblock {\em Introduction to applied optimization}, volume~22.
 \newblock Springer Science \& Business Media.
 
+\bibitem[Eldred, 2009]{eldred2009recent}
+Eldred, M. (2009).
+\newblock Recent advances in non-intrusive polynomial chaos and stochastic
+  collocation methods for uncertainty analysis and design.
+\newblock page 2274.
+
 \bibitem[Eugene and Moshe, 1965]{wong}
 Eugene, W. and Moshe, Z. (1965).
 \newblock On the relation between ordinary and stochastic differential
@@ -134,6 +140,11 @@ Shi, D., El-Farra, N.~H., Li, M., Mhaskar, P., and Christofides, P.~D. (2006).
 Wiener, N. (1938).
 \newblock The homogeneous chaos.
 \newblock {\em American Journal of Mathematics}, 60(4):897--936.
+
+\bibitem[Xiu, 2010]{xiu2010}
+Xiu, D. (2010).
+\newblock Numerical methods for stochastic computations: a spectral method
+  approach.
 
 \bibitem[Xiu and Karniadakis, 2002]{xiuwiener}
 Xiu, D. and Karniadakis, G.~E. (2002).
