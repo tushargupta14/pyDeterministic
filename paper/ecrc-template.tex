@@ -680,31 +680,31 @@ Here, $\phi_{i}$ are the coefficients of the orthogonal polynomials being used f
 
 \subsubsection{Results}
 
-All the source scripts for using PCE with the crystallization model were written Python, using the open source library \textbf{chaospy}\cite{chaospy}. It is a toolbox for performing uncertainity quantification through polynomial chaos expansions and efficient sampling strategies. The base model for performing simulations was derived from Section \ref{secdet}. The range of values exhibited by the uncertain parameters have been mentioned in the Table \ref{Table3}. The results obtained can be observed from \cref{PCEConc}
+All the source scripts for using PCE with the crystallization model were written Python, using the open source library \textbf{chaospy}\cite{chaospy}. It is a toolbox for performing uncertainity quantification through polynomial chaos expansions and efficient sampling strategies. The base model for performing simulations was derived from Section \ref{secdet}. The range of values exhibited by the uncertain parameters have been mentioned in the Table \ref{Table3}. The results obtained can be observed from Figures (\label{PCEObj}), (\label{PCETemp}) and (\label{PCEConc}).
 
 
 
-%\begin{figure}[h!] 
+\begin{figure}[h!] 
+\begin{center}
+\includegraphics[width=4in]{images/PCEobj.png} 
+\end{center}
+\caption{Objective Function ($\mathbf{E}\left(\mu_{3}^{s}(t) - \mu_{3}^{n}(t)\right]$)} \label{PCEObj}
+\end{figure}
 
-%\begin{center}
-%\includegraphics[width=4in]{images/PCEobj.eps}
-%\end{center}
-%\caption{Objective Function ($\mathbf{E}\left[\mu_{3}^{s}(t) - \mu_{3}^{n}(t)\right]$)}
-%\end{figure}
-%\begin{figure}[h!] 
 
-%\begin{center}
-%\includegraphics[width=4in]{images/PCETemp.eps}
-%\end{center}
-%\caption{The cooling profile for the controlled variable T(t) obtained at the final iteration}
-%\end{figure}
+\begin{figure}[h!] 
+\begin{center} 
+\includegraphics[width=4in]{images/PCETemp.eps} 
+\end{center}
+\caption{The cooling profile for the controlled variable T(t) obtained at the final iteration} 
+\end{figure}
 
 \begin{figure}[h!] 
 
 \begin{center}
-\includegraphics[width=4in]{images/PCEConc.eps} \label{PCEConc}
+\includegraphics[width=4in]{images/PCEConc.png} 
 \end{center}
-\caption{The Concentration profile}
+\caption{The Concentration profile} \label{PCEConc}
 \end{figure}
 
 \section{Case Study}
@@ -805,7 +805,8 @@ Key Differences :
 The value for the concentration profile for the time horizon was obtained as :
 \begin{figure}[h!] 
 \begin{center}
-\includegraphics[width=4in]{AppConc.png}
+
+\includegraphics[width=4in]{images/AppConc.png}
 \end{center}
 \caption{Concentration Profile}
 \end{figure}
@@ -813,7 +814,7 @@ The value for the concentration profile for the time horizon was obtained as :
 The value for the temperature profile was obtained as :
 \begin{figure}[h!] 
 \begin{center}
-\includegraphics[width=4in]{AppTemp.png}
+\includegraphics[width=4in]{images/AppTemp.png}
 \end{center}
 \caption{Temperature Profile}
 \end{figure}

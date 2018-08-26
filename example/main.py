@@ -161,10 +161,10 @@ def model(parameters,delta_t = 1):
 		t = np.linspace(t0,tf,num= 241)
 
 		fig1 = plt.figure(1)
-		plt.plot(t,y_mat[:,0])
+		plt.plot(t,y_mat[:,0],color = 'black')
 		fig1.show()
 		fig2 = plt.figure(2)
-		plt.plot(t,T_vec)
+		plt.plot(t,T_vec,color = 'black')
 		fig2.show()
 		#print "check constraints...."
 

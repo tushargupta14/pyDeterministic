@@ -179,6 +179,8 @@ def model(parameters,delta_t = 1,):
 		plt.plot(t,T_vec)
 		plt.figure(2)
 		plt.plot(t,y_mat[:,4]-y_mat[:,8])
+		plt.figure(3)
+		plt.plot(t,y_mat[:,0])
 		plt.show()
 		plt.cla()
 
