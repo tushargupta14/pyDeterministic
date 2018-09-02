@@ -710,12 +710,15 @@ All the source scripts for using PCE with the crystallization model were written
 
 \section{Case Study}
 
-In the following case study we aim to build a predictive model for batch crystallization of L-Asparagine Monohyrdate(LAM) by using the concepts developed in the previous section and at the same time validate the performance of Polynomial Chaos Expansions (PCEs) on an unseeded batch crystallization scenario.   
+In the following study, the insights gathered from our work on batch seeded crystallization has been extended to the unseeded batch cooling crystallization of L-Asparagine Monohyrdate (LAM) to develop a predictive model based on a population balance framework and at the same time validate the performance of the Polynomial Chaos (PC) approach in this domain. Similar to the previous sections, we aim to predict an optimal cooling strategy to achieve a desired objective function value.
+
 
 \subsection{Mathematical Background}
 
 
-The kinetics of crystal formation are modeled using the population balance equations(PBE) in \ref{populationbalance}, where the nucleation rate expression for LAM crystals is given by \cite{lindenberg} :
+Previous works in literature have reported the determination of nucleation and growth kinetic parameters of LAM during anti-solvent crystallization at high supersaturation (\cite{lindenberg}, \cite{mahajan1994nucleation} and \cite{zarkadas2006antisolvent}).Also, \cite{bhoi} published a non-linear approach on kinetic parameter estimation using experimental data which has been utilized further in this study.
+
+The kinetics of crystal formation are modelled using the population balance equations(PBE) in \ref{populationbalance}, where the nucleation rate expression for LAM crystals is given by 
 \begin{equation}
 B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) 
 \end{equation}

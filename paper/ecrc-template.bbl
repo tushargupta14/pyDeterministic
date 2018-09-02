@@ -91,6 +91,12 @@ Ma, D.~L., Chung, S.~H., and Braatz, R.~D. (1999).
   trajectories.
 \newblock {\em AIChE journal}, 45(7):1469--1476.
 
+\bibitem[Mahajan and Kirwan, 1994]{mahajan1994nucleation}
+Mahajan, A.~J. and Kirwan, D.~J. (1994).
+\newblock Nucleation and growth kinetics of biochemicals measured at high
+  supersaturations.
+\newblock {\em Journal of crystal growth}, 144(3-4):281--290.
+
 \bibitem[Miller and Rawlings, 1994]{miller_rawlings}
 Miller, S.~M. and Rawlings, J.~B. (1994).
 \newblock Model identification and control strategies for batch cooling
@@ -157,5 +163,10 @@ Yenkie, K.~M. and Diwekar, U. (2012).
 \newblock Stochastic optimal control of seeded batch crystallizer applying the
   ito process.
 \newblock {\em Industrial \& Engineering Chemistry Research}, 52(1):108--122.
+
+\bibitem[Zarkadas and Sirkar, 2006]{zarkadas2006antisolvent}
+Zarkadas, D.~M. and Sirkar, K.~K. (2006).
+\newblock Antisolvent crystallization in porous hollow fiber devices.
+\newblock {\em Chemical engineering science}, 61(15):5030--5048.
 
 \end{thebibliography}
