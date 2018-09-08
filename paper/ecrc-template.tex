@@ -228,15 +228,13 @@ In this work, the system under consideration is potassium sulfate, which has bee
 
 Nucleation kinetics are defined by :
 \begin{equation}
-B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}
+B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3} \label{nucleation}
 \end{equation}  
-
-
 Growth Kinetics are given by:
 \begin{equation}
-G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}
+G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g} \label{growth}
 \end{equation}
-where k$_{b}$ and k$_{g}$ are constants of the system, E$_{b}$ and E$_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. The values for these parameters for the given system have been mentioned in Table \ref{Table1}. The following equations are used to evaluate the saturation($C_{s}$) and metastable($C_{m}$) concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C) (\cite{shi}). \\
+where $k_{b}$ and $k_{g}$ are constants of the system, $E_{b}$ and $E_{g}$ are activation energies, and b and g are exponents of nucleation and growth, respectively. The values for these parameters for the given system have been mentioned in Table \ref{Table1}. The following equations are used to evaluate the saturation($C_{s}$) and metastable($C_{m}$) concentrations corresponding to the solution temperature T (expressed in units of $^\circ$C) (\cite{shi}). \\
 \begin{align}
 C_{s}(T) &= 6.29\times10^{-2} + 2.46\times10^{-3}T - 7.14\times10^{-6}T^{2} \label{sat}\\
 C_{m}(T) &= 7.76\times10^{-2} + 2.46\times10^{-3}T - 8.1\times10^{-6}T^{2} \label{meta}
@@ -306,7 +304,7 @@ $b$ & $1.45$ \\
 \end{center}
 \section{Deterministic Optimal Control}\label{secdet}
 
-\subsection{\textit{Case Study : Seeded batch crystallization}}
+\subsection{\textit{Seeded batch crystallization}}
 Optimal control involves the evaluation of time-dependent operating profiles, in terms of the control variable to optimize the process performance. In the crystallization domain, temperature becomes the control variable while the product yield is used to evaluate the performance of the model. The Optimization problem here is solved by using the method of Maximum Principle as discussed extensively by \cite{diwekar}. This method stands out in compared to other techniques such as dynamic programming as it involves the use of first order ODEs while the later utilises partial differential equations. Another advantage of maximum principle is its ability to adapt to stochastic calculus which is explained in the next section. \par 
 In a seeded crystallization process it is essential to keep the nucleation phenomena to minimum as in the early stages of growth, nucleated crystals might compete with the seeded ones for growth. This ensures uniformity in the shape and size of the final product. It is achieved by incorporating the volume of nucleated in the \textbf{objective fuction}. Third moment($\mu_{3}$) represents volume in a crystallization model as evident from Equation(\ref{moments}) and is used as follows :
 \begin{equation}
@@ -550,7 +548,7 @@ The equations are integrated in the backward direction using the final condition
 \begin{align}
 &\frac{dH}{dT} = \sum_{i=1}^{9} \left( \frac{dH}{dy_{i}}\right)\left(	\frac{dy_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{dz_{i}}\right)\left(\frac{dz_{i}}{dT} \right) + \sum_{i=1}^{9} \left(\frac{dH}{d\omega_{i}}\right)\left(\frac{d\omega_{i}}{dT} \right)
 \end{align}
-\item The computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of hamiltonian. 
+\item The computed value of the derivative is checked against the convergence criterion $(\frac{dH}{dT}<$ tolerance). If it is not satisfied, the temperature $T(t)$ is updated using eq(\ref{temp}). This ensures that the optimal control variable $T(t)$ is obtained using the extremum of Hamiltonian. 
 \item The concentration is evaluated  at that time step and compared with first with the saturation concentration ($C_{s}$) and then the metastable concentration($C_{m}$) to validate the active constraints. If it found to be lesser than saturation value or greater than the metastable value, eqs (\ref{sat}) and (\ref{meta}) are used to compute the new temperature respectively. 
 \item Iterations of above steps are repeated until the convergence criteria is achieved.
 \end{enumerate} 
@@ -607,15 +605,15 @@ $g_{9}$ & $8.753\times10^{4}$ \\
 
 \subsection{Stochastic Optimal Control using Polynomial Chaos Expansions}
 
-Polynomial Chaos (PC) expansions (\cite{wiener}) have risen as efficient means of representing stochastic processes with the intention of quantifying uncertainty in differential equations. PC expansions are based on a probabilistic framework and represent stochastic quantities as spectral expansions of orthogonal polynomials. In the following work, we propose the use of PC expansions to propogate uncertainity into the crystallization model and then we compare it's performance with the other methods in this domain. 
+Polynomial Chaos (PC) expansions (\cite{wiener}) have risen as efficient means of representing stochastic processes with the intention of quantifying uncertainty in differential equations. PC expansions are based on a probabilistic framework and represent stochastic quantities as spectral expansions of orthogonal polynomials. In the following work, we propose the use of PC expansions to propagate uncertainty into the crystallization model and then we compare it's performance with the other methods in this domain. 
 %\cite{mesbah,fagiano,huschto,kim2013}
 
-\subsubsection{Mathemetical Background}
+\subsubsection{Mathematical Background} \label{mathback}
 The PC expansion can be considered as a mathematical model that is able to solve stochastic problems: the response of a system under stochastic effects which can be represented via a properly constructed basis functions. A stochastic process $Y(x,t,\xi)$ with finite second-order moments and normalized random variables collected in the vector $\xi$ can be represented as follows : 
 \begin{equation}
 Y(x,t,\xi) = \mathcal{L}(x,t,\xi)
 \end{equation}
-where $t \in [0, T]$ represents the time, x is the state vector, and $\mathcal{L}$ is an operator (linear or nonlinear).
+where $t \in [0, T]$ represents the time, x is the state vector, and $\mathcal{L}$ is an operator (linear or non-linear).
 Now, $Y$ can be expressed as an infinite series of orthogonal basis functions(\cite{ghanem}, \cite{ghanem1997}), $\Phi_{i}$ with suitable deterministic coefficients $a_{i}$ as :
 \begin{equation} \label{exact}
 Y(t,\xi) =  \sum_{i=0}^{\infty} a_{i}(t)\Phi_{i}(\xi)
@@ -651,7 +649,9 @@ study in order to obtain a new system of equations where the desired PC coeffici
 approaches is that non-intrusive techniques are easy to implement and use existing deterministic model (Section \ref{model}) as black-box(no modifications of the system fundamental equations are required), while intrusive ones generally lead to a coupled system of equations, which can be more expensive to solve with respect to the original problem. Thus, this paper uses the non-intrusive approach to solve for the PC coefficients. The detailed approach has been explained in the following sections.
 \subsubsection{Usage of PCE in Batch Crystallization}
 
-Extending the concepts from the previous section, the state varibles($y_{i}$)(\Crefrange{eq1}{eq9}) act as the uncertain outputs which is caused by uncertainities present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), used to calculate the Growth rate ($G(t) = k_{g}\exp{\left(-E_{g}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{g}$) and the Nucleation rate ($B(t) = k_{b}\exp{\left(-E_{b}/RT \right)}\left(\frac{C - C_{s}(T)}{C_{s}(T)}\right)^{b}\mu_{3}$). Temperatue($T(t)$) acts as the input variable $x$ in the above system. The PC expansion coefficients can be determined using the probabilistic collocation methods. Using these methods, N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the nonlinear process model \Crefrange{obj}{adjoints}. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the nonlinear model predictions. The complete algorithm is mentioned below.
+Application of the polynomial chaos methodology (\cite{streif2014stochastic}) to seeded batch crystallization requires identifying the corresponding parameters mentioned in Section \ref{mathback} for the process under study. The state variables $y_{i}$ (\Crefrange{eq1}{eq9}) act as the uncertain outputs $Y$ which is caused by uncertainties present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), which are used to calculate the Growth rate (\ref{growth}) and the Nucleation rate (\ref{nucleation}). Temperature($T(t)$) acts as the input variable $x$ in the system. Here, $\xi$ represents the joint distribution of the random variables which are modelled using the Gaussian probabilistic distribution (\cite{yenkie}). 
+\par
+The PC expansion coefficients are determined using the probabilistic collocation method (\cite{mesbah2014active}, \cite{nagy}), a non-intrusive approach in which N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the non-linear process model. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the non-linear model predictions. The complete algorithm is mentioned below.
 
 \textbf{Algorithm}:
 \begin{enumerate}
@@ -662,7 +662,7 @@ y_{i} = f(x(\theta),\lambda_{i}(\theta))
 \end{align*}
 where x is the input temperature(T), $\lambda_{i}$'s are process parameters and $\theta$ is the random variable.
 %% Can add a example expression here
-\item The process model consists of 6 uncertainities which computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
+\item The process model consists of 6 uncertainties which computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
 \item Samples are generated for the model at $N$ points. The sampling technique used is the Gaussian Quadratures along with Hermite Polynomials to represent state variables $(y_{i})$ into Eq(5.17).
 
 \item For each of the above sample $y^{j}_{i} = f(T^{j}(\theta),\lambda(\theta) $ ,  the optimization problem is solved using the Steepest Ascent Hamiltonian method discussed in Section(4.1.1).
@@ -716,14 +716,13 @@ In the following study, the insights gathered from our work on batch seeded crys
 \subsection{Mathematical Background}
 
 
-Previous works in literature have reported the determination of nucleation and growth kinetic parameters of LAM during anti-solvent crystallization at high supersaturation (\cite{lindenberg}, \cite{mahajan1994nucleation} and \cite{zarkadas2006antisolvent}).Also, \cite{bhoi} published a non-linear approach on kinetic parameter estimation using experimental data which has been utilized further in this study.
-
-The kinetics of crystal formation are modelled using the population balance equations(PBE) in \ref{populationbalance}, where the nucleation rate expression for LAM crystals is given by 
+Previous works in literature have reported the determination of nucleation and growth kinetic parameters of LAM during anti-solvent crystallization at high supersaturation (\cite{lindenberg}, \cite{mahajan1994nucleation} and \cite{zarkadas2006antisolvent}). Also, \cite{bhoi} published a non-linear approach on kinetic parameter estimation using experimental data which has been utilized further in this study.
+\par
+The formation of LAM crystals are modelled using the same population balance equation (PBE) in \ref{populationbalance}, whereas the nucleation and the growth rate expressions are modified to incorporate the differences in kinetics from the previous model. The rate of formation on nuclei is given by \ref{nucleation} (\cite{lindenberg}), 
 \begin{equation}
-B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) 
+B = k_{j_{1}}S\exp\left( -k_{j_{2}}\frac{\ln^{3}{C_{c}/C^{*}}}{\ln^{2}S}\right) \label{nucleation}
 \end{equation}
-in which $C_{c}$ represents the  molar density of LAM crystals. Here, $k_{j_{1}}$ and $k_{j_{2}}$ are
-empirical parameters. The growth rate (\cite{nagy} and \cite{nagy2}) is now given by the power-law expression in \ref{newgrowth}. 
+in which $C_{c}$ represents the  molar density of LAM crystals. Here, $k_{j_{1}}$ and $k_{j_{2}}$ are empirical parameters. The growth rate (\cite{nagy} and \cite{nagy2}) is now given by the power-law expression in \ref{newgrowth}. 
 \begin{equation}
 G = k_{g}(S-1)^{g} \label{newgrowth}
 \end{equation}
@@ -735,12 +734,37 @@ where $C^{*}$ represents the saturation concentration of LAM crystals. The solub
 \begin{equation}
 C^{*} = 5 \times 10^{-5}T^{2} - 0.001T + 0.0236
 \end{equation}
-The experimental values for the set of kinetic parameters $[k_{g}, g, k_{j_{1}}, k_{j_{2}}]$ (\cite{bhoi}) have been mentioned in the Table \ref{Table4} .
+
+\cite{bhoi} used a predictive non-linear technique which minimizes the difference between the experimental and predicted concentrations of LAM crystals to estimate the values of the set of kinetic parameters $[k_{g}, g, k_{j_{1}}, k_{j_{2}}]$. Table \ref{Table4} depicts the resulting values. 
+\par
+Similar to the procedure followed in Section \ref{model}, Method of Moments has been used to reduce the PBE to ODE's given by \Crefrange{ceq1}{ceq2}. The mass balance for LAM crystals also remains the same, with the difference being the absence of seeded crystals.\\
+
+\begin{align} 
+\frac{du_{0}}{dt} &= B  \label{ceq1} \\
+\frac{du_{j}}{dt} &= jG\mu_{j-1} \label{ceq2} \quad\text{for}\quad j = 1,2,3,4
+\end{align}
+\par
+Determination of the optimal temperature profile for maximizing the weight mean size of crystals is a very common objective for a crystallization process (\cite{mao2010kinetics}, \cite{nowee2007optimization} and \cite{yang2013model}). The current process is an unseeded batch process as compared to the previous seeded one, thus the following optimal control problem is formulated.  
+The \textbf{Objective Function} becomes :
+\begin{align}
+\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t = t_{f} 
+\end{align}
+which is subject to the \textbf{Constraints} : 
+\begin{align}
+T_{min} &\leqslant T(t) \leqslant T_{max} \\
+\frac{dT}{dt} &\leqslant 0
+\end{align}
+The state variables can be represented as :
+\begin{equation*}
+y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
+\end{equation*}
+Here we do not divide the moments as the process does not contain any seeded crystals.
+
 
 \begin{center}
 \begin{table}[!h]
 \centering 
-\caption{Kinetic Parameters} \label{Table4}
+\caption{Estimated values for kinetic parameters} \label{Table4}
 \begin{tabular}{|c|c|c|}
 \hline
 Parameters & Experimental Values & Range of Values\\
@@ -761,47 +785,24 @@ $k_{j_{2}}$ & $2.7\times10^{-2}\pm 3.2\times10^{-3}$ & $-$\\
 \end{table}
 \end{center}
 
-Method of Moments has been used to reduce the PBE to ODE's as stated in Section \ref{modeleq}. The mass balance for LAM crystals also remains the same from there, with the difference being the absence of seeded crystals.\\
-
-The ODEs for the model are given by :
-\begin{align}
-\frac{du_{0}}{dt} &= B \\
-\frac{du_{j}}{dt} &= jG\mu_{j-1}
-\end{align}
-for  $j = 1,2,3,4 $ \\
-The determination of the optimal temperature profile for maximizing the weight mean size is a highly studied objective for a crystallization process.Thus, 
-\paragraph{Objective Function} becomes :
-\begin{align}
-\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t_{f} 
-\end{align}
-\paragraph{Constraints}
-\begin{align}
-T_{min} &\leqslant T(t) \leqslant T_{max} \\
-\frac{dT}{dt} &\leqslant 0
-\end{align}
-The state variables can be represented as :
-\begin{equation*}
-y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
-\end{equation*}
-Here we do not divide the moments in seeded and nucleated ones.\\
-The Hamiltonian method described in the previous sections was employed to solve the optimaization problem along with the uncertainity quantification being done using Polynomial Chaos Expansions. The new state equations, constraints and kinetics as described above are used to define the problem.\\
 
 \subsection{Solution Technique : Hamiltonian Steepest Ascent with PCE}
 
-Equations(6.5-6.6) take place as the new state equations and the uncertain parameters are mentioned in Table 6.1. The constraint(Eq 6.9)) depicts a cooling profile for the crystallizer. The obejective function here (Eq 6.7) differs from the one used in Section(\ref{deterministic}) so as to calculate the final maximum mean size of the crystals.\\ 
+The Hamiltonian method described in the previous sections was employed to solve the optimization problem along with the uncertainty quantification being done using Polynomial Chaos Expansions. The new state equations, constraints and kinetics as described above are used to define the problem.\\
+Equations(6.5-6.6) take place as the new state equations and the uncertain parameters are mentioned in Table 6.1. The constraint(Eq 6.9)) depicts a cooling profile for the crystallizer. The objective function here (Eq 6.7) differs from the one used in Section(\ref{deterministic}) so as to calculate the final maximum mean size of the crystals.\\ 
 Key Differences :
 \begin{itemize}
 \item The batch time for the model was taken to be 240 min($t_{f}$).
-\item An initial concentration value of 0.073 $g/L$ was taken to obtain the cooling profile. All the moments were intialised to 0.
+\item An initial concentration value of 0.073 $g/L$ was taken to obtain the cooling profile. All the moments were initialised to 0.
 \item The ODEs were integrated using Python \textbf{scipy's} \textbf{odeint} integrator.
 \end{itemize}
 
 \paragraph{Algorithm}
 \begin{enumerate}
-\item The process model consists of 4 uncertainities which computationally prohibits the evaluation. Thus, the experiment has been done on $k_{g}$ and $g$, employing a joint distribution of the parameters.
+\item The process model consists of 4 uncertainties which computationally prohibits the evaluation. Thus, the experiment has been done on $k_{g}$ and $g$, employing a joint distribution of the parameters.
 \item Samples are generated using the distribution using Gaussian Quadrature Scheme.
-\item The function is evaluated at each of these samples to evalute the integrals numerically to determine the PCE coefficients.
-\item At each sample, optimization of the model is performed using the Determinstic Approach explained in Section(\ref{deterministic}).
+\item The function is evaluated at each of these samples to evaluate the integrals numerically to determine the PCE coefficients.
+\item At each sample, optimization of the model is performed using the Deterministic Approach explained in Section(\ref{deterministic}).
 \item The convergence criteria and the constraints remain same as the above referenced method.
 \end{enumerate}
 
@@ -854,7 +855,6 @@ The value for the temperature profile was obtained as :
 %% References with BibTeX database:
 
 \clearpage
-\section{References}
 
 \bibliography{mybibfile}
 % Authors are advised to use a BibTeX database file for their reference list.

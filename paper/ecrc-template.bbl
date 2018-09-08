@@ -97,6 +97,12 @@ Mahajan, A.~J. and Kirwan, D.~J. (1994).
   supersaturations.
 \newblock {\em Journal of crystal growth}, 144(3-4):281--290.
 
+\bibitem[Mao et~al., 2010]{mao2010kinetics}
+Mao, S., Zhang, Y., Rohani, S., and Ray, A.~K. (2010).
+\newblock Kinetics of (r, s)-and (r)-mandelic acid in an unseeded cooling batch
+  crystallizer.
+\newblock {\em Journal of Crystal Growth}, 312(22):3340--3348.
+
 \bibitem[Miller and Rawlings, 1994]{miller_rawlings}
 Miller, S.~M. and Rawlings, J.~B. (1994).
 \newblock Model identification and control strategies for batch cooling
@@ -142,6 +148,12 @@ Shi, D., El-Farra, N.~H., Li, M., Mhaskar, P., and Christofides, P.~D. (2006).
   processes.
 \newblock {\em Chemical Engineering Science}, 61(1):268--281.
 
+\bibitem[Streif et~al., 2014]{streif2014stochastic}
+Streif, S., Karl, M., and Mesbah, A. (2014).
+\newblock Stochastic nonlinear model predictive control with efficient sample
+  approximation of chance constraints.
+\newblock {\em arXiv preprint arXiv:1410.4535}.
+
 \bibitem[Wiener, 1938]{wiener}
 Wiener, N. (1938).
 \newblock The homogeneous chaos.
@@ -157,6 +169,12 @@ Xiu, D. and Karniadakis, G.~E. (2002).
 \newblock The wiener--askey polynomial chaos for stochastic differential
   equations.
 \newblock {\em SIAM journal on scientific computing}, 24(2):619--644.
+
+\bibitem[Yang and Nagy, 2013]{yang2013model}
+Yang, Y. and Nagy, Z.~K. (2013).
+\newblock Model-based systematic design and analysis approach for unseeded
+  combined cooling and antisolvent crystallization (ccac) systems.
+\newblock {\em Crystal Growth \& Design}, 14(2):687--698.
 
 \bibitem[Yenkie and Diwekar, 2012]{yenkie}
 Yenkie, K.~M. and Diwekar, U. (2012).
