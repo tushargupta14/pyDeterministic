@@ -477,7 +477,7 @@ dy_{8} &= (2G(t)y_{7})\Delta t +g_{8}\varepsilon_{8}\sqrt{\Delta t} \\
 dy_{9} &= (3G(t)y_{8})\Delta t + g_{9}\varepsilon_{9}\sqrt{\Delta t} \label{steq2} 
 \end{align}
 $a(y,t)$ in each equation is replaced by the corresponding deterministic function for the state variable. Here, the $g_{i}$ values represent the variance in the variable for which they are associated. They are calculated by recording the variance of the differences ($y_{i}^{t} - y_{i}^{t-1}$), which is divided by the time interval $\Delta t$, and then the square root of this value is taken. \par
-The stochastic system defined by the \Crefrange{steq1}{steq2} treats the kinetic parameters as random variables for which the variations are propagated through the coefficients $g_{i}$ into the final output of the model. The range of values exhibited by the kinetic constants can be seen in the Table (\ref{stochastic}) (\cite{hu}, \cite{shi} and \cite{paeng}). We use a Gaussian probabilistic distribution (\cite{yenkie}) to incorpoarte the variations into the model. Consequently, the objective function is also modified in \ref{Sobjeq} for its evaluation in the stochastic domain.   
+The stochastic system defined by the \Crefrange{steq1}{steq2} treats the kinetic parameters as random variables for which the variations are propagated through the coefficients $g_{i}$ into the final output of the model. The range of values exhibited by the kinetic constants can be seen in the Table (\ref{stochastic}) (\cite{hu}, \cite{shi} and \cite{paeng}). We use a Gaussian probabilistic distribution (\cite{yenkie}) to incorporate the variations into the model. Consequently, the objective function is also modified in \ref{Sobjeq} for its evaluation in the stochastic domain.   
 \begin{equation} 
 \max_{T} L = \mathbf{E}\left[ \mu_{3}^{s}(t_{f}) - \mu_{3}^{n}(t_{f})\right] \label{Sobjeq}
 \end{equation}
@@ -626,7 +626,7 @@ Y(t,\xi) \approx \sum_{i=0}^{M} a_{i}(t)\Phi_{i}(\xi)
 The total number of terms depends on the number of dimensions, $N$ of the random multivariate parameter $\xi$ and the highest order $P$ of the polynomials $\Phi_{i}$ which is set according to the required accuracy. The number of terms now become $ M + 1 = \frac{(N+P)!}{N!P!} $. The basis functions $\Phi_{i}$ used for generating polynomial expansions  are chosen from the Askey scheme (\cite{xiuwiener}) which maps the polynomial functions to the type of stochastic distribution of the random variables($\xi$) that are considered in the model. In our case, the parameters follow a Gaussian distribution (\cite{yenkie}), which uses Hermite Polynomials to describe the probability distribution in the least number of terms. In particular, if the random variables $\xi$ are independent, their joint probability distribution function (PDF) corresponds to the product of the distributions of each random variable. 
 \par
 Given a process model with uncertain output, $y = f(x,\lambda)$, where $x$ is the uncertain input and $\lambda$ is the uncertain parameter, the aim is to quantify uncertainty in $y(\xi)$ from $x(\xi)$ and $\lambda(\xi)$ by representing each of these variables as a polynomial expansion of basis functions. The crystallization model given by \Crefrange{obj}{adjoints} corresponds to these notations as follows. $\lambda$ is the set of kinetic parameters given in Table \ref{Table2} whereas $\xi$ is a random variable of the gaussian distribution. The first step is to construct PCE’s of $x(\xi)$, and $\lambda(\xi)$, by determining their PCE coefficients $x_{i}$ and $\lambda_{i}$ where (\ref{orthogonal}) utilises the orthogonality condition of the basis functions.
-\begin{align}
+\begin{align} \label{xandlambda}
 &x(\xi) = \sum_{i=0}^{M} x_{i}\phi_{i}(\xi) 
 \quad
 &\lambda(\xi) = \sum_{i=0}^{M} \lambda_{i}\phi_{i}(\xi)
@@ -651,27 +651,31 @@ approaches is that non-intrusive techniques are easy to implement and use existi
 
 Application of the polynomial chaos methodology (\cite{streif2014stochastic}) to seeded batch crystallization requires identifying the corresponding parameters mentioned in Section \ref{mathback} for the process under study. The state variables $y_{i}$ (\Crefrange{eq1}{eq9}) act as the uncertain outputs $Y$ which is caused by uncertainties present in process parameters $\lambda$ ($k_{g}, E_{g}, g, k_{b}, E_{b}, b$), which are used to calculate the Growth rate (\ref{growth}) and the Nucleation rate (\ref{nucleation}). Temperature($T(t)$) acts as the input variable $x$ in the system. Here, $\xi$ represents the joint distribution of the random variables which are modelled using the Gaussian probabilistic distribution (\cite{yenkie}). 
 \par
-The PC expansion coefficients are determined using the probabilistic collocation method (\cite{mesbah2014active}, \cite{nagy}), a non-intrusive approach in which N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the non-linear process model. The PC expansion coefficients can then be obtained in a least squares sense by minimizing the residuals between the PC expansion and the non-linear model predictions. The complete algorithm is mentioned below.
+The PC expansion coefficients are determined using the probabilistic collocation method (\cite{mesbah2014active}, \cite{nagy}), a non-intrusive approach in which N samples are drawn from the known distributions of uncertainties and, subsequently, are used to solve the non-linear process model. This approach proves beneficial as the deterministic model implemented previously in is utilised here as an application to compute the process outputs. The PC expansion coefficients are now obtained in a least squares sense by minimizing the residuals between the PC expansion and the non-linear model predictions. The complete algorithm is discussed below.
 
-\textbf{Algorithm}:
 \begin{enumerate}
 
-\item Following the general representation, $y_{i}$ can be written as :
-\begin{align*}
-y_{i} = f(x(\theta),\lambda_{i}(\theta))
-\end{align*}
-where x is the input temperature(T), $\lambda_{i}$'s are process parameters and $\theta$ is the random variable.
+\item A joint probability distribution is constructed from the individual uncertain parameters $[k_{g}, E_{g}, g, k_{b}, E_{b}, b]$, each of which is modelled using a Gaussian distribution.
+\item Order of the PCE is defined and no. of terms determined. These determine the number of collocation points at which the model is simulated. %Need to improve this%
+\item Samples are generated for the model at $N$ points. The sampling technique used is the Gaussian Quadratures along with Hermite Polynomials to represent state variables $y_{i}$ in the form of \ref{approx}. 
+
+\item The deterministic algorithm developed in section \ref{secdet} is now used to calculate the output at each of the simulation points. 
+
+\item For each of the above sample $y^{j}_{i} = f(T^{j}(\xi),\lambda(\xi) $ ,  the optimization problem is solved using the Steepest Ascent Hamiltonian method discussed.
+
+\item The optimum value of the input temperature $T^{j}(\xi)$ at each of these samples is used to construct the PC expansion for $T(\xi)$ and $\lambda(\xi)$ (\ref{xandlambda} and \ref{orthogonal}), by using the orthogonal property of the basis functions. 
+ 
+%\item Following the general representation, $y_{i}$ can be written as :
+%\begin{align*}
+%y_{i} = f(x(\theta),\lambda_{i}(\theta))
+%\end{align*}
+%where x is the input temperature(T), $\lambda_{i}$'s are process parameters and $\theta$ is the random variable.
 %% Can add a example expression here
-\item The process model consists of 6 uncertainties which computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
-\item Samples are generated for the model at $N$ points. The sampling technique used is the Gaussian Quadratures along with Hermite Polynomials to represent state variables $(y_{i})$ into Eq(5.17).
-
-\item For each of the above sample $y^{j}_{i} = f(T^{j}(\theta),\lambda(\theta) $ ,  the optimization problem is solved using the Steepest Ascent Hamiltonian method discussed in Section(4.1.1).
-
-\item The optimum value of the input temperature $T^{j}(\theta)$ at these samples is used to construct the PCE's for $T(\theta)$ and $\lambda(\theta)$ as given by Equations(5.18).
+%\item The process model consists of 6 uncertainties which %computationally prohibits the evaluation. Thus, an approximation of $n_{0} = 2$ is taken by employing a joint distribution of the parameters.
 
 \item $y^{j}_{i}$'s for each sample are used to evaluate :
 \begin{equation}
-y_{i} = \frac{1}{\left\langle \phi^{2}_{i}\right\rangle }\frac{1}{N} \sum_{j=1}^{N} y^{j}\phi_{i}(\theta)
+y_{i} = \frac{1}{\left\langle \phi^{2}_{i}\right\rangle }\frac{1}{N} \sum_{j=1}^{N} y^{j}\phi_{i}(\xi)
 \end{equation}
 Here, $\phi_{i}$ are the coefficients of the orthogonal polynomials being used for PCE estimation.  
 
@@ -703,7 +707,7 @@ All the source scripts for using PCE with the crystallization model were written
 \begin{figure}[h!] 
 
 \begin{center}
-\includegraphics[width=4in]{images/PCEConc.png} 
+\includegraphics[width=4in]{images/PCEConc.eps} 
 \end{center}
 \caption{The Concentration profile} \label{PCEConc}
 \end{figure}
@@ -744,7 +748,7 @@ Similar to the procedure followed in Section \ref{model}, Method of Moments has 
 \frac{du_{j}}{dt} &= jG\mu_{j-1} \label{ceq2} \quad\text{for}\quad j = 1,2,3,4
 \end{align}
 \par
-Determination of the optimal temperature profile for maximizing the weight mean size of crystals is a very common objective for a crystallization process (\cite{mao2010kinetics}, \cite{nowee2007optimization} and \cite{yang2013model}). The current process is an unseeded batch process as compared to the previous seeded one, thus the following optimal control problem is formulated.  
+Determination of the optimal temperature profile for maximizing the weight mean size of crystals is a very common objective for a crystallization process (\cite{mao2010kinetics}, \cite{nowee} and \cite{yang2013model}). The current process is an unseeded batch process as compared to the previous seeded one, thus the following optimal control problem is formulated.  
 The \textbf{Objective Function} becomes :
 \begin{align}
 \max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t = t_{f} 
@@ -758,7 +762,7 @@ The state variables can be represented as :
 \begin{equation*}
 y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
 \end{equation*}
-Here we do not divide the moments as the process does not contain any seeded crystals.
+Here we do not divide the moments into seed and nuclei as the process does not contain any seeded crystals.
 
 
 \begin{center}

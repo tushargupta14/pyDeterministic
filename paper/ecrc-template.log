@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  8 SEP 2018 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  9 SEP 2018 21:49
 entering extended mode
 **./ecrc-template.tex
 (ecrc-template.tex
@@ -880,25 +880,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11 <./images/Sobj-eps-converted-to.pdf>] [12 <./images/Stemp-eps-converted-to.
 pdf> <./images/Sconc-eps-converted-to.pdf>] [13]
-
-Package natbib Warning: Citation `mesbah2014active' on page 14 undefined on inp
-ut line 654.
-
-
-LaTeX Warning: File `images/PCEobj.png' not found on input line 690.
-
-
-! Package pdftex.def Error: File `images/PCEobj.png' not found: using draft set
-ting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.690 ...udegraphics[width=4in]{images/PCEobj.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<images/PCEobj.png, id=103, 421.575pt x 316.18124pt>
+File: images/PCEobj.png Graphic file (type png)
+<use images/PCEobj.png>
+Package pdftex.def Info: images/PCEobj.png  used on input line 694.
+(pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -911,117 +897,86 @@ Package epstopdf Info: Source file: <images/PCETemp.eps>
 (epstopdf)                    size: 18629 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/PCETemp-eps-converte
 d-to.pdf images/PCETemp.eps>
-(epstopdf)             \includegraphics on input line 698.
+(epstopdf)             \includegraphics on input line 702.
 Package epstopdf Info: Output file is already uptodate.
-<images/PCETemp-eps-converted-to.pdf, id=103, 903.375pt x 313.17pt>
+<images/PCETemp-eps-converted-to.pdf, id=104, 903.375pt x 313.17pt>
 File: images/PCETemp-eps-converted-to.pdf Graphic file (type pdf)
 <use images/PCETemp-eps-converted-to.pdf>
 Package pdftex.def Info: images/PCETemp-eps-converted-to.pdf  used on input lin
-e 698.
+e 702.
 (pdftex.def)             Requested size: 289.07999pt x 100.21643pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: File `images/PCEConc.png' not found on input line 706.
-
-
-! Package pdftex.def Error: File `images/PCEConc.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.706 ...degraphics[width=4in]{images/PCEConc.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+Package epstopdf Info: Source file: <images/PCEConc.eps>
+(epstopdf)                    date: 2018-04-29 15:25:26
+(epstopdf)                    size: 45641 bytes
+(epstopdf)             Output file: <images/PCEConc-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-15 18:46:12
+(epstopdf)                    size: 24620 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/PCEConc-eps-converte
+d-to.pdf images/PCEConc.eps>
+(epstopdf)             \includegraphics on input line 710.
+Package epstopdf Info: Output file is already uptodate.
+<images/PCEConc-eps-converted-to.pdf, id=105, 463.7325pt x 383.4325pt>
+File: images/PCEConc-eps-converted-to.pdf Graphic file (type pdf)
+<use images/PCEConc-eps-converted-to.pdf>
+Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf  used on input lin
+e 710.
+(pdftex.def)             Requested size: 289.07999pt x 239.02455pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15 <./images/PCETemp-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
+[14] [15 <./images/PCEobj.png (PNG copy)> <./images/PCETemp-eps-converted-to.pd
+f>]
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
 
  []
 
+[16 <./images/PCEConc-eps-converted-to.pdf>]
 
-Package natbib Warning: Citation `nowee2007optimization' on page 16 undefined o
-n input line 747.
-
-[16]
-
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 792
+LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 796
 .
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 795.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 799.
 
 ("C:\Users\tushar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd
 "
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 795.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 799.
 
 
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 805
+LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 809
 .
 
 
-Overfull \hbox (12.6302pt too wide) in paragraph at lines 805--806
+Overfull \hbox (12.6302pt too wide) in paragraph at lines 809--810
 []\OT1/txr/m/n/10 At each sam-ple, op-ti-miza-tion of the model is per-formed u
 s-ing the De-ter-min-is-tic Ap-proach ex-plained in Section([]). 
  []
 
-
-LaTeX Warning: File `images/AppConc.png' not found on input line 814.
-
-
-! Package pdftex.def Error: File `images/AppConc.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.814 ...degraphics[width=4in]{images/AppConc.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[17]
-
-LaTeX Warning: File `images/AppTemp.png' not found on input line 822.
-
-
-! Package pdftex.def Error: File `images/AppTemp.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.822 ...degraphics[width=4in]{images/AppTemp.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<images/AppConc.png, id=123, 578.16pt x 433.62pt>
+File: images/AppConc.png Graphic file (type png)
+<use images/AppConc.png>
+Package pdftex.def Info: images/AppConc.png  used on input line 818.
+(pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19] (ecrc-template.bbl)
+<images/AppTemp.png, id=125, 578.16pt x 433.62pt>
+File: images/AppTemp.png Graphic file (type png)
+<use images/AppTemp.png>
+Package pdftex.def Info: images/AppTemp.png  used on input line 826.
+(pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
-Package natbib Warning: There were undefined citations.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20
+[17] [18 <./images/AppConc.png> <./images/AppTemp.png>] (ecrc-template.bbl)
+[19
 
-] (ecrc-template.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+] (ecrc-template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1030,31 +985,30 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6163 strings out of 492973
- 99025 string characters out of 3126249
+ 6184 strings out of 492973
+ 99593 string characters out of 3126249
  179487 words of memory out of 3000000
- 9875 multiletter control sequences out of 15000+200000
- 58384 words of font info for 135 fonts, out of 3000000 for 9000
+ 9897 multiletter control sequences out of 15000+200000
+ 58216 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,34p,1440b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
 c}<C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmtt10.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/symbols/msam10.pfb><C:/Users/tushar/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/txfonts/rtxi.pfb><C:/Users/tushar/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/tushar/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/tushar/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/txex.pfb><C:/Users/t
-ushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:
-/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a
-.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/u
-tmb8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/ti
-mes/utmbi8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-urw/times/utmr8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on ecrc-template.pdf (20 pages, 340887 bytes).
+s/symbols/msam10.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/txfonts/rtxi.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/tushar/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/tushar/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/txfonts/txex.pfb><C:/Users/tushar/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Users/tushar/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users
+/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/
+Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pf
+b><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr
+8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on ecrc-template.pdf (19 pages, 394532 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
+ 174 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

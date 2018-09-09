@@ -103,6 +103,12 @@ Mao, S., Zhang, Y., Rohani, S., and Ray, A.~K. (2010).
   crystallizer.
 \newblock {\em Journal of Crystal Growth}, 312(22):3340--3348.
 
+\bibitem[Mesbah et~al., 2014]{mesbah2014active}
+Mesbah, A., Streif, S., Findeisen, R., and Braatz, R.~D. (2014).
+\newblock Active fault diagnosis for nonlinear systems with probabilistic
+  uncertainties.
+\newblock {\em IFAC Proceedings Volumes}, 47(3):7079--7084.
+
 \bibitem[Miller and Rawlings, 1994]{miller_rawlings}
 Miller, S.~M. and Rawlings, J.~B. (1994).
 \newblock Model identification and control strategies for batch cooling
@@ -125,6 +131,13 @@ Nagy, Z.~K., Fujiwara, M., Woo, X.~Y., and Braatz, R.~D. (2008).
 \newblock Determination of the kinetic parameters for the crystallization of
   paracetamol from water using metastable zone width experiments.
 \newblock {\em Industrial \& Engineering Chemistry Research}, 47(4):1245--1252.
+
+\bibitem[Nowee et~al., 2007]{nowee}
+Nowee, S.~M., Abbas, A., and Romagnoli, J.~A. (2007).
+\newblock Optimization in seeded cooling crystallization: A parameter
+  estimation and dynamic optimization study.
+\newblock {\em Chemical Engineering and Processing: Process Intensification},
+  46(11):1096--1106.
 
 \bibitem[Paengjuntuek et~al., 2008]{paeng}
 Paengjuntuek, W., Arpornwichanop, A., and Kittisupakorn, P. (2008).
