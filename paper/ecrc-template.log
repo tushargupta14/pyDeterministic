@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  9 SEP 2018 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  7 OCT 2018 19:40
 entering extended mode
 **./ecrc-template.tex
 (ecrc-template.tex
@@ -527,22 +527,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box34
 ) (ecrc-template.aux
 
-LaTeX Warning: Label `PCEObj' multiply defined.
-
-
-LaTeX Warning: Label `PCEObj@cref' multiply defined.
-
-
 LaTeX Warning: Label `nucleation' multiply defined.
 
 
 LaTeX Warning: Label `nucleation@cref' multiply defined.
-
-
-LaTeX Warning: Label `PCEConc' multiply defined.
-
-
-LaTeX Warning: Label `PCEConc@cref' multiply defined.
 
 )
 \openout1 = `ecrc-template.aux'.
@@ -775,54 +763,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--258
  []
 
 [3] [4] [5]
-Package epstopdf Info: Source file: <images/Dtemp.eps>
-(epstopdf)                    date: 2018-04-29 10:08:28
-(epstopdf)                    size: 46056 bytes
-(epstopdf)             Output file: <images/Dtemp-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-26 18:37:20
-(epstopdf)                    size: 17459 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Dtemp-eps-converted-
-to.pdf images/Dtemp.eps>
+Package epstopdf Info: Source file: <images/Dtempv2.eps>
+(epstopdf)                    date: 2018-10-07 18:39:51
+(epstopdf)                    size: 41743 bytes
+(epstopdf)             Output file: <images/Dtempv2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-07 18:43:43
+(epstopdf)                    size: 15973 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/Dtempv2-eps-converte
+d-to.pdf images/Dtempv2.eps>
 (epstopdf)             \includegraphics on input line 395.
 Package epstopdf Info: Output file is already uptodate.
-<images/Dtemp-eps-converted-to.pdf, id=38, 421.575pt x 316.18124pt>
-File: images/Dtemp-eps-converted-to.pdf Graphic file (type pdf)
-<use images/Dtemp-eps-converted-to.pdf>
-Package pdftex.def Info: images/Dtemp-eps-converted-to.pdf  used on input line 
-395.
+<images/Dtempv2-eps-converted-to.pdf, id=38, 421.575pt x 316.18124pt>
+File: images/Dtempv2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/Dtempv2-eps-converted-to.pdf>
+Package pdftex.def Info: images/Dtempv2-eps-converted-to.pdf  used on input lin
+e 395.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
  [6]
-Package epstopdf Info: Source file: <images/Dobj.eps>
-(epstopdf)                    date: 2018-04-29 10:10:24
-(epstopdf)                    size: 110623 bytes
-(epstopdf)             Output file: <images/Dobj-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-26 18:50:08
-(epstopdf)                    size: 20240 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Dobj-eps-converted-t
-o.pdf images/Dobj.eps>
+Package epstopdf Info: Source file: <images/Dobjv2.eps>
+(epstopdf)                    date: 2018-10-07 18:38:54
+(epstopdf)                    size: 42838 bytes
+(epstopdf)             Output file: <images/Dobjv2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-07 18:43:44
+(epstopdf)                    size: 17143 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/Dobjv2-eps-converted
+-to.pdf images/Dobjv2.eps>
 (epstopdf)             \includegraphics on input line 402.
 Package epstopdf Info: Output file is already uptodate.
-<images/Dobj-eps-converted-to.pdf, id=42, 429.605pt x 339.2675pt>
-File: images/Dobj-eps-converted-to.pdf Graphic file (type pdf)
-<use images/Dobj-eps-converted-to.pdf>
-Package pdftex.def Info: images/Dobj-eps-converted-to.pdf  used on input line 4
-02.
-(pdftex.def)             Requested size: 289.07999pt x 228.2968pt.
-<images/Dconc.png, id=43, 443.40656pt x 373.395pt>
-File: images/Dconc.png Graphic file (type png)
-<use images/Dconc.png>
-Package pdftex.def Info: images/Dconc.png  used on input line 446.
-(pdftex.def)             Requested size: 289.07999pt x 243.45026pt.
+<images/Dobjv2-eps-converted-to.pdf, id=42, 421.575pt x 316.18124pt>
+File: images/Dobjv2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/Dobjv2-eps-converted-to.pdf>
+Package pdftex.def Info: images/Dobjv2-eps-converted-to.pdf  used on input line
+ 402.
+(pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
+Package epstopdf Info: Source file: <images/Dconcv2.eps>
+(epstopdf)                    date: 2018-10-07 18:40:16
+(epstopdf)                    size: 40592 bytes
+(epstopdf)             Output file: <images/Dconcv2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-07 18:43:44
+(epstopdf)                    size: 16480 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/Dconcv2-eps-converte
+d-to.pdf images/Dconcv2.eps>
+(epstopdf)             \includegraphics on input line 446.
+Package epstopdf Info: Output file is already uptodate.
+<images/Dconcv2-eps-converted-to.pdf, id=43, 421.575pt x 316.18124pt>
+File: images/Dconcv2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/Dconcv2-eps-converted-to.pdf>
+Package pdftex.def Info: images/Dconcv2-eps-converted-to.pdf  used on input lin
+e 446.
+(pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./images/Dtemp-eps-converted-to.pdf> <./images/Dobj-eps-converted-to.pdf>]
-[8 <./images/Dconc.png (PNG copy)>] [9]
+[7 <./images/Dtempv2-eps-converted-to.pdf> <./images/Dobjv2-eps-converted-to.pd
+f>] [8 <./images/Dconcv2-eps-converted-to.pdf>] [9]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10]
 Package epstopdf Info: Source file: <images/Sobj.eps>
 (epstopdf)                    date: 2018-04-29 10:45:18
 (epstopdf)                    size: 109616 bytes
@@ -833,12 +831,15 @@ Package epstopdf Info: Source file: <images/Sobj.eps>
 o.pdf images/Sobj.eps>
 (epstopdf)             \includegraphics on input line 585.
 Package epstopdf Info: Output file is already uptodate.
-<images/Sobj-eps-converted-to.pdf, id=71, 421.575pt x 316.18124pt>
+<images/Sobj-eps-converted-to.pdf, id=69, 421.575pt x 316.18124pt>
 File: images/Sobj-eps-converted-to.pdf Graphic file (type pdf)
 <use images/Sobj-eps-converted-to.pdf>
 Package pdftex.def Info: images/Sobj-eps-converted-to.pdf  used on input line 5
 85.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <images/Stemp.eps>
 (epstopdf)                    date: 2018-04-29 10:42:46
 (epstopdf)                    size: 48617 bytes
@@ -849,13 +850,12 @@ Package epstopdf Info: Source file: <images/Stemp.eps>
 to.pdf images/Stemp.eps>
 (epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
-<images/Stemp-eps-converted-to.pdf, id=72, 421.575pt x 316.18124pt>
+<images/Stemp-eps-converted-to.pdf, id=70, 421.575pt x 316.18124pt>
 File: images/Stemp-eps-converted-to.pdf Graphic file (type pdf)
 <use images/Stemp-eps-converted-to.pdf>
 Package pdftex.def Info: images/Stemp-eps-converted-to.pdf  used on input line 
 592.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -869,7 +869,7 @@ Package epstopdf Info: Source file: <images/Sconc.eps>
 to.pdf images/Sconc.eps>
 (epstopdf)             \includegraphics on input line 600.
 Package epstopdf Info: Output file is already uptodate.
-<images/Sconc-eps-converted-to.pdf, id=73, 421.575pt x 316.18124pt>
+<images/Sconc-eps-converted-to.pdf, id=71, 421.575pt x 316.18124pt>
 File: images/Sconc-eps-converted-to.pdf Graphic file (type pdf)
 <use images/Sconc-eps-converted-to.pdf>
 Package pdftex.def Info: images/Sconc-eps-converted-to.pdf  used on input line 
@@ -878,33 +878,41 @@ Package pdftex.def Info: images/Sconc-eps-converted-to.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./images/Sobj-eps-converted-to.pdf>] [12 <./images/Stemp-eps-converted-to.
-pdf> <./images/Sconc-eps-converted-to.pdf>] [13]
-<images/PCEobj.png, id=103, 421.575pt x 316.18124pt>
+[10] [11 <./images/Sobj-eps-converted-to.pdf>] [12 <./images/Stemp-eps-converte
+d-to.pdf> <./images/Sconc-eps-converted-to.pdf>] [13]
+Overfull \hbox (12.42268pt too wide) in paragraph at lines 658--659
+[]\OT1/txr/m/n/10 A joint prob-a-bil-ity dis-tri-bu-tion is con-structed by com
+-bin-ing the in-di-vid-ual un-cer-tain pa-ram-e-ters $[\OML/txmi/m/it/10 k[]; E
+[]; g; k[]; E[]; b\OT1/txr/m/n/10 ]$,
+ []
+
+
+LaTeX Warning: Reference `PCETemp' on page 14 undefined on input line 688.
+
+<images/PCEobj.png, id=104, 421.575pt x 316.18124pt>
 File: images/PCEobj.png Graphic file (type png)
 <use images/PCEobj.png>
 Package pdftex.def Info: images/PCEobj.png  used on input line 694.
 (pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <images/PCETemp.eps>
-(epstopdf)                    date: 2018-04-29 15:07:46
-(epstopdf)                    size: 47291 bytes
-(epstopdf)             Output file: <images/PCETemp-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-07-15 18:59:02
-(epstopdf)                    size: 18629 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/PCETemp-eps-converte
-d-to.pdf images/PCETemp.eps>
+Package epstopdf Info: Source file: <images/PCETempv2.eps>
+(epstopdf)                    date: 2018-10-07 18:59:28
+(epstopdf)                    size: 48822 bytes
+(epstopdf)             Output file: <images/PCETempv2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-07 19:00:31
+(epstopdf)                    size: 18921 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/PCETempv2-eps-conver
+ted-to.pdf images/PCETempv2.eps>
 (epstopdf)             \includegraphics on input line 702.
 Package epstopdf Info: Output file is already uptodate.
-<images/PCETemp-eps-converted-to.pdf, id=104, 903.375pt x 313.17pt>
-File: images/PCETemp-eps-converted-to.pdf Graphic file (type pdf)
-<use images/PCETemp-eps-converted-to.pdf>
-Package pdftex.def Info: images/PCETemp-eps-converted-to.pdf  used on input lin
-e 702.
-(pdftex.def)             Requested size: 289.07999pt x 100.21643pt.
+<images/PCETempv2-eps-converted-to.pdf, id=105, 421.575pt x 316.18124pt>
+File: images/PCETempv2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/PCETempv2-eps-converted-to.pdf>
+Package pdftex.def Info: images/PCETempv2-eps-converted-to.pdf  used on input l
+ine 702.
+(pdftex.def)             Requested size: 289.07999pt x 216.81442pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -918,7 +926,7 @@ Package epstopdf Info: Source file: <images/PCEConc.eps>
 d-to.pdf images/PCEConc.eps>
 (epstopdf)             \includegraphics on input line 710.
 Package epstopdf Info: Output file is already uptodate.
-<images/PCEConc-eps-converted-to.pdf, id=105, 463.7325pt x 383.4325pt>
+<images/PCEConc-eps-converted-to.pdf, id=106, 463.7325pt x 383.4325pt>
 File: images/PCEConc-eps-converted-to.pdf Graphic file (type pdf)
 <use images/PCEConc-eps-converted-to.pdf>
 Package pdftex.def Info: images/PCEConc-eps-converted-to.pdf  used on input lin
@@ -927,48 +935,42 @@ e 710.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15 <./images/PCEobj.png (PNG copy)> <./images/PCETemp-eps-converted-to.pd
-f>]
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
+[14] [15 <./images/PCEobj.png (PNG copy)> <./images/PCETempv2-eps-converted-to.
+pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
 
  []
 
 [16 <./images/PCEConc-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 796
+LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 795
 .
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 799.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 798.
 
 ("C:\Users\tushar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd
 "
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 799.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 798.
 
 
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 809
+LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 808
 .
 
-
-Overfull \hbox (12.6302pt too wide) in paragraph at lines 809--810
-[]\OT1/txr/m/n/10 At each sam-ple, op-ti-miza-tion of the model is per-formed u
-s-ing the De-ter-min-is-tic Ap-proach ex-plained in Section([]). 
- []
-
-<images/AppConc.png, id=123, 578.16pt x 433.62pt>
+<images/AppConc.png, id=124, 578.16pt x 433.62pt>
 File: images/AppConc.png Graphic file (type png)
 <use images/AppConc.png>
-Package pdftex.def Info: images/AppConc.png  used on input line 818.
+Package pdftex.def Info: images/AppConc.png  used on input line 817.
 (pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/AppTemp.png, id=125, 578.16pt x 433.62pt>
+<images/AppTemp.png, id=126, 578.16pt x 433.62pt>
 File: images/AppTemp.png Graphic file (type png)
 <use images/AppTemp.png>
-Package pdftex.def Info: images/AppTemp.png  used on input line 826.
+Package pdftex.def Info: images/AppTemp.png  used on input line 825.
 (pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -985,10 +987,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6184 strings out of 492973
- 99593 string characters out of 3126249
- 179487 words of memory out of 3000000
- 9897 multiletter control sequences out of 15000+200000
+ 6183 strings out of 492973
+ 99711 string characters out of 3126249
+ 181487 words of memory out of 3000000
+ 9896 multiletter control sequences out of 15000+200000
  58216 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,34p,1440b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1006,9 +1008,9 @@ Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pf
 b><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ecrc-template.pdf (19 pages, 394532 bytes).
+Output written on ecrc-template.pdf (19 pages, 384751 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
+ 175 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
