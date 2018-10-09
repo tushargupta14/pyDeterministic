@@ -603,7 +603,7 @@ $g_{9}$ & $8.753\times10^{4}$ \\
 \end{figure}
 
 
-\subsection{Stochastic Optimal Control using Polynomial Chaos Expansions}
+\subsection{Stochastic Optimal Control using Polynomial Chaos Expansions} \label{PCE}
 
 Polynomial Chaos (PC) expansions (\cite{wiener}) have risen as efficient means of representing stochastic processes with the intention of quantifying uncertainty in differential equations. PC expansions are based on a probabilistic framework and represent stochastic quantities as spectral expansions of orthogonal polynomials. In the following work, we propose the use of PC expansions to propagate uncertainty into the crystallization model and then we compare it's performance with the other methods in this domain. 
 %\cite{mesbah,fagiano,huschto,kim2013}
@@ -685,7 +685,7 @@ Here, $\phi_{i}$ are the coefficients of the orthogonal polynomials being used f
 
 \subsubsection{Results}
 
-All the source scripts for using PCE with the crystallization model were written Python, using the open source library \textbf{chaospy}\cite{chaospy}. It is a toolbox for performing uncertainity quantification through polynomial chaos expansions and efficient sampling strategies. The base model for performing simulations was derived from Section \ref{secdet}. The range of values exhibited by the uncertain parameters have been mentioned in the Table \ref{Table3}. The results obtained can be observed from Figures \ref{PCEObj}, \ref{PCETemp} and \ref{PCEConc}.
+All the source scripts for using PCE with the crystallization model were written Python, using the open source library \textbf{chaospy} (\cite{chaospy}). It is a toolbox for performing uncertainity quantification through polynomial chaos expansions and efficient sampling strategies. The base model for performing simulations was derived from Section \ref{secdet}. The range of values exhibited by the uncertain parameters have been mentioned in the Table \ref{Table3}. The results obtained can be observed from Figures \ref{PCEObj}, \ref{PCETemp} and \ref{PCEConc}.
 
 
 
@@ -701,7 +701,7 @@ All the source scripts for using PCE with the crystallization model were written
 \begin{center} 
 \includegraphics[width=4in]{images/PCETempv2.eps} 
 \end{center}
-\caption{The optimal cooling profile T(t) obtained for the system} 
+\caption{The optimal cooling profile T(t) obtained for the system} \label{PCETemp}
 \end{figure}
 
 \begin{figure}[h!] 
@@ -750,10 +750,10 @@ Similar to the procedure followed in Section \ref{model}, Method of Moments has 
 Determination of the optimal temperature profile for maximizing the weight mean size of crystals is a very common objective for a crystallization process (\cite{mao2010kinetics}, \cite{nowee} and \cite{yang2013model}). The current process is an unseeded batch process as compared to the previous seeded one, thus the following optimal control problem is formulated.  
 The \textbf{Objective Function} becomes :
 \begin{align}
-\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t = t_{f} 
+\max_{T(t)}	\phi = \mu_{4}/\mu_{3} \quad at \quad t = t_{f} \label{appobjective}
 \end{align}
 which is subject to the \textbf{Constraints} : 
-\begin{align}
+\begin{align} \label{appconstraints}
 T_{min} &\leqslant T(t) \leqslant T_{max} \\
 \frac{dT}{dt} &\leqslant 0
 \end{align}
@@ -761,7 +761,6 @@ The state variables can be represented as :
 \begin{equation*}
 y_{i} = \left[\quad C \quad \mu_{0} \quad \mu_{1} \quad \mu_{2} \quad \mu_{3}\quad \mu_{4} \quad\right]  
 \end{equation*}
-Here we do not divide the moments into seed and nuclei as the process does not contain any seeded crystals.
 
 
 \begin{center}
@@ -791,48 +790,50 @@ $k_{j_{2}}$ & $2.7\times10^{-2}\pm 3.2\times10^{-3}$ & $-$\\
 
 \subsection{Solution Technique : Hamiltonian Steepest Ascent with PCE}
 
-The Hamiltonian method described in the previous sections was employed to solve the optimization problem along with the uncertainty quantification being done using Polynomial Chaos Expansions. The new state equations, constraints and kinetics as described above are used to define the problem.\\
-Equations(6.5-6.6) take place as the new state equations and the uncertain parameters are mentioned in Table 6.1. The constraint(Eq 6.9)) depicts a cooling profile for the crystallizer. The objective function here (Eq 6.7) differs from the one used in Section \ref{deterministic} so as to calculate the final maximum mean size of the crystals.\\ 
-Key Differences :
+Solution to the unseeded crystallization scenario involved application of the PCE technique described in Section \ref{PCE}. The Hamiltonian method was employed to solve the optimization problem. 
+\Crefrange{ceq1}{ceq2} take place as the new state equations and the uncertain parameters are mentioned in Table \ref{Table4}. The constraint equation (\ref{appconstraints}) depicts a cooling strategy for the crystallizer. The objective function here (\ref{appobjective}) calculates the final maximum mean size of the crystals.\\ 
+The key differences in the problem from the one used in previous sections.
 \begin{itemize}
+\item The crystallization does not involve the presence of initial seeded crystals and thus does not involve 2 separate types of moments.
 \item The batch time for the model was taken to be 240 min($t_{f}$).
 \item An initial concentration value of 0.073 $g/L$ was taken to obtain the cooling profile. All the moments were initialised to 0.
-\item The ODEs were integrated using Python \textbf{scipy's} \textbf{odeint} integrator.
 \end{itemize}
 
-\paragraph{Algorithm}
-\begin{enumerate}
-\item The process model consists of 4 uncertainties which computationally prohibits the evaluation. Thus, the experiment has been done on $k_{g}$ and $g$, employing a joint distribution of the parameters.
-\item Samples are generated using the distribution using Gaussian Quadrature Scheme.
-\item The function is evaluated at each of these samples to evaluate the integrals numerically to determine the PCE coefficients.
-\item At each sample, optimization of the model is performed using the Deterministic Approach explained in Section \ref{deterministic}.
-\item The convergence criteria and the constraints remain same as the above referenced method.
-\end{enumerate}
+%\paragraph{Algorithm}
+%\begin{enumerate}
+%\item The process model consists of 4 uncertainties which computationally prohibits the evaluation. Thus, the experiment has been done on $k_{g}$ and $g$, employing a joint distribution of the parameters.
+%\item Samples are generated using the distribution using Gaussian Quadrature Scheme.
+%\item The function is evaluated at each of these samples to evaluate the integrals numerically to determine the PCE coefficients.
+%\item At each sample, optimization of the model is performed using the Deterministic Approach explained in Section \ref{deterministic}.
+%\item The convergence criteria and the constraints remain same as the above referenced method.
+%\end{enumerate}
 
 \subsection{Results}
-The value for the concentration profile for the time horizon was obtained as :
+
+The ODEs were integrated using Python \textbf{scipy's} \textbf{odeint} integrator.
+The concentration profile and the cooling trajectory for the time horizon can be seen in Figure \ref{AppConc} and \ref{AppTemp}.
+These results produced the following insights : 
+
+\begin{itemize}
+\item The final value of the objective function($\mu_{4}/\mu_{3}$), ie. the mean crystal size was obtained at : $300 \mu m$
+\item The model performs at par with other cooling policies such as the cubic cooling policy, $251 \mu m$ (\cite{bhoi}). This proves the efficacy of polynomial chaos expansions in the field of batch crystallization.
+\end{itemize}
+
 \begin{figure}[h!] 
 \begin{center}
 
 \includegraphics[width=4in]{images/AppConc.png}
 \end{center}
-\caption{Concentration Profile}
+\caption{Concentration Profile} \label{AppConc}
 \end{figure}
 
-The value for the temperature profile was obtained as :
 \begin{figure}[h!] 
 \begin{center}
 \includegraphics[width=4in]{images/AppTemp.png}
 \end{center}
-\caption{Temperature Profile}
+\caption{Temperature Profile} \label{AppTemp}
 \end{figure}
 
-\subsection{Conclusion}
-
-\begin{itemize}
-\item The final value of the objective function($\mu_{4}/\mu_{3}$), ie. the mean crystal size was obtained at : $300 \mu m$
-\item The model performs at par with other cooling policies such as cubic cooling policy($251 \mu m$)\cite{bhoi}. This proves the efficacy of P.C.E in the field of batch crystallization.
-\end{itemize}
 
 
 \section{Conclusion}

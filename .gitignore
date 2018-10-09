@@ -1,3 +1,4 @@
 *.eps
 *images/
 *.png
+paper/*.pdf

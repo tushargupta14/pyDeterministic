@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  7 OCT 2018 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  10 OCT 2018 00:43
 entering extended mode
 **./ecrc-template.tex
 (ecrc-template.tex
@@ -886,9 +886,6 @@ Overfull \hbox (12.42268pt too wide) in paragraph at lines 658--659
 []; g; k[]; E[]; b\OT1/txr/m/n/10 ]$,
  []
 
-
-LaTeX Warning: Reference `PCETemp' on page 14 undefined on input line 688.
-
 <images/PCEobj.png, id=104, 421.575pt x 316.18124pt>
 File: images/PCEobj.png Graphic file (type png)
 <use images/PCEobj.png>
@@ -942,35 +939,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 743--744
  []
 
 [16 <./images/PCEConc-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 797.
 
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 795
-.
-
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 798.
 
 ("C:\Users\tushar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\omstxr.fd
 "
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 798.
-
-
-LaTeX Warning: Reference `deterministic' on page 17 undefined on input line 808
-.
-
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 797.
 <images/AppConc.png, id=124, 578.16pt x 433.62pt>
 File: images/AppConc.png Graphic file (type png)
 <use images/AppConc.png>
-Package pdftex.def Info: images/AppConc.png  used on input line 817.
+Package pdftex.def Info: images/AppConc.png  used on input line 825.
 (pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/AppTemp.png, id=126, 578.16pt x 433.62pt>
 File: images/AppTemp.png Graphic file (type png)
 <use images/AppTemp.png>
-Package pdftex.def Info: images/AppTemp.png  used on input line 825.
+Package pdftex.def Info: images/AppTemp.png  used on input line 833.
 (pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -980,17 +970,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] (ecrc-template.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6183 strings out of 492973
- 99711 string characters out of 3126249
+ 6193 strings out of 492973
+ 99841 string characters out of 3126249
  181487 words of memory out of 3000000
- 9896 multiletter control sequences out of 15000+200000
+ 9906 multiletter control sequences out of 15000+200000
  58216 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,34p,1440b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1008,7 +995,7 @@ Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pf
 b><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ecrc-template.pdf (19 pages, 384751 bytes).
+Output written on ecrc-template.pdf (19 pages, 383654 bytes).
 PDF statistics:
  175 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
