@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  10 OCT 2018 00:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.30)  24 NOV 2018 22:43
 entering extended mode
 **./ecrc-template.tex
 (ecrc-template.tex
@@ -960,13 +960,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <images/AppTemp.png, id=126, 578.16pt x 433.62pt>
 File: images/AppTemp.png Graphic file (type png)
 <use images/AppTemp.png>
-Package pdftex.def Info: images/AppTemp.png  used on input line 833.
+Package pdftex.def Info: images/AppTemp.png  used on input line 832.
 (pdftex.def)             Requested size: 289.07999pt x 216.80946pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18 <./images/AppConc.png> <./images/AppTemp.png>] (ecrc-template.bbl)
-[19
+[17] [18 <./images/AppConc.png> <./images/AppTemp.png>] [19] (ecrc-template.bbl
+) [20
 
 ] (ecrc-template.aux)
 
@@ -995,9 +995,9 @@ Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pf
 b><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><C:/Users/tushar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ecrc-template.pdf (19 pages, 383654 bytes).
+Output written on ecrc-template.pdf (20 pages, 385187 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 178 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
